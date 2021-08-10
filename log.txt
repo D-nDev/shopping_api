@@ -1,0 +1,7 @@
+9 de agosto:
+    - Iniciado estudos do pg
+    - Criado rota para teste
+    - Adicionado log de rotas, e de consultas no sql
+    - Criado uma função para abstrair queries sem transaction
+    - Adicionado Helmet para maior segurança da aplicação
+    - Adicionado compression para melhorar a compressão das rotas(compacta as rotas para GZIP)

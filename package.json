@@ -1,0 +1,28 @@
+{
+  "name": "shop_api",
+  "version": "1.0.0",
+  "description": "shop api for alphalumen edtech",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "shop",
+    "shopping",
+    "api"
+  ],
+  "author": "Diego Novaes",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "fs-extra": "^10.0.0",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.6.3",
+    "pg": "^8.7.1"
+  }
+}

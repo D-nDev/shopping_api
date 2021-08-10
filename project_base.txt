@@ -1,0 +1,108 @@
+* adicionar imagem do produto na tabela products
+
+
+Arquitetura:
+  * MVC
+  * Pastas:
+	model: db
+	controllers: funcoes que interagem diretamente com as regras de negócio
+	cart: cart.json, devido a falta do front para armazenar o carrinho atual, será armazenado em um json
+  * routes.js: rotas
+
+Libs usadas:
+  - express: padrão
+  - pg: padrão
+  - cookie-parser: padrão
+  - morgan: armazenamento e processamento de logs detalhados das requests sendo feitas nas rotas com dados avaliativos
+  - bcrypt: criptografia da senha
+  - crypto: ?
+  - helmet: prevenção de ataques comuns como XSS
+  - nodemailer: envio de e-mail solicitando reembolso
+  - fs_extra(talvez): melhorar leitura de json, armazenar o carrinho em um .json devido a falta de um localstorage por não haver front-end
+
+
+Fluxo de CRUD usuário:
+
+  /register
+	registra um usuário, Dados:
+	- Email
+	- Primeiro Nome
+	- Último nome
+	- RG/CPF
+	- Senha
+	- Endereço
+	- Cidade(via API externa se possível)
+	- Estado(via API externa se possível)
+	- CEP
+	- Data de nascimento
+	- Telefone celular
+
+  /login
+	Loga um usuário caso e-mail e senha correspondam
+
+  /requestpass_email
+	Solicita um reset de senha por e-mail
+
+  /requestpass_sms
+	Solicita um reset de senha por SMS
+
+  /recoverpass
+	Recupera a senha através de uma nova senha e caso o código esteja correto.
+
+  /deleteaccount
+	Realiza um soft delete da conta, caso o usuário esteja logado
+	
+
+Fluxo de vendas para USUÁRIO:
+
+  /addcart?productid=id:
+	Realiza um select no bd, tras os dados do produto através do id requisitado e adiciona ao CARRINHO 
+	caso possua quantidade desejada em estoque
+
+  /cart
+	Retorna o carrinho do usuário atual
+
+  /list?filter=filter
+	Realiza uma consulta no bd, e retorna todos os produtos disponíveis baseado ou não no filter
+
+  /buy
+	Realiza uma compra com os itens no carrinho, podendo ser aplicado um cupom de desconto ao qual vira da req.body.
+	Após é iniciada uma transaction para processar o header, os itens vendidos, e a adição de um titulo a receber.
+
+  /modifycart?productid=id&&quantity=quantity
+	No carrinho será possível aumentar ou diminuir a quantidade. Será feita uma consulta no bd para verificar o estoque
+
+  /removeproduct?productid=id
+	Remove um produto do carrinho, e retorna a quantidade ao estoque no bd
+
+  /addcoupon?code=code
+	Adiciona um cupom ao carrinho, verifica se o mesmo existe no bd, caso exista aplica um desconto ao carrinho atual. Caso não haja
+	nada no carrinho retorna carrinho vazio
+
+  /requestrefund?userid=id&&saleheaderid=id
+	O usuário pode requisitar um reembolso, sendo enviado para o e-mail da equipe responsável sua mensagem, o id do usuário, e o id da compra
+
+  /contact
+	Envia um e-mail para os responsáveis, com o req.session.user, req.session.name, data atual e req.body.message
+
+Fluxo de estorno realizado por pessoas AUTORIZADAS:
+
+  /refund?saleheaderid=id
+	Caso após análise do setor responsável o reembolso seja autorizado, através dessa rota é possível realizar o mesmo.
+	Será feito o soft delete do sale_header e o sale_items respectivos a compra e também do titulos a receber.
+
+
+Fluxo ADMIN:
+
+  /addproduct
+	Adiciona um novo produto a loja caso seu grupo de produtos exista
+
+  /addgroup
+	Adiciona um novo grupo de produtos a loja, caso não haja um igual
+
+  /addprovider
+	Adiciona um novo fornecedor ao bd
+
+  /addcode
+	Adiciona um novo código promocional, caso não já exista
+  

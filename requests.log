@@ -1,0 +1,8 @@
+GET /test 135.558 ms
+DATE: Monday, August 9, 2021
+HTTP STATUS CODE: 200
+
+GET /test 2.988 ms
+DATE: Monday, August 9, 2021
+HTTP STATUS CODE: 200
+
