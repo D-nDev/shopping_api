@@ -2,7 +2,9 @@ const express = require("express");
 const cookie_parser = require("cookie-parser");
 const db = require("./model/db");
 const login = require("./controllers/login");
+const resetemail = require("./controllers/sendemail");
 const bcrypt = require("bcrypt");
+const crypto = require('crypto');
 const app = express();
 
 const router = express.Router();
@@ -78,5 +80,22 @@ router.post("/register", async (req, res) => {
     res.send("Register ok");
   }
 });
+
+router.post("/requestpass_email", async (req, res) => {
+  const email = req.body.email;
+  const token = crypto.randomBytes(20).toString("hex");
+  const result = await db.query("SELECT * FROM users where email = $1", [email]);
+  if(result.rows.length == 0) {
+    res.send("Email not found");
+  }
+  else {
+    try {
+      await resetemail.sendEmail(email, token, null, null, null, null, result.rows[0].first_name);
+      res.send("Email sent");
+    } catch (err) {
+      res.send(err);
+    }
+  }
+})
 
 module.exports = router;

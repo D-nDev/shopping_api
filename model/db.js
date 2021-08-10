@@ -19,6 +19,9 @@ async function query(text, params) {
     if(err.code == '23505') {
       return 23505 // violate unique constraint
     }
+    else {
+      console.log(err);
+    }
     return err;
   } finally {
     const duration = Date.now() - start;

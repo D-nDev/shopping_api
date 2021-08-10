@@ -20,6 +20,7 @@ Libs usadas:
   - helmet: prevenção de ataques comuns como XSS
   - nodemailer: envio de e-mail solicitando reembolso/contato
   - fs_extra(talvez): melhorar leitura de json, armazenar o carrinho em um .json devido a falta de um localstorage por não haver front-end
+  - dotenv: armazenar dados do email e SMS em .env
 
 
 Fluxo de CRUD usuário:
