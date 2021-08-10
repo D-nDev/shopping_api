@@ -8,3 +8,4 @@
 
 10 de agosto:
     - Adicionado log de queries
+    - Adicionado Login e registro de usuários
