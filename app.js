@@ -1,3 +1,5 @@
+require("dotenv").config();
+process.env.TZ = "America/Sao_Paulo";
 const express = require("express");
 const compression = require("compression");
 const cookie_parser = require("cookie-parser");
@@ -16,6 +18,7 @@ const dateoptions = {
 
 const app = express();
 const port = process.env.port || 3000;
+process.env.TZ = 'America/Sao_Paulo';
 
 const accessLogStream = fs.createWriteStream(
   path.join(__dirname, "requests.log"),

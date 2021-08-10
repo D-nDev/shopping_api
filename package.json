@@ -4,7 +4,7 @@
   "description": "shop api for alphalumen edtech",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "env TZ='Europe/Amsterdam' node app.js"
   },
   "keywords": [
     "shop",
@@ -14,16 +14,21 @@
   "author": "Diego Novaes",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
+    "detect-browser": "^5.2.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-useragent": "^1.0.15",
     "fs-extra": "^10.0.0",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "nodemailer": "^6.6.3",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "totalvoice-node": "^1.10.0",
+    "tzdata": "^1.0.25"
   }
 }

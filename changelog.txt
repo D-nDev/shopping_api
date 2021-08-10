@@ -9,3 +9,7 @@
 10 de agosto:
     - Adicionado log de queries
     - Adicionado Login e registro de usuários
+    - Adicionado envio de email de reset de senha
+    - Adicionado envio de SMS de reset de senha
+    - Adicionado tempo de expiração do código de resetar a senha
+    - Adicionando alterar senha via código

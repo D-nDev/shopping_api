@@ -44,3 +44,80 @@ executed query: { query: SELECT * FROM users where email = $1, params: diego-ss.
 executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 2ms, rows: 1 }
 executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 169ms, rows: 1 }
 executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 176ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 116ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 187ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaess@hotmail.com; duration: 209ms, rows: 0 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 171ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 149ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 160ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 186ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 124ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 149ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 141ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 186ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 174ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 130ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE email = $2, params: d781244947c8f698e71a952c94f93cc12755af6d,diego-s.novaes@hotmail.com; duration: 105ms, rows: error }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 147ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE email = $2, params: 1bb2ed9da3896624012ac552f992c646752140b9,diego-s.novaes@hotmail.com; duration: 11ms, rows: error }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 165ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = 'test22' WHERE email = 'diego-s.novaes@hotmail.com', params: undefined; duration: 4ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 135ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = ? WHERE email = ?, params: undefined; duration: 13ms, rows: error }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 198ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE email = $2, params: undefined; duration: 35ms, rows: error }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 204ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE email = $2, params: undefined; duration: 12ms, rows: error }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 193ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE email = $2, params: undefined; duration: 11ms, rows: error }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 178ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE email = $2, params: 2f925fee3976000c2f21805b3c160fbc06d569c7,diego-s.novaes@hotmail.com; duration: 11ms, rows: error }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 126ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE email = $2, params: 14b0c5bb87d9778f06bf912c57de78e598718c58,diego-s.novaes@hotmail.com; duration: 11ms, rows: error }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 201ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE email = $2, params: eb1529dd2b9d7eff89efb56c29e230180de79564,diego-s.novaes@hotmail.com; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * FROM users where email = $1, params: diego-s.novaes@hotmail.com; duration: 185ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE email = $2, params: 6ac53ce2a3be1e17eacf4547e31f96f2c0323d0d,diego-s.novaes@hotmail.com; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * FROM users where phone = $1, params: ; duration: 166ms, rows: 0 }
+executed query: { query: SELECT * FROM users where phone = $1, params: ; duration: 141ms, rows: 0 }
+executed query: { query: SELECT * FROM users where phone = $1, params: 11970151606; duration: 140ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1, expire_time = $2 WHERE phone = $3, params: 32a851ea68b112447ab22cedf82cede2911ad70d,Tue Aug 10 2021 19:25:29 GMT-0300 (Brasilia Standard Time),11970151606; duration: 18ms, rows: 1 }
+executed query: { query: SELECT * FROM users where phone = $1, params: 11970151606; duration: 116ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1, expire_time = $2 WHERE phone = $3, params: d9e249ce36dcb2a444c0b79424c0c112a7c8fbfd,Tue Aug 10 2021 19:25:50 GMT-0300 (Brasilia Standard Time),11970151606; duration: 23ms, rows: 1 }
+executed query: { query: SELECT * FROM users where phone = $1, params: 11970151606; duration: 138ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1, expire_time = $2 WHERE phone = $3, params: 5f62611b4416729d40f157bfb167d52ac2ae2b2e,Tue Aug 10 2021 19:26:13 GMT-0300 (Brasilia Standard Time),11970151606; duration: 23ms, rows: 1 }
+executed query: { query: SELECT * FROM users where phone = $1, params: 11970151606; duration: 154ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1, expire_time = $2 WHERE phone = $3, params: 801e83680c085011c113fa255b04e346a116f9de,Tue Aug 10 2021 20:26:56 GMT-0300 (Brasilia Standard Time),11970151606; duration: 61ms, rows: 1 }
+executed query: { query: SELECT * FROM users where phone = $1, params: 114970151606; duration: 103ms, rows: 0 }
+executed query: { query: SELECT * FROM users where (email = $1 AND deleted_at = $2), params: diego-s.novaes@hotmail.com,; duration: 298ms, rows: 0 }
+executed query: { query: SELECT * FROM users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 142ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE (email = $2 AND deleted_at IS NULL), params: 527f76539114f3bb963bac0c198c3f267e2a8420,diego-s.novaes@hotmail.com; duration: 6ms, rows: 1 }
+executed query: { query: SELECT * from users where token = $1, params: 801e83680c085011c113fa255b04e346a116f9de; duration: 119ms, rows: error }
+executed query: { query: SELECT * from users where reset_code = $1, params: 801e83680c085011c113fa255b04e346a116f9de; duration: 215ms, rows: 0 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 184ms, rows: 1 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 206ms, rows: 1 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 147ms, rows: 1 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 116ms, rows: 1 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 122ms, rows: 1 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 126ms, rows: 1 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 167ms, rows: 1 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 202ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1, params: $2b$10$.KXbNAk9UGwhDs5erjagdu1JVzUBzEOswTcFnrwcEyqYEhHsJgUka; duration: 59ms, rows: 4 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s23.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s23.novaes@hotmail.com; duration: 114ms, rows: 1 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 179ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$Ho4ADOuEMgfgIBS8WuoGfuV9Ekd1uvF.qNRToEHgQ963zSJxMtrZa,; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s23.novaes@hotmail.com; duration: 208ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s23.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 153ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 154ms, rows: 1 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a84201; duration: 278ms, rows: 0 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$nBXzWjMfIKXHDBsVuebgwu1e1ZIcxDFUuCNUnuPocT3q26iBWLvZS,; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 132ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$6lMH17Riguf61DdGAi/CwO4Adt057cKQ9yDWV9j6ejlNP9Cq4s3Rm,; duration: 2ms, rows: 0 }
+executed query: { query: SELECT * from users where reset_code = $1, params: 527f76539114f3bb963bac0c198c3f267e2a8420; duration: 205ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$LPlpmTYSjhCRIaKFio4u2eXEqVp58xxRVBUAch1Gys8Q9rM3AfVBG,527f76539114f3bb963bac0c198c3f267e2a8420; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 197ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
