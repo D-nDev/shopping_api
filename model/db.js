@@ -16,18 +16,20 @@ async function query(text, params) {
   try {
     query = await client.query(text, params);
   } catch (err) {
-    console.log(err);
+    if(err.code == '23505') {
+      return 23505 // violate unique constraint
+    }
     return err;
   } finally {
     const duration = Date.now() - start;
     console.log("executed query:", {
       query: text,
       duration: `${duration}ms`,
-      rows: query.rowCount,
+      rows: `${query != undefined ? query.rowCount : 'error'}` ,
     });
     fs.appendFileSync(
       "queries_log.log",
-      `executed query: { query: ${text}, params: ${params}, duration: ${duration}ms, rows: ${query.rowCount} }\n`
+      `executed query: { query: ${text}, params: ${params}; duration: ${duration}ms, rows: ${query != undefined ? query.rowCount : 'error'} }\n`
     );
     client.release();
   }

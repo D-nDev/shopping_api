@@ -38,3 +38,99 @@ GET /test 192.256 ms
 DATE: Tuesday, August 10, 2021
 HTTP STATUS CODE: 200
 
+POST /register - ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: -
+
+POST /register - ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: -
+
+POST /register 227.679 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /register 150.844 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /register 198.032 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /register 214.256 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /register 162.753 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /register 212.094 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 167.431 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 134.451 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 138.656 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 132.956 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 183.074 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 219.205 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 207.586 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 272.959 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 260.962 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 293.449 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 276.207 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 263.116 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 213.419 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 3.294 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 181.823 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+POST /login 71.932 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+

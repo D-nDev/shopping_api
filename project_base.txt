@@ -16,7 +16,7 @@ Libs usadas:
   - jwt: padrão
   - morgan: armazenamento e processamento de logs detalhados das requests sendo feitas nas rotas com dados avaliativos
   - bcrypt: criptografia da senha
-  - crypto: ?
+  - crypto: gerar código hash para recuperação de senha
   - helmet: prevenção de ataques comuns como XSS
   - nodemailer: envio de e-mail solicitando reembolso/contato
   - fs_extra(talvez): melhorar leitura de json, armazenar o carrinho em um .json devido a falta de um localstorage por não haver front-end

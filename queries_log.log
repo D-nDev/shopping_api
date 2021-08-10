@@ -4,3 +4,34 @@ executed query: { query: SELECT * from users where id = $1, duration: 226ms, row
 executed query: { query: SELECT * from users where id = $1, duration: 216ms, rows: 1 }
 executed query: { query: SELECT * from users where id = $1, params: 1, duration: 199ms, rows: 1 }
 executed query: { query: SELECT * from users, params: , duration: 151ms, rows: 2 }
+executed query: { query: INSERT INTO users(document, email, password, first_name, last_name, address, city, state, zip_code, phone, birth_date) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *, params: 543478513,diego-s.novaes@hotmail.com,123456,Diegao2,Sousa2,test2,Guarulhos,SP,123,1197016064,2001-09-27, duration: 130ms, rows: error }
+executed query: { query: INSERT INTO users(document, email, password, first_name, last_name, address, city, state, zip_code, phone, birth_date) VALUES ? RETURNING *, params: 543478513,diego-s.novaes@hotmail.com,123456,Diegao2,Sousa2,test2,Guarulhos,SP,123,1197016064,2001-09-27; duration: 179ms, rows: error }
+executed query: { query: INSERT INTO users(document, email, password, first_name, last_name, address, city, state, zip_code, phone, birth_date) VALUES ? RETURNING *, params: 543478513,diego-s23.novaes@hotmail.com,123456,Diegao2,Sousa2,test2,Guarulhos,SP,123,1197016064,2001-09-27; duration: 212ms, rows: error }
+executed query: { query: INSERT INTO users(document, email, password, first_name, last_name, address, city, state, zip_code, phone, birth_date) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *, params: 543478513,diego-s23.novaes@hotmail.com,123456,Diegao2,Sousa2,test2,Guarulhos,SP,123,1197016064,2001-09-27; duration: 143ms, rows: 1 }
+executed query: { query: INSERT INTO users(document, email, password, first_name, last_name, address, city, state, zip_code, phone, birth_date) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *, params: 543478513,diego-s23.novaes@hotmail.com,$2b$10$N1gsmaoEeSsgLYnz.w1GcOslanIopsLnVTJscUU.reiXdNTCoA1WG,Diegao2,Sousa2,test2,Guarulhos,SP,123,1197016064,2001-09-27; duration: 125ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1 AND password = $2, params: diego-s23.novaes@hotmail.com,123456; duration: 165ms, rows: 0 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 114ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 115ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 112ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 163ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 124ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 156ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 198ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 169ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 110ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 207ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 128ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 114ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 116ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 183ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 170ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 206ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 191ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 187ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 200ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 122ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 175ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 126ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s234.novaes@hotmail.com; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 112ms, rows: 1 }
+executed query: { query: SELECT * from users where email = $1, params: diego-s23.novaes@hotmail.com; duration: 1ms, rows: 1 }
