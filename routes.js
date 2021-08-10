@@ -10,8 +10,13 @@ app.use(express.json());
 app.use(cookie_parser("1234"));
 
 router.get("/test", async (req, res) => {
-  const result = await db.query("SELECT * from users", [])
+  const result = await db.query("SELECT * from users", []);
   res.send(result.rows);
 });
+
+router.get("/test2", async (req, res) => {
+  const result = await db.query("SELECT * from users where id = $1", [1]);
+  res.send(result.rows);
+})
 
 module.exports = router;

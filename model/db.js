@@ -1,4 +1,6 @@
 const { Pool } = require("pg");
+const fs = require("fs");
+
 const pool = new Pool({
   user: "postgres",
   host: "localhost",
@@ -18,7 +20,15 @@ async function query(text, params) {
     return err;
   } finally {
     const duration = Date.now() - start;
-    console.log("executed query:", { query: text, duration: `${duration}ms`, rows: query.rowCount });
+    console.log("executed query:", {
+      query: text,
+      duration: `${duration}ms`,
+      rows: query.rowCount,
+    });
+    fs.appendFileSync(
+      "queries_log.log",
+      `executed query: { query: ${text}, params: ${params}, duration: ${duration}ms, rows: ${query.rowCount} }\n`
+    );
     client.release();
   }
   return query;

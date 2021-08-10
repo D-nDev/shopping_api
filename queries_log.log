@@ -1,0 +1,6 @@
+executed query: { query: SELECT * from users, duration: 203ms, rows: 2 }
+executed query: { query: SELECT * from users, duration: 1ms, rows: 2 }
+executed query: { query: SELECT * from users where id = $1, duration: 226ms, rows: 1 }
+executed query: { query: SELECT * from users where id = $1, duration: 216ms, rows: 1 }
+executed query: { query: SELECT * from users where id = $1, params: 1, duration: 199ms, rows: 1 }
+executed query: { query: SELECT * from users, params: , duration: 151ms, rows: 2 }

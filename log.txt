@@ -5,3 +5,6 @@
     - Criado uma função para abstrair queries sem transaction
     - Adicionado Helmet para maior segurança da aplicação
     - Adicionado compression para melhorar a compressão das rotas(compacta as rotas para GZIP)
+
+10 de agosto:
+    - Adicionado log de queries

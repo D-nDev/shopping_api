@@ -6,3 +6,35 @@ GET /test 2.988 ms
 DATE: Monday, August 9, 2021
 HTTP STATUS CODE: 200
 
+GET /test 2133.384 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+GET /test 121.823 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+GET /test 211.780 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+GET /test 3.473 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+GET /test2 236.385 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+GET /test2 250.811 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+GET /test2 234.851 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
+GET /test 192.256 ms
+DATE: Tuesday, August 10, 2021
+HTTP STATUS CODE: 200
+
