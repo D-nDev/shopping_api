@@ -20,3 +20,6 @@
     - Adicionado rota de criação de produto, grupo de produto, código promocional e fornecedor APENAS para admins
     - Adicionado validação via jwt
     - Melhorado console.logs de erros de jwt
+    - Adicionado middleware exclusivo para rotas de admins
+    - Adicionado rotas de soft delete de criação de produto, grupo de produto, código promocional e fornecedor APENAS para admins
+    - Adicionado rotas de mostrar um ou TODOS os produtos, grupo de produtos, código promocional e fornecedores APENAS para admins

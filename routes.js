@@ -108,7 +108,7 @@ router.post("/register", async (req, res) => {
     ]
   );
   if (result == 23505) {
-    res.send("Email already exists");
+    res.send("Email or document already exists");
   } else {
     res.send("Register ok");
   }
@@ -199,7 +199,7 @@ router.post("/resetpass", async (req, res) => {
   }
 });
 
-router.post("/addproduct", verifyToken, async (req, res) => {
+router.post("/addproduct", verifyTokenAdmin, async (req, res) => {
   const group_id = req.body.group_id;
   const name = req.body.name;
   const price = req.body.price;
@@ -209,10 +209,9 @@ router.post("/addproduct", verifyToken, async (req, res) => {
       "INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *",
       [group_id, name, price, description]
     );
-    if(result == 23503) {
+    if (result == 23503) {
       res.send("Invalid Product Group ID");
-    }
-    else {
+    } else {
       res.send(result.rows[0]);
     }
   } catch (err) {
@@ -220,17 +219,16 @@ router.post("/addproduct", verifyToken, async (req, res) => {
   }
 });
 
-router.post("/addgroup", verifyToken, async (req, res) => {
+router.post("/addgroup", verifyTokenAdmin, async (req, res) => {
   const name = req.body.name;
   try {
     const result = await db.query(
       "INSERT INTO products_group(name) VALUES ($1) RETURNING *",
       [name]
     );
-    if(result == 23505) {
+    if (result == 23505) {
       res.send("Group Name already exists");
-    }
-    else {
+    } else {
       res.send(result.rows[0]);
     }
   } catch (err) {
@@ -238,7 +236,7 @@ router.post("/addgroup", verifyToken, async (req, res) => {
   }
 });
 
-router.post("/addprovider", verifyToken, async (req, res) => {
+router.post("/addprovider", verifyTokenAdmin, async (req, res) => {
   const document = req.body.document;
   const name = req.body.name;
   const country = req.body.country;
@@ -251,10 +249,9 @@ router.post("/addprovider", verifyToken, async (req, res) => {
       "INSERT INTO providers(document, name, country, state, product_type, phone, zip_code) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
       [document, name, country, state, product_type, phone, zip_code]
     );
-    if(result == 23505) {
+    if (result == 23505) {
       res.send("Document already exists");
-    }
-    else {
+    } else {
       res.send(result.rows[0]);
     }
   } catch (err) {
@@ -262,7 +259,7 @@ router.post("/addprovider", verifyToken, async (req, res) => {
   }
 });
 
-router.post("/addcode", verifyToken, async (req, res) => {
+router.post("/addcode", verifyTokenAdmin, async (req, res) => {
   const code = req.body.code;
   const discount = req.body.discount;
   const type_discount = req.body.type_discount;
@@ -271,13 +268,11 @@ router.post("/addcode", verifyToken, async (req, res) => {
       "INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *",
       [code, discount, type_discount]
     );
-    if(result == 23505) {
+    if (result == 23505) {
       res.send("Code already exists");
-    }
-    else if(result == 23514) {
+    } else if (result == 23514) {
       res.send("Invalid discount type");
-    }
-    else {
+    } else {
       res.send(result.rows[0]);
     }
   } catch (err) {
@@ -285,14 +280,161 @@ router.post("/addcode", verifyToken, async (req, res) => {
   }
 });
 
-
-router.delete("/deleteaccount", async (req, res) => {
-  const email = req.session.email;
+router.delete("/deleteproduct", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+  const now = new Date().toLocaleString();
   try {
-    await db.query("DELETE FROM users where email = $1", [email]);
-    res.send("Ok");
+    const result = await db.query(
+      "UPDATE products SET deleted_at = $1 WHERE (id = $2)",
+      [now, id]
+    );
+    if (result.rowCount >= 1) {
+      res.send("Successfully deleted");
+    } else {
+      res.send("error");
+    }
   } catch (err) {
     res.send(err);
+  }
+});
+
+router.delete("/deletegroup", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+  const now = new Date().toLocaleString();
+  try {
+    const check = await db.query(
+      "SELECT COUNT(CASE WHEN group_id = $1 AND deleted_at IS NULL THEN 1 ELSE NULL END) FROM products",
+      [id]
+    );
+    if (check.rows[0].count >= 1) {
+      res.send(
+        `You can't delete this product, because you have a product linked to this group. first delete the linked products.`
+      );
+    } else {
+      await db.query(
+        "UPDATE products_group SET deleted_at = $1 WHERE ID = $2",
+        [now, id]
+      );
+      res.send("Successfully deleted");
+    }
+  } catch (err) {
+    res.send(err);
+  }
+});
+
+router.delete("/deleteprovider", verifyTokenAdmin, async (req, res) => {
+  const now = new Date().toLocaleString();
+  const id = req.query.id;
+  try {
+    const result = await db.query("UPDATE providers SET deleted_at = $1 WHERE ID = $2", [now, id]);
+    if (result.rowCount >= 1) {
+      res.send("Successfully deleted");
+    } else {
+      res.send("error");
+    }
+  } catch (err) {
+    res.send(err);
+  }
+});
+
+router.delete("/deletecode", verifyTokenAdmin, async (req, res) => {
+  const now = new Date().toLocaleString();
+  const id = req.query.id;
+  try {
+    const result = await db.query("UPDATE promotional_codes SET deleted_at = $1 WHERE ID = $2", [now, id]);
+    if (result.rowCount >= 1) {
+      res.send("Successfully deleted");
+    } else {
+      res.send("error");
+    }
+  } catch (err) {
+    res.send(err);
+  }
+});
+
+function currentUser(req) {
+  return new Promise((resolve, reject) => {
+    jwt.verify(req.cookies.usertoken, process.env.SECRET, (err, decoded) => {
+      //console.log(decoded.id);
+      if (err) {
+        console.log(err);
+        resolve(err);
+      } else {
+        resolve(decoded.id);
+      }
+    });
+  });
+}
+
+router.delete("/deleteaccount", verifyTokenAdmin, async (req, res) => {
+  const now = new Date().toLocaleString();
+  const id = req.query.id;
+  try {
+    //console.log(id);
+    const currentuser = await currentUser(req);
+    const check = await db.query("SELECT id from users WHERE id = $1", [id]);
+
+    if (check.rows[0].id == currentuser) {
+      res.send("You can't delete yourself, try to do it in another account")
+    }
+    else {
+      await db.query("UPDATE users SET deleted_at = $1 WHERE id = $2", [now, id]);
+      res.send("Successfully deleted");
+    }
+  } catch (err) {
+    res.send(err);
+  }
+});
+
+router.get("/product", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+
+  if(!id) {
+    const result = await db.query("SELECT * from products");
+    res.send(result.rows);
+  }
+  else {
+    const result = await db.query("SELECT * from products WHERE id = $1", [id]);
+    res.send(result.rows);
+  }
+});
+
+router.get("/group", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+
+  if(!id) {
+    const result = await db.query("SELECT * from products_group");
+    res.send(result.rows);
+  }
+  else {
+    const result = await db.query("SELECT * from products_group WHERE id = $1", [id]);
+    res.send(result.rows);
+  }
+});
+
+router.get("/provider", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+
+  if(!id) {
+    const result = await db.query("SELECT * from providers");
+    res.send(result.rows);
+  }
+  else {
+    const result = await db.query("SELECT * from providers WHERE id = $1", [id]);
+    res.send(result.rows);
+  }
+});
+
+router.get("/code", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+
+  if(!id) {
+    const result = await db.query("SELECT * from promotional_codes");
+    res.send(result.rows);
+  }
+  else {
+    const result = await db.query("SELECT * from promotional_codes WHERE id = $1", [id]);
+    res.send(result.rows);
   }
 });
 
@@ -302,10 +444,20 @@ function verifyToken(req, res, next) {
       console.log(`${err.name}: ${err.message}`);
       return res.status(401).send("Unauthorized");
     } else {
-      if (req.url === "/addproduct" || req.url === "/addgroup" && decoded.roleID != 1) {
+      next();
+    }
+  });
+}
+
+function verifyTokenAdmin(req, res, next) {
+  jwt.verify(req.cookies.usertoken, process.env.SECRET, (err, decoded) => {
+    if (err) {
+      console.log(`${err.name}: ${err.message}`);
+      return res.status(401).send("Unauthorized");
+    } else {
+      if (decoded.roleID != 1) {
         return res.status(401).send("Unauthorized");
       } else {
-        //console.log(`Valid Token and usertype`);
         next();
       }
     }

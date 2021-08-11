@@ -150,3 +150,93 @@ executed query: { query: INSERT INTO promotional_codes(code, discount, type_disc
 executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: XWOEPAKMQJF47891,20,tercentage; duration: 140ms, rows: error }
 executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: XWOEPAKMQJF47891,20,tercentage; duration: 202ms, rows: error }
 executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: XWOEPAKMQJF47891,20,percentage; duration: 6ms, rows: 1 }
+executed query: { query: DELETE FROM products WHERE ID = $1, params: 5; duration: 363ms, rows: 1 }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 3; duration: 176ms, rows: 1 }
+executed query: { query: INSERT INTO products_group(name) VALUES ($1) RETURNING *, params: Notebooks2; duration: 160ms, rows: 1 }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 4,test,150.47,teste loko; duration: 3ms, rows: 1 }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 4; duration: 9ms, rows: error }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 4; duration: 220ms, rows: error }
+executed query: { query: DELETE FROM products WHERE ID = $1, params: 6; duration: 134ms, rows: 1 }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 4,test,150.47,teste loko; duration: 151ms, rows: 1 }
+executed query: { query: DELETE FROM products WHERE ID = $1, params: 7; duration: 4ms, rows: 1 }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 4,test,150.47,teste loko; duration: 155ms, rows: 1 }
+executed query: { query: DELETE FROM products WHERE ID = $1, params: 9; duration: 2ms, rows: 0 }
+executed query: { query: DELETE FROM products WHERE ID = $1, params: 8; duration: 196ms, rows: 1 }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 4,test,150.47,teste loko; duration: 212ms, rows: 1 }
+executed query: { query: DELETE FROM products WHERE ID = $1, params: 10; duration: 2ms, rows: 0 }
+executed query: { query: DELETE FROM products WHERE ID = $1, params: 9; duration: 5ms, rows: 1 }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 4,test,150.47,teste loko; duration: 147ms, rows: 1 }
+executed query: { query: DELETE FROM products WHERE ID = $1, params: 10; duration: 121ms, rows: 1 }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 4,test,150.47,teste loko; duration: 4ms, rows: 1 }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 4; duration: 9ms, rows: error }
+executed query: { query: DELETE FROM products WHERE ID = $1, params: 11; duration: 135ms, rows: 1 }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 4; duration: 3ms, rows: 1 }
+executed query: { query: INSERT INTO products_group(name) VALUES ($1) RETURNING *, params: Notebooks2; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 5,test,150.47,teste loko; duration: 2ms, rows: 1 }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 5; duration: 8ms, rows: error }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 5; duration: 202ms, rows: error }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 5; duration: 162ms, rows: error }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 5; duration: 204ms, rows: error }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 5; duration: 168ms, rows: error }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 5; duration: 141ms, rows: error }
+executed query: { query: DELETE FROM products WHERE ID = $1, params: 12; duration: 4ms, rows: 1 }
+executed query: { query: DELETE FROM products_group WHERE ID = $1, params: 5; duration: 2ms, rows: 1 }
+executed query: { query: DELETE FROM providers WHERE ID = $1, params: 4; duration: 211ms, rows: 0 }
+executed query: { query: DELETE FROM providers WHERE ID = $1, params: 3; duration: 131ms, rows: 1 }
+executed query: { query: INSERT INTO products_group(name) VALUES ($1) RETURNING *, params: Notebooks2; duration: 120ms, rows: 1 }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 6,test,150.47,teste loko; duration: 104ms, rows: 1 }
+executed query: { query: UPDATE products SET deleted_at = $1 WHERE (id = $2), params: 8/11/2021, 7:14:59 PM,13; duration: 208ms, rows: 1 }
+executed query: { query: UPDATE products_group SET deleted_at = $1 WHERE ID = $2, params: 8/11/2021, 7:16:14 PM,6; duration: 156ms, rows: 1 }
+executed query: { query: SELECT COUNT(CASE WHEN group_id = $1 THEN 1 ELSE NULL END) FROM products, params: 6; duration: 185ms, rows: 1 }
+executed query: { query: UPDATE products_group SET deleted_at = $1 WHERE ID = $2, params: 8/11/2021, 7:22:32 PM,6; duration: 3ms, rows: 1 }
+executed query: { query: SELECT COUNT(CASE WHEN group_id = $1 THEN 1 ELSE NULL END) FROM products, params: 6; duration: 117ms, rows: 1 }
+executed query: { query: UPDATE products_group SET deleted_at = $1 WHERE ID = $2, params: 8/11/2021, 7:23:12 PM,6; duration: 4ms, rows: 1 }
+executed query: { query: SELECT COUNT(CASE WHEN group_id = $1 THEN 1 ELSE NULL END) FROM products, params: 6; duration: 150ms, rows: 1 }
+executed query: { query: SELECT COUNT(CASE WHEN group_id = $1 THEN 1 ELSE NULL END) FROM products, params: 6; duration: 138ms, rows: 1 }
+executed query: { query: UPDATE products SET deleted_at = $1 WHERE (id = $2), params: 8/11/2021, 7:24:14 PM,13; duration: 113ms, rows: 1 }
+executed query: { query: SELECT COUNT(CASE WHEN group_id = $1 AND deleted_at IS NOT NULL THEN 1 ELSE NULL END) FROM products, params: 6; duration: 206ms, rows: 1 }
+executed query: { query: UPDATE products_group SET deleted_at = $1 WHERE ID = $2, params: 8/11/2021, 7:25:14 PM,6; duration: 3ms, rows: 1 }
+executed query: { query: SELECT COUNT(CASE WHEN group_id = $1 AND deleted_at IS NULL THEN 1 ELSE NULL END) FROM products, params: 6; duration: 197ms, rows: 1 }
+executed query: { query: UPDATE products SET deleted_at = $1 WHERE (id = $2), params: 8/11/2021, 7:26:01 PM,13; duration: 181ms, rows: 1 }
+executed query: { query: SELECT COUNT(CASE WHEN group_id = $1 AND deleted_at IS NULL THEN 1 ELSE NULL END) FROM products, params: 6; duration: 74ms, rows: 1 }
+executed query: { query: UPDATE products_group SET deleted_at = $1 WHERE ID = $2, params: 8/11/2021, 7:26:16 PM,6; duration: 15ms, rows: 1 }
+executed query: { query: INSERT INTO providers(document, name, country, state, product_type, phone, zip_code) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 00000179-8,Pedrinho eletronicos,Brazil,SP,Notebooks,12345678,0123456-7; duration: 206ms, rows: 1 }
+executed query: { query: UPDATE providers SET deleted_at = $1 WHERE ID = $2, params: 8/11/2021, 7:27:30 PM,3; duration: 130ms, rows: 0 }
+executed query: { query: UPDATE providers SET deleted_at = $1 WHERE ID = $2, params: 8/11/2021, 7:27:32 PM,4; duration: 6ms, rows: 1 }
+executed query: { query: DELETE FROM promotional_codes WHERE ID = $1, params: 5; duration: 243ms, rows: 1 }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: XWOEPAKMQJF47891,20,percentage; duration: 221ms, rows: 1 }
+executed query: { query: UPDATE promotional_codes SET deleted_at = $1 WHERE ID = $2, params: 8/11/2021, 7:30:11 PM,5; duration: 207ms, rows: 0 }
+executed query: { query: UPDATE promotional_codes SET deleted_at = $1 WHERE ID = $2, params: 8/11/2021, 7:30:17 PM,6; duration: 5ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 193ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 105ms, rows: 1 }
+executed query: { query: SELECT email from users WHERE email = $1, params: ; duration: 209ms, rows: 0 }
+executed query: { query: SELECT email from users WHERE email = $1, params: ; duration: 130ms, rows: 0 }
+executed query: { query: SELECT email from users WHERE email = $1, params: ; duration: 159ms, rows: 0 }
+executed query: { query: SELECT email from users WHERE email = $1, params: ; duration: 126ms, rows: 0 }
+executed query: { query: SELECT email from users WHERE email = $1, params: ; duration: 150ms, rows: 0 }
+executed query: { query: SELECT email from users WHERE email = $1, params: diego-s.novaes@hotmail.com; duration: 210ms, rows: 1 }
+executed query: { query: SELECT email from users WHERE email = $1, params: diego-s.novaes@hotmail.com; duration: 178ms, rows: 1 }
+executed query: { query: INSERT INTO users(document, email, password, first_name, last_name, address, city, state, zip_code, phone, birth_date) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *, params: 543478513,pedro-s23.novaes@hotmail.com,$2b$10$UfAVzkcA55kUuqNlidhK0e511yr5XiaIQ8HQlpbdk/vrtICTQykFK,Pedrao3,Sousa2,test2,Guarulhos,SP,133,1177016064,2001-09-27; duration: 160ms, rows: error }
+executed query: { query: INSERT INTO users(document, email, password, first_name, last_name, address, city, state, zip_code, phone, birth_date) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *, params: 573478513,pedro-s23.novaes@hotmail.com,$2b$10$8hh7vv7kEOPYEopVIPQFc.kmPdtxhPumS.7kqK/1hJCWzAMmtK/Pu,Pedrao3,Sousa2,test72,Guarulhos,SP,133,1177016064,2001-09-27; duration: 82ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 124ms, rows: 1 }
+executed query: { query: SELECT id from users WHERE id = $1, params: 1; duration: 163ms, rows: 1 }
+executed query: { query: SELECT id from users WHERE id = $1, params: 23; duration: 110ms, rows: 1 }
+executed query: { query: SELECT id from users WHERE id = $1, params: 1; duration: 165ms, rows: 1 }
+executed query: { query: SELECT id from users WHERE id = $1, params: 23; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE users SET deleted_at = $1 WHERE id = $2, params: 8/11/2021, 7:50:52 PM,23; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * from products, params: undefined; duration: 168ms, rows: 2 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 169ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products_group, params: undefined; duration: 129ms, rows: 2 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 6; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 4ms, rows: 1 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 6; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from providers, params: undefined; duration: 121ms, rows: 2 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 154ms, rows: 1 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from promotional_codes, params: undefined; duration: 175ms, rows: 2 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 6; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 6; duration: 1ms, rows: 1 }
