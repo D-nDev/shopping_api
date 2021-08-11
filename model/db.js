@@ -19,6 +19,12 @@ async function query(text, params) {
     if(err.code == '23505') {
       return 23505 // violate unique constraint
     }
+    else if(err.code == '23503') {
+      return 23503 // violate duplicate key
+    }
+    else if(err.code == '23514') {
+      return 23514 // violate check constraint
+    }
     else {
       console.log(err);
     }

@@ -13,3 +13,10 @@
     - Adicionado envio de SMS de reset de senha
     - Adicionado tempo de expiração do código de resetar a senha
     - Adicionando alterar senha via código
+
+11 de agosto:
+    - Adicionado coluna imagem do produto a tabela products do bd
+    - Criado tabela payment_method no bd
+    - Adicionado rota de criação de produto, grupo de produto, código promocional e fornecedor APENAS para admins
+    - Adicionado validação via jwt
+    - Melhorado console.logs de erros de jwt

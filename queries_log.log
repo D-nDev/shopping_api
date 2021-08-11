@@ -121,3 +121,32 @@ executed query: { query: SELECT * from users where reset_code = $1, params: 527f
 executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$LPlpmTYSjhCRIaKFio4u2eXEqVp58xxRVBUAch1Gys8Q9rM3AfVBG,527f76539114f3bb963bac0c198c3f267e2a8420; duration: 3ms, rows: 1 }
 executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 197ms, rows: 1 }
 executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1192ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 161ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s2.novaes@hotmail.com; duration: 178ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s247.novaes@hotmail.com; duration: 128ms, rows: 0 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s2.novaes@hotmail.com; duration: 146ms, rows: 1 }
+executed query: { query: SELECT * from users, params: ; duration: 207ms, rows: 4 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 122ms, rows: 1 }
+executed query: { query: SELECT * from users, params: ; duration: 2ms, rows: 4 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 154ms, rows: 1 }
+executed query: { query: SELECT * from users, params: ; duration: 2ms, rows: 4 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 170ms, rows: 1 }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 20,test,150.47,teste loko; duration: 479ms, rows: error }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 20,test,150.47,teste loko; duration: 112ms, rows: error }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 20,test,150.47,teste loko; duration: 154ms, rows: error }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 1,test,150.47,teste loko; duration: 138ms, rows: 1 }
+executed query: { query: INSERT INTO products_group(name) VALUES ($1) RETURNING *, params: Notebooks; duration: 247ms, rows: error }
+executed query: { query: INSERT INTO products_group(name) VALUES ($1) RETURNING *, params: Notebooks2; duration: 134ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 210ms, rows: 1 }
+executed query: { query: INSERT INTO providers(document, name, country, state, product_type, phone, zip_code) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 00000178-8,Pedrinho eletronicos,Brazil,SP,Notebooks,12345678,0123456-7; duration: 11ms, rows: error }
+executed query: { query: INSERT INTO providers(document, name, country, state, product_type, phone, zip_code) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 00000179-8,Pedrinho eletronicos,Brazil,SP,Notebooks,12345678,0123456-7; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: QWOEPAKMQJF47891,20,percentage; duration: 164ms, rows: error }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: QWOEPAKMQJF478912,20,paercentage; duration: 45ms, rows: error }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: XWOEPAKMQJF47891,20,paercentage; duration: 165ms, rows: error }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: XWOEPAKMQJF47891,20,paercentage; duration: 220ms, rows: error }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: XWOEPAKMQJF47891,20,paercentage; duration: 192ms, rows: error }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: XWOEPAKMQJF47891,20,tercentage; duration: 140ms, rows: error }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: XWOEPAKMQJF47891,20,tercentage; duration: 202ms, rows: error }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: XWOEPAKMQJF47891,20,percentage; duration: 6ms, rows: 1 }
