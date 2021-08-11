@@ -240,3 +240,66 @@ executed query: { query: SELECT * from promotional_codes, params: undefined; dur
 executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 6; duration: 2ms, rows: 1 }
 executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 3ms, rows: 1 }
 executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 6; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE products SET name = $1, description = $2, price = $3 WHERE id = $4, params: ,,,13; duration: 200ms, rows: error }
+executed query: { query: SELECT * from product WHERE id = $1, params: 13; duration: 133ms, rows: error }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 178ms, rows: 1 }
+executed query: { query: UPDATE products SET name = $1, description = $2, price = $3 WHERE id = $4, params: test,teste loko,150.47,13; duration: 4ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 166ms, rows: 1 }
+executed query: { query: UPDATE products SET name = $1, description = $2, price = $3 WHERE id = $4, params: test22,teste loko,150.47,13; duration: 4ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 84ms, rows: 1 }
+executed query: { query: UPDATE products SET name = $1, description = $2, price = $3 WHERE id = $4, params: test22,test_description,150.47,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 107ms, rows: 1 }
+executed query: { query: UPDATE products SET name = $1, description = $2, price = $3 WHERE id = $4, params: test3,test_description3,150.47,13; duration: 5ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 18; duration: 182ms, rows: 0 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 18; duration: 145ms, rows: 0 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 17; duration: 138ms, rows: 0 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 2ms, rows: 1 }
+executed query: { query: UPDATE products SET name = $1, description = $2, price = $3 WHERE id = $4, params: test4,test_description4,150.47,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 196ms, rows: 1 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 6; duration: 112ms, rows: 1 }
+executed query: { query: UPDATE products_group SET name = $1 WHERE id = $4, params: Notebooks2,6; duration: 12ms, rows: error }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 6; duration: 162ms, rows: 1 }
+executed query: { query: UPDATE products_group SET name = $1 WHERE id = $2, params: Notebooks2,6; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 7; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 6; duration: 102ms, rows: 1 }
+executed query: { query: UPDATE products_group SET name = $1 WHERE id = $2, params: Notebooks,6; duration: 8ms, rows: error }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 6; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE products_group SET name = $1 WHERE id = $2, params: Notebooks3,6; duration: 5ms, rows: 1 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 7; duration: 139ms, rows: 0 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 6; duration: 183ms, rows: 1 }
+executed query: { query: UPDATE products_group SET name = $1 WHERE id = $2, params: Notebooks4,6; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 7; duration: 141ms, rows: 0 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 6; duration: 93ms, rows: 1 }
+executed query: { query: UPDATE products_group SET name = $1 WHERE id = $2, params: Notebooks5,6; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 178ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8, params: 00000179-8,Pedrinho eletronicos,Brazil,SP,Notebooks,12345678,0123456-7,4; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 9; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 84ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8, params: 00000179-8,Pedrinho eletronicos,Brazil,SP,Notebooks,12345678,0123456-7,4; duration: 5ms, rows: 1 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 174ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8, params: 00000179-8,Pedrinho eletronicos,Brazil,SP,Notebooks,12345678,0123456-7,4; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 99ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8, params: 00000179-8,Pedrinho eletronicos,Brazil,SP,Notebooks,12345678,0123456-7,4; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 123ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8, params: 00000179-8,Pedrinho eletronicos,Brazil,SP,Notebooks,12345678,0123456-7,4; duration: 5ms, rows: 1 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 117ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8, params: 00000178-8,Pedrinho eletronicos,Brazil,SP,Notebooks,12345678,0123456-7,4; duration: 10ms, rows: error }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 2ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8, params: 10000178-8,Pedrinho eletronicos,Brazil,SP,Notebooks,12345678,0123456-7,4; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 185ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8, params: 10000178-8,Pedrinho eletronicos,Brazil,SP,Notebooks,47123456789,0123456-7,4; duration: 9ms, rows: error }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 4; duration: 78ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8, params: 20000178-8,Pedrinho eletronicos 2.0,Brazil,SP,Notebooks,12345678,0123456-7,4; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 220ms, rows: 1 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 99; duration: 2ms, rows: 0 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 6; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE promotional_codes SET code = $1, discount = $2, type_discount = $3 WHERE id = $4, params: XWOEPAKMQJF47891,20.00,percentage,6; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 6; duration: 172ms, rows: 1 }
+executed query: { query: UPDATE promotional_codes SET code = $1, discount = $2, type_discount = $3 WHERE id = $4, params: SHASHASHA,20.00,percentage,6; duration: 6ms, rows: 1 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 6; duration: 119ms, rows: 1 }
+executed query: { query: UPDATE promotional_codes SET code = $1, discount = $2, type_discount = $3 WHERE id = $4, params: SHASHASHA2,20.00,test,6; duration: 9ms, rows: error }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 6; duration: 104ms, rows: 1 }
+executed query: { query: UPDATE promotional_codes SET code = $1, discount = $2, type_discount = $3 WHERE id = $4, params: SHASHASHA2,20.00,fix,6; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 6; duration: 175ms, rows: 1 }
+executed query: { query: UPDATE promotional_codes SET code = $1, discount = $2, type_discount = $3 WHERE id = $4, params: SHASHASHA2,150,fix,6; duration: 5ms, rows: 1 }

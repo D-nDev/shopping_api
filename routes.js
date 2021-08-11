@@ -438,6 +438,156 @@ router.get("/code", verifyTokenAdmin, async (req, res) => {
   }
 });
 
+router.put("/product", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+  const name = req.body.name;
+  const description = req.body.description;
+  const price = req.body.price;
+
+  if (!id) {
+    res.send("Please provider an ID");
+  } else {
+    const check = await db.query("SELECT * from products WHERE id = $1", [id]);
+
+    if (check.rows.length == 0) {
+      res.send("Invalid ID");
+    } else {
+      const currentname = check.rows[0].name;
+      const currentdescription = check.rows[0].description;
+      const currentprice = check.rows[0].price;
+
+      const result = await db.query(
+        "UPDATE products SET name = $1, description = $2, price = $3 WHERE id = $4",
+        [
+          name != undefined ? name : currentname,
+          description != undefined ? description : currentdescription,
+          price != undefined ? price : currentprice,
+          id,
+        ]
+      );
+      res.send(result);
+    }
+  }
+});
+
+router.put("/group", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+  const name = req.body.name;
+
+  if (!id) {
+    res.send("Please provider an ID");
+  } else if (!name) {
+    res.send("Please provider a new name");
+  } else {
+    const check = await db.query("SELECT * from products_group WHERE id = $1", [
+      id,
+    ]);
+
+    if (check.rows.length == 0) {
+      res.send("Invalid ID");
+    } else {
+      const result = await db.query(
+        "UPDATE products_group SET name = $1 WHERE id = $2",
+        [name, id]
+      );
+      if (result == 23505) {
+        res.send("Name already exists");
+      } else {
+        res.send(result);
+      }
+    }
+  }
+});
+
+router.put("/provider", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+  const document = req.body.document;
+  const name = req.body.name;
+  const country = req.body.country;
+  const state = req.body.state;
+  const product_type = req.body.product_type;
+  const phone = req.body.phone;
+  const zip_code = req.body.zip_code;
+
+  if (!id) {
+    res.send("Please provider an ID");
+  } else {
+    const check = await db.query("SELECT * from providers WHERE id = $1", [id]);
+
+    if (check.rows.length == 0) {
+      res.send("Invalid ID");
+    } else {
+      const currentdocument = check.rows[0].document;
+      const currentname = check.rows[0].name;
+      const currentcountry = check.rows[0].country;
+      const currentstate = check.rows[0].state;
+      const currentproduct_type = check.rows[0].product_type;
+      const currentphone = check.rows[0].phone;
+      const currentzip_code = check.rows[0].zip_code;
+
+      const result = await db.query(
+        "UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8",
+        [
+          document != undefined ? document : currentdocument,
+          name != undefined ? name : currentname,
+          country != undefined ? country : currentcountry,
+          state != undefined ? state : currentstate,
+          product_type != undefined ? product_type : currentproduct_type,
+          phone != undefined ? phone : currentphone,
+          zip_code != undefined ? zip_code : currentzip_code,
+          id,
+        ]
+      );
+      if (result == 23505) {
+        res.send("Document or phone already exists");
+      } else {
+        res.send(result);
+      }
+    }
+  }
+});
+
+router.put("/code", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+  const code = req.body.code;
+  const discount = req.body.discount;
+  const type_discount = req.body.type_discount;
+
+  if (!id) {
+    res.send("Please provider an ID");
+  } else {
+    const check = await db.query(
+      "SELECT * from promotional_codes WHERE id = $1",
+      [id]
+    );
+
+    if (check.rows.length == 0) {
+      res.send("Invalid ID");
+    } else {
+      const currentcode = check.rows[0].code;
+      const currentdiscount = check.rows[0].discount;
+      const currenttype_discount = check.rows[0].type_discount;
+
+      const result = await db.query(
+        "UPDATE promotional_codes SET code = $1, discount = $2, type_discount = $3 WHERE id = $4",
+        [
+          code != undefined ? code : currentcode,
+          discount != undefined ? discount : currentdiscount,
+          type_discount != undefined ? type_discount : currenttype_discount,
+          id,
+        ]
+      );
+      if (result == 23505) {
+        res.send("Code already exists");
+      } else if (result == 23514) {
+        res.send("Invalid discount type");
+      } else {
+        res.send(result);
+      }
+    }
+  }
+});
+
 function verifyToken(req, res, next) {
   jwt.verify(req.cookies.usertoken, process.env.SECRET, (err, decoded) => {
     if (err) {

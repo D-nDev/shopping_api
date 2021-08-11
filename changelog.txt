@@ -23,3 +23,4 @@
     - Adicionado middleware exclusivo para rotas de admins
     - Adicionado rotas de soft delete de criação de produto, grupo de produto, código promocional e fornecedor APENAS para admins
     - Adicionado rotas de mostrar um ou TODOS os produtos, grupo de produtos, código promocional e fornecedores APENAS para admins
+    - Adicionado rotas de update(PUT) de produto, grupo de produto, código promocional e fornecedor APENAS para admins
