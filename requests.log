@@ -1470,3 +1470,19 @@ POST /addcart?productid=1 212.268 ms
 DATE: Thursday, August 12, 2021
 HTTP STATUS CODE: 200
 
+GET /cart 8.064 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 37.946 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 8.091 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 2.815 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+

@@ -1,6 +1,7 @@
 process.env.TZ = "America/Sao_Paulo";
 require("dotenv").config();
 const express = require("express");
+const fs = require("fs").promises;
 const jwt = require("jsonwebtoken");
 const cookie_parser = require("cookie-parser");
 const db = require("./model/db");
@@ -726,7 +727,19 @@ router.post("/addcart", verifyToken, async (req, res) => {
       }
     }
   }
-})
+});
+
+router.get("/cart", verifyToken, async (req, res) => {
+  const userid = await currentUser(req);
+  if (userid) {
+    const usercart = await fs.readFile(`./cart/cart${userid}.json`);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(usercart);
+  }
+  else {
+    res.send("ID not found");
+  }
+});
 
 function verifyToken(req, res, next) {
   jwt.verify(req.cookies.usertoken, process.env.SECRET, (err, decoded) => {
