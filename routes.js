@@ -280,75 +280,137 @@ router.post("/addcode", verifyTokenAdmin, async (req, res) => {
   }
 });
 
-router.delete("/deleteproduct", verifyTokenAdmin, async (req, res) => {
-  const id = req.query.id;
-  const now = new Date().toLocaleString();
+router.post("/addpaymentmethod", verifyTokenAdmin, async (req, res) => {
+  const name = req.body.name;
+  const portion = req.body.portion;
   try {
     const result = await db.query(
-      "UPDATE products SET deleted_at = $1 WHERE (id = $2)",
-      [now, id]
+      "INSERT INTO payment_method(name, portion_quantity) VALUES ($1, $2) RETURNING *",
+      [name, portion]
     );
-    if (result.rowCount >= 1) {
-      res.send("Successfully deleted");
+    if (result == 23505) {
+      res.send("Method already exists");
     } else {
-      res.send("error");
+      res.send(result.rows[0]);
     }
   } catch (err) {
     res.send(err);
+  }
+});
+
+router.delete("/deleteproduct", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+  const now = new Date().toLocaleString();
+  if (!id) {
+    res.send("Please provide an ID");
+  } else {
+    try {
+      const result = await db.query(
+        "UPDATE products SET deleted_at = $1 WHERE (id = $2)",
+        [now, id]
+      );
+      if (result.rowCount >= 1) {
+        res.send("Successfully deleted");
+      } else {
+        res.send("error");
+      }
+    } catch (err) {
+      res.send(err);
+    }
   }
 });
 
 router.delete("/deletegroup", verifyTokenAdmin, async (req, res) => {
   const id = req.query.id;
   const now = new Date().toLocaleString();
-  try {
-    const check = await db.query(
-      "SELECT COUNT(CASE WHEN group_id = $1 AND deleted_at IS NULL THEN 1 ELSE NULL END) FROM products",
-      [id]
-    );
-    if (check.rows[0].count >= 1) {
-      res.send(
-        `You can't delete this product, because you have a product linked to this group. first delete the linked products.`
+  if (!id) {
+    res.send("Please provide an ID");
+  } else {
+    try {
+      const check = await db.query(
+        "SELECT COUNT(CASE WHEN group_id = $1 AND deleted_at IS NULL THEN 1 ELSE NULL END) FROM products",
+        [id]
       );
-    } else {
-      await db.query(
-        "UPDATE products_group SET deleted_at = $1 WHERE ID = $2",
-        [now, id]
-      );
-      res.send("Successfully deleted");
+      if (check.rows[0].count >= 1) {
+        res.send(
+          `You can't delete this product, because you have a product linked to this group. first delete the linked products.`
+        );
+      } else {
+        await db.query(
+          "UPDATE products_group SET deleted_at = $1 WHERE ID = $2",
+          [now, id]
+        );
+        res.send("Successfully deleted");
+      }
+    } catch (err) {
+      res.send(err);
     }
-  } catch (err) {
-    res.send(err);
   }
 });
 
 router.delete("/deleteprovider", verifyTokenAdmin, async (req, res) => {
   const now = new Date().toLocaleString();
   const id = req.query.id;
-  try {
-    const result = await db.query("UPDATE providers SET deleted_at = $1 WHERE ID = $2", [now, id]);
-    if (result.rowCount >= 1) {
-      res.send("Successfully deleted");
-    } else {
-      res.send("error");
+  if (!id) {
+    res.send("Please provide an ID");
+  } else {
+    try {
+      const result = await db.query(
+        "UPDATE providers SET deleted_at = $1 WHERE ID = $2",
+        [now, id]
+      );
+      if (result.rowCount >= 1) {
+        res.send("Successfully deleted");
+      } else {
+        res.send("error");
+      }
+    } catch (err) {
+      res.send(err);
     }
-  } catch (err) {
-    res.send(err);
   }
 });
 
 router.delete("/deletecode", verifyTokenAdmin, async (req, res) => {
   const now = new Date().toLocaleString();
   const id = req.query.id;
-  try {
-    const result = await db.query("UPDATE promotional_codes SET deleted_at = $1 WHERE ID = $2", [now, id]);
-    if (result.rowCount >= 1) {
-      res.send("Successfully deleted");
-    } else {
-      res.send("error");
+  if (!id) {
+    res.send("Please provide an ID");
+  } else {
+    try {
+      const result = await db.query(
+        "UPDATE promotional_codes SET deleted_at = $1 WHERE ID = $2",
+        [now, id]
+      );
+      if (result.rowCount >= 1) {
+        res.send("Successfully deleted");
+      } else {
+        res.send("error");
+      }
+    } catch (err) {
+      res.send(err);
     }
-  } catch (err) {
-    res.send(err);
+  }
+});
+
+router.delete("/deletepaymentmethod", verifyTokenAdmin, async (req, res) => {
+  const now = new Date().toLocaleString();
+  const id = req.query.id;
+  if (!id) {
+    res.send("Please provide an ID");
+  } else {
+    try {
+      const result = await db.query(
+        "UPDATE payment_method SET deleted_at = $1 WHERE ID = $2",
+        [now, id]
+      );
+      if (result.rowCount >= 1) {
+        res.send("Successfully deleted");
+      } else {
+        res.send("error");
+      }
+    } catch (err) {
+      res.send(err);
+    }
   }
 });
 
@@ -438,6 +500,19 @@ router.get("/code", verifyTokenAdmin, async (req, res) => {
   }
 });
 
+router.get("/paymentmethod", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+
+  if(!id) {
+    const result = await db.query("SELECT * from payment_method");
+    res.send(result.rows);
+  }
+  else {
+    const result = await db.query("SELECT * from payment_method WHERE id = $1", [id]);
+    res.send(result.rows);
+  }
+});
+
 router.put("/product", verifyTokenAdmin, async (req, res) => {
   const id = req.query.id;
   const name = req.body.name;
@@ -445,7 +520,7 @@ router.put("/product", verifyTokenAdmin, async (req, res) => {
   const price = req.body.price;
 
   if (!id) {
-    res.send("Please provider an ID");
+    res.send("Please provide an ID");
   } else {
     const check = await db.query("SELECT * from products WHERE id = $1", [id]);
 
@@ -475,9 +550,9 @@ router.put("/group", verifyTokenAdmin, async (req, res) => {
   const name = req.body.name;
 
   if (!id) {
-    res.send("Please provider an ID");
+    res.send("Please provide an ID");
   } else if (!name) {
-    res.send("Please provider a new name");
+    res.send("Please provide a new name");
   } else {
     const check = await db.query("SELECT * from products_group WHERE id = $1", [
       id,
@@ -510,7 +585,7 @@ router.put("/provider", verifyTokenAdmin, async (req, res) => {
   const zip_code = req.body.zip_code;
 
   if (!id) {
-    res.send("Please provider an ID");
+    res.send("Please provide an ID");
   } else {
     const check = await db.query("SELECT * from providers WHERE id = $1", [id]);
 
@@ -554,7 +629,7 @@ router.put("/code", verifyTokenAdmin, async (req, res) => {
   const type_discount = req.body.type_discount;
 
   if (!id) {
-    res.send("Please provider an ID");
+    res.send("Please provide an ID");
   } else {
     const check = await db.query(
       "SELECT * from promotional_codes WHERE id = $1",
@@ -581,6 +656,42 @@ router.put("/code", verifyTokenAdmin, async (req, res) => {
         res.send("Code already exists");
       } else if (result == 23514) {
         res.send("Invalid discount type");
+      } else {
+        res.send(result);
+      }
+    }
+  }
+});
+
+router.put("/paymentmethod", verifyTokenAdmin, async (req, res) => {
+  const id = req.query.id;
+  const name = req.body.name;
+  const portion = req.body.portion;
+
+  if (!id) {
+    res.send("Please provide an ID");
+  } else {
+    const check = await db.query(
+      "SELECT * from payment_method WHERE id = $1",
+      [id]
+    );
+
+    if (check.rows.length == 0) {
+      res.send("Invalid ID");
+    } else {
+      const currentname = check.rows[0].name;
+      const currentportion = check.rows[0].portion_quantity;
+
+      const result = await db.query(
+        "UPDATE payment_method SET name = $1, portion_quantity = $2 WHERE id = $3",
+        [
+          name != undefined ? name : currentname,
+          portion != undefined ? portion : currentportion,
+          id,
+        ]
+      );
+      if (result == 23505) {
+        res.send("Payment method already exists");
       } else {
         res.send(result);
       }

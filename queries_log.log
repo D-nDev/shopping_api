@@ -303,3 +303,18 @@ executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 
 executed query: { query: UPDATE promotional_codes SET code = $1, discount = $2, type_discount = $3 WHERE id = $4, params: SHASHASHA2,20.00,fix,6; duration: 2ms, rows: 1 }
 executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 6; duration: 175ms, rows: 1 }
 executed query: { query: UPDATE promotional_codes SET code = $1, discount = $2, type_discount = $3 WHERE id = $4, params: SHASHASHA2,150,fix,6; duration: 5ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 618ms, rows: 1 }
+executed query: { query: SELECT * from payment_method, params: undefined; duration: 29ms, rows: 9 }
+executed query: { query: INSERT INTO payment_method(name, portion_quantity) VALUES ($1, $2) RETURNING *, params: test,1; duration: 110ms, rows: 1 }
+executed query: { query: SELECT * from payment_method, params: undefined; duration: 1ms, rows: 10 }
+executed query: { query: SELECT * from payment_method WHERE id = $1, params: 11; duration: 404ms, rows: 1 }
+executed query: { query: UPDATE payment_method SET name = $1, portion_quantity = $2 WHERE id = $3, params: test,1,11; duration: 315ms, rows: 1 }
+executed query: { query: SELECT * from payment_method WHERE id = $1, params: 11; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE payment_method SET name = $1, portion_quantity = $2 WHERE id = $3, params: test2,1,11; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from payment_method, params: undefined; duration: 0ms, rows: 10 }
+executed query: { query: SELECT * from payment_method WHERE id = $1, params: 11; duration: 86ms, rows: 1 }
+executed query: { query: UPDATE payment_method SET name = $1, portion_quantity = $2 WHERE id = $3, params: test3,3,11; duration: 6ms, rows: 1 }
+executed query: { query: SELECT * from payment_method, params: undefined; duration: 1ms, rows: 10 }
+executed query: { query: UPDATE payment_method SET deleted_at = $1 WHERE ID = $2, params: 8/12/2021, 5:19:51 PM,; duration: 142ms, rows: 0 }
+executed query: { query: UPDATE payment_method SET deleted_at = $1 WHERE ID = $2, params: 8/12/2021, 5:20:05 PM,11; duration: 102ms, rows: 1 }
+executed query: { query: SELECT * from payment_method, params: undefined; duration: 106ms, rows: 10 }

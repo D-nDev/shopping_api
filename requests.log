@@ -1182,3 +1182,63 @@ PUT /code?id=6 182.469 ms
 DATE: Wednesday, August 11, 2021
 HTTP STATUS CODE: 200
 
+GET /paymentmethod 25.994 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 401
+
+POST /login 3760.775 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /paymentmethod 32.383 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addpaymentmethod 112.991 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /paymentmethod 3.060 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+PUT /paymentmethod 0.862 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+PUT /paymentmethod?id=11 721.870 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+PUT /paymentmethod?id=11 5.165 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /paymentmethod 2.367 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+PUT /paymentmethod?id=11 94.361 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /paymentmethod 2.695 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletepaymentmethod 368.064 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletepaymentmethod?id=11 105.854 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /paymentmethod 108.147 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletepaymentmethod 7.233 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
