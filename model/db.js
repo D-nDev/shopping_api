@@ -31,11 +31,11 @@ async function query(text, params) {
     return err;
   } finally {
     const duration = Date.now() - start;
-    console.log("executed query:", {
+    /*console.log("executed query:", {
       query: text,
       duration: `${duration}ms`,
       rows: `${query != undefined ? query.rowCount : 'error'}` ,
-    });
+    });*/
     fs.appendFileSync(
       "queries_log.log",
       `executed query: { query: ${text}, params: ${params}; duration: ${duration}ms, rows: ${query != undefined ? query.rowCount : 'error'} }\n`

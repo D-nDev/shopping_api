@@ -8,6 +8,7 @@ const login = require("./controllers/login");
 const resetemail = require("./controllers/sendemail");
 const resetsms = require("./controllers/sendsms");
 const resetpass = require("./controllers/resetpass");
+const addtocart = require("./controllers/addtocart");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const { detect } = require("detect-browser");
@@ -698,6 +699,34 @@ router.put("/paymentmethod", verifyTokenAdmin, async (req, res) => {
     }
   }
 });
+
+router.post("/addcart", verifyToken, async (req, res) => {
+  const id = req.query.productid;
+  const userid = await currentUser(req);
+  if(!id) {
+    res.send("Please provider an ID");
+  }
+  else {
+    const check = await db.query("SELECT * from products WHERE id = $1", [
+      id,
+    ]);
+
+    if (check.rows.length == 0) {
+      res.send("Invalid ID");
+    }
+    else {
+      const check_stock = await db.query("SELECT amount from stock where product_id = $1", [id]);
+      if(check_stock.rows[0].amount <= 0) {
+        res.send("Out of stock");
+      }
+      else {
+        await addtocart.addtocart(userid, id);
+        await db.query("UPDATE stock SET amount = $1 WHERE product_id = $2", [check_stock.rows[0].amount - 1, id]);
+        res.send("Added to cart");
+      }
+    }
+  }
+})
 
 function verifyToken(req, res, next) {
   jwt.verify(req.cookies.usertoken, process.env.SECRET, (err, decoded) => {

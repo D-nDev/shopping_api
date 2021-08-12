@@ -29,3 +29,5 @@
     - Linkado tabela de metódos de pagamentos ao sale_header
     - Adicionado rotas de adicionar, editar, deletar e requisitar metódos de pagamentos
     - Melhorado sistemas de deleção
+    - Adicionado cart em json
+    - Adicionado rota para adicionar produtos ao carrinho

@@ -1242,3 +1242,231 @@ DELETE /deletepaymentmethod 7.233 ms
 DATE: Thursday, August 12, 2021
 HTTP STATUS CODE: 200
 
+POST /addcart?productid=13 2077.195 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 1288.883 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 132.741 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 179.524 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 518.547 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 294.216 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 211.693 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 1172.620 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 286.245 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 377.842 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 217.707 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 750.917 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 785.621 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 200.831 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 908.309 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 460.696 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 600.780 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 257.719 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 885.711 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 152.804 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 284.118 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 331.850 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 269.367 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 239.524 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 178.483 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 154.456 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 173.596 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 203.229 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 - ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: -
+
+POST /addcart?productid=1 198.960 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 199.850 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 140.714 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 130.329 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 211.935 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 197.573 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 245.880 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 217.496 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 213.433 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 193.118 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 392.558 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 - ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: -
+
+POST /addcart?productid=13 147.138 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 160.171 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 212.557 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 189.283 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 175.420 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 254.396 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 164.465 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 8.732 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 46.271 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 6.371 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 155.540 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 7.782 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 6.849 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 5.893 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 128.238 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 212.268 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
