@@ -32,3 +32,4 @@
     - Adicionado cart em json
     - Adicionado rota para adicionar produtos ao carrinho
     - Adicionado rota de visualizar os itens do carrinho do usuário
+    - Adicionado listagem com filtros

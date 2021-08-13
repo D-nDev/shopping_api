@@ -493,3 +493,7 @@ executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, par
 executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 197ms, rows: 1 }
 executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 2ms, rows: 1 }
 executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 8,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 114ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE creation_timestamp = $1, params: 2021-08-03; duration: 141ms, rows: error }
+executed query: { query: SELECT * from products WHERE add_date = $1, params: 2021-08-03; duration: 135ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE price = $1, params: 150.47; duration: 190ms, rows: 1 }

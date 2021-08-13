@@ -1486,3 +1486,27 @@ GET /cart 2.815 ms
 DATE: Thursday, August 12, 2021
 HTTP STATUS CODE: 200
 
+GET /list?id=1 7.461 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /list 131.207 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /list 142.954 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /list 157.155 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /list 193.804 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+
+GET /list 0.997 ms
+DATE: Thursday, August 12, 2021
+HTTP STATUS CODE: 200
+

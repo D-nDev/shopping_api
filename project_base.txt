@@ -67,8 +67,8 @@ Fluxo de vendas para USUÁRIO:
   /cart
 	Retorna o carrinho do usuário atual
 
-  /list?filter=filter
-	Realiza uma consulta no bd, e retorna todos os produtos disponíveis baseado ou não no filter
+  /list
+	Realiza uma consulta no bd, e retorna todos os produtos disponíveis baseado ou não no filter do req.body
 
   /buy
 	Realiza uma compra com os itens no carrinho, podendo ser aplicado um cupom de desconto ao qual vira da req.body.

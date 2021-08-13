@@ -439,10 +439,12 @@ router.delete("/deleteaccount", verifyTokenAdmin, async (req, res) => {
     const check = await db.query("SELECT id from users WHERE id = $1", [id]);
 
     if (check.rows[0].id == currentuser) {
-      res.send("You can't delete yourself, try to do it in another account")
-    }
-    else {
-      await db.query("UPDATE users SET deleted_at = $1 WHERE id = $2", [now, id]);
+      res.send("You can't delete yourself, try to do it in another account");
+    } else {
+      await db.query("UPDATE users SET deleted_at = $1 WHERE id = $2", [
+        now,
+        id,
+      ]);
       res.send("Successfully deleted");
     }
   } catch (err) {
@@ -453,11 +455,10 @@ router.delete("/deleteaccount", verifyTokenAdmin, async (req, res) => {
 router.get("/product", verifyTokenAdmin, async (req, res) => {
   const id = req.query.id;
 
-  if(!id) {
+  if (!id) {
     const result = await db.query("SELECT * from products");
     res.send(result.rows);
-  }
-  else {
+  } else {
     const result = await db.query("SELECT * from products WHERE id = $1", [id]);
     res.send(result.rows);
   }
@@ -466,12 +467,14 @@ router.get("/product", verifyTokenAdmin, async (req, res) => {
 router.get("/group", verifyTokenAdmin, async (req, res) => {
   const id = req.query.id;
 
-  if(!id) {
+  if (!id) {
     const result = await db.query("SELECT * from products_group");
     res.send(result.rows);
-  }
-  else {
-    const result = await db.query("SELECT * from products_group WHERE id = $1", [id]);
+  } else {
+    const result = await db.query(
+      "SELECT * from products_group WHERE id = $1",
+      [id]
+    );
     res.send(result.rows);
   }
 });
@@ -479,12 +482,13 @@ router.get("/group", verifyTokenAdmin, async (req, res) => {
 router.get("/provider", verifyTokenAdmin, async (req, res) => {
   const id = req.query.id;
 
-  if(!id) {
+  if (!id) {
     const result = await db.query("SELECT * from providers");
     res.send(result.rows);
-  }
-  else {
-    const result = await db.query("SELECT * from providers WHERE id = $1", [id]);
+  } else {
+    const result = await db.query("SELECT * from providers WHERE id = $1", [
+      id,
+    ]);
     res.send(result.rows);
   }
 });
@@ -492,12 +496,14 @@ router.get("/provider", verifyTokenAdmin, async (req, res) => {
 router.get("/code", verifyTokenAdmin, async (req, res) => {
   const id = req.query.id;
 
-  if(!id) {
+  if (!id) {
     const result = await db.query("SELECT * from promotional_codes");
     res.send(result.rows);
-  }
-  else {
-    const result = await db.query("SELECT * from promotional_codes WHERE id = $1", [id]);
+  } else {
+    const result = await db.query(
+      "SELECT * from promotional_codes WHERE id = $1",
+      [id]
+    );
     res.send(result.rows);
   }
 });
@@ -505,12 +511,14 @@ router.get("/code", verifyTokenAdmin, async (req, res) => {
 router.get("/paymentmethod", verifyTokenAdmin, async (req, res) => {
   const id = req.query.id;
 
-  if(!id) {
+  if (!id) {
     const result = await db.query("SELECT * from payment_method");
     res.send(result.rows);
-  }
-  else {
-    const result = await db.query("SELECT * from payment_method WHERE id = $1", [id]);
+  } else {
+    const result = await db.query(
+      "SELECT * from payment_method WHERE id = $1",
+      [id]
+    );
     res.send(result.rows);
   }
 });
@@ -673,10 +681,9 @@ router.put("/paymentmethod", verifyTokenAdmin, async (req, res) => {
   if (!id) {
     res.send("Please provide an ID");
   } else {
-    const check = await db.query(
-      "SELECT * from payment_method WHERE id = $1",
-      [id]
-    );
+    const check = await db.query("SELECT * from payment_method WHERE id = $1", [
+      id,
+    ]);
 
     if (check.rows.length == 0) {
       res.send("Invalid ID");
@@ -704,25 +711,26 @@ router.put("/paymentmethod", verifyTokenAdmin, async (req, res) => {
 router.post("/addcart", verifyToken, async (req, res) => {
   const id = req.query.productid;
   const userid = await currentUser(req);
-  if(!id) {
+  if (!id) {
     res.send("Please provider an ID");
-  }
-  else {
-    const check = await db.query("SELECT * from products WHERE id = $1", [
-      id,
-    ]);
+  } else {
+    const check = await db.query("SELECT * from products WHERE id = $1", [id]);
 
     if (check.rows.length == 0) {
       res.send("Invalid ID");
-    }
-    else {
-      const check_stock = await db.query("SELECT amount from stock where product_id = $1", [id]);
-      if(check_stock.rows[0].amount <= 0) {
+    } else {
+      const check_stock = await db.query(
+        "SELECT amount from stock where product_id = $1",
+        [id]
+      );
+      if (check_stock.rows[0].amount <= 0) {
         res.send("Out of stock");
-      }
-      else {
+      } else {
         await addtocart.addtocart(userid, id);
-        await db.query("UPDATE stock SET amount = $1 WHERE product_id = $2", [check_stock.rows[0].amount - 1, id]);
+        await db.query("UPDATE stock SET amount = $1 WHERE product_id = $2", [
+          check_stock.rows[0].amount - 1,
+          id,
+        ]);
         res.send("Added to cart");
       }
     }
@@ -733,11 +741,41 @@ router.get("/cart", verifyToken, async (req, res) => {
   const userid = await currentUser(req);
   if (userid) {
     const usercart = await fs.readFile(`./cart/cart${userid}.json`);
-    res.setHeader('Content-Type', 'application/json');
+    res.setHeader("Content-Type", "application/json");
     res.send(usercart);
+  } else {
+    res.send("ID not found");
+  }
+});
+
+router.get("/list", verifyTokenAdmin, async (req, res) => {
+  const id = req.body.id;
+  const groupid = req.body.groupid;
+  const name = req.body.name;
+  const price = req.body.price;
+  const date = req.body.date;
+  if (id) {
+    const result = await db.query("SELECT * from products WHERE id = $1", [id]);
+    res.send(result.rows);
+  }
+  else if(groupid) {
+    const result = await db.query("SELECT * from products WHERE group_id = $1", [groupid]);
+    res.send(result.rows);
+  }
+  else if(name) {
+    const result = await db.query("SELECT * from products WHERE name = $1", [name]);
+    res.send(result.rows);
+  }
+  else if(price) {
+    const result = await db.query("SELECT * from products WHERE price = $1", [price]);
+    res.send(result.rows);
+  }
+  else if(date) {
+    const result = await db.query("SELECT * from products WHERE add_date = $1", [date]);
+    res.send(result.rows);
   }
   else {
-    res.send("ID not found");
+    res.send("Invalid parameter");
   }
 });
 
