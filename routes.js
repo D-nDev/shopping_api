@@ -2,6 +2,7 @@ process.env.TZ = "America/Sao_Paulo";
 require("dotenv").config();
 const express = require("express");
 const fs = require("fs").promises;
+const fs2 = require("fs");
 const jwt = require("jsonwebtoken");
 const cookie_parser = require("cookie-parser");
 const db = require("./model/db");
@@ -726,7 +727,11 @@ router.post("/addcart", verifyToken, async (req, res) => {
       if (check_stock.rows[0].amount <= 0) {
         res.send("Out of stock");
       } else {
-        await addtocart.addtocart(userid, id);
+        const price = await db.query(
+          "SELECT price from products WHERE id = $1",
+          [id]
+        );
+        await addtocart.addtocart(userid, id, price.rows[0].price);
         await db.query("UPDATE stock SET amount = $1 WHERE product_id = $2", [
           check_stock.rows[0].amount - 1,
           id,
@@ -757,25 +762,180 @@ router.get("/list", verifyTokenAdmin, async (req, res) => {
   if (id) {
     const result = await db.query("SELECT * from products WHERE id = $1", [id]);
     res.send(result.rows);
-  }
-  else if(groupid) {
-    const result = await db.query("SELECT * from products WHERE group_id = $1", [groupid]);
+  } else if (groupid) {
+    const result = await db.query(
+      "SELECT * from products WHERE group_id = $1",
+      [groupid]
+    );
     res.send(result.rows);
-  }
-  else if(name) {
-    const result = await db.query("SELECT * from products WHERE name = $1", [name]);
+  } else if (name) {
+    const result = await db.query("SELECT * from products WHERE name = $1", [
+      name,
+    ]);
     res.send(result.rows);
-  }
-  else if(price) {
-    const result = await db.query("SELECT * from products WHERE price = $1", [price]);
+  } else if (price) {
+    const result = await db.query("SELECT * from products WHERE price = $1", [
+      price,
+    ]);
     res.send(result.rows);
-  }
-  else if(date) {
-    const result = await db.query("SELECT * from products WHERE add_date = $1", [date]);
+  } else if (date) {
+    const result = await db.query(
+      "SELECT * from products WHERE add_date = $1",
+      [date]
+    );
     res.send(result.rows);
-  }
-  else {
+  } else {
     res.send("Invalid parameter");
+  }
+});
+
+router.post("/addcoupon", verifyToken, async (req, res) => {
+  const userid = await currentUser(req);
+  const coupon = req.query.coupon;
+  const check = await db.query(
+    "SELECT code, discount, type_discount from promotional_codes WHERE code = $1",
+    [coupon]
+  );
+  if (fs2.existsSync(`./coupons/user${userid}.json`) == true) {
+    res.send("You already have a coupon");
+  } else if (fs2.existsSync(`./cart/cart${userid}.json`) == false) {
+    res.send("You have to add a product to cart first before add a coupon.");
+  } else {
+    if (check.rows.length >= 1) {
+      const newcode = [
+        {
+          code: check.rows[0].code,
+          discount: parseFloat(check.rows[0].discount),
+          type_discount: check.rows[0].type_discount,
+        },
+      ];
+      await fs.writeFile(
+        `./coupons/user${userid}.json`,
+        JSON.stringify(newcode)
+      );
+
+      // update the cart
+      try {
+        const updatecart = await fs.readFile(`./cart/cart${userid}.json`);
+        const updateusercart = JSON.parse(updatecart);
+
+        updateusercart.forEach((element) => {
+          element.discount_value = parseFloat(check.rows[0].discount);
+          if (check.rows[0].type_discount == "fix") {
+            element.unitary_price -= parseFloat(check.rows[0].discount);
+            element.total_price = element.unitary_price * element.quantity;
+            element.type_discount = 'fix';
+          } else {
+            let percentage =
+              (check.rows[0].discount / 100) * element.unitary_price;
+            element.unitary_price -= percentage;
+            element.total_price = element.unitary_price * element.quantity;
+            element.type_discount = 'percentage';
+          }
+        });
+        await fs.writeFile(
+          `./cart/cart${userid}.json`,
+          JSON.stringify(updateusercart)
+        );
+        res.send("Coupon added and prices updated");
+      } catch (err) {
+        if (err.errno == "-4058") {
+          res.send("Coupon added");
+        } else {
+          console.log(err);
+          res.send(err);
+        }
+      }
+    } else {
+      res.send("Invalid coupon");
+    }
+  }
+});
+
+router.get("/coupon", verifyToken, async (req, res) => {
+  const userid = await currentUser(req);
+  try {
+    const result = await fs.readFile(`./coupons/user${userid}.json`);
+    res.setHeader("Content-Type", "application/json");
+    res.send(result);
+  } catch (err) {
+    if (err.errno == "-4058") {
+      res.send("You haven't applied a coupon");
+    } else {
+      console.log(err);
+      res.send(err);
+    }
+  }
+});
+
+router.delete("/coupon", verifyToken, async (req, res) => {
+  const userid = await currentUser(req);
+  try {
+    await fs.unlink(`./coupons/user${userid}.json`);
+    try {
+      const updatecart = await fs.readFile(`./cart/cart${userid}.json`);
+      const updateusercart = JSON.parse(updatecart);
+
+      updateusercart.forEach((element) => {
+        if (element.type_discount == "fix") {
+          element.unitary_price = element.original_value;
+          element.total_price = element.unitary_value * element.quantity;
+          element.type_discount = 'none';
+          element.discount_value = 0;
+        } else {
+          element.unitary_price = element.original_value;
+          element.total_price = element.original_value * element.quantity;
+          element.type_discount = 'none';
+          element.discount_value = 0;
+        }
+      });
+      await fs.writeFile(
+        `./cart/cart${userid}.json`,
+        JSON.stringify(updateusercart)
+      );
+      res.send("Deleted");
+    } catch (err) {
+      if (err.errno == "-4058") {
+        res.send("test");
+      } else {
+        console.log(err);
+        res.send(err);
+      }
+    }
+  } catch (err) {
+    if (err.errno == "-4058") {
+      res.send("File doesn't exists");
+    } else {
+      console.log(err);
+      res.send(err);
+    }
+  }
+})
+
+router.post("/buy", verifyToken, async (req, res) => {
+  const userid = await currentUser(req);
+  const method = req.body.method;
+  let total;
+  if (userid) {
+    const allowmethods = await db.query("SELECT name from payment_method");
+
+    const searchmethod = allowmethods.rows.find((o) => o.name === method);
+    if (searchmethod != undefined) {
+      const usercart = await fs.readFile(`./cart/cart${userid}.json`);
+      const hascoupon = await fs.readFile(`./coupons/user${userid}.json`);
+      const usercoupon = JSON.parse(hascoupon);
+      if (usercart.length >= 1) {
+        const cart = JSON.parse(usercart);
+        cart.forEach((element) => {
+          total += element.price;
+          //await db.query("INSERT INTO sale_header(user_id, )");
+        });
+      }
+    } else {
+      res.send("Invalid payment method");
+    }
+  } else {
+    res.send("User ID not found");
   }
 });
 

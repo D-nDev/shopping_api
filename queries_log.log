@@ -497,3 +497,192 @@ executed query: { query: SELECT * from products WHERE id = $1, params: 1; durati
 executed query: { query: SELECT * from products WHERE creation_timestamp = $1, params: 2021-08-03; duration: 141ms, rows: error }
 executed query: { query: SELECT * from products WHERE add_date = $1, params: 2021-08-03; duration: 135ms, rows: 1 }
 executed query: { query: SELECT * from products WHERE price = $1, params: 150.47; duration: 190ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 618ms, rows: 1 }
+executed query: { query: SELECT name from payment_method, params: undefined; duration: 170ms, rows: 10 }
+executed query: { query: INSERT INTO bills_receive, params: undefined; duration: 49ms, rows: error }
+executed query: { query: SELECT name from payment_method, params: undefined; duration: 202ms, rows: 10 }
+executed query: { query: SELECT name from payment_method, params: undefined; duration: 167ms, rows: 10 }
+executed query: { query: SELECT name from payment_method, params: undefined; duration: 118ms, rows: 10 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 174ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 105ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 7,1; duration: 185ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 187ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 9ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 6,1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 146ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 5,1; duration: 5ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 205ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 4,1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 3,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 163ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 2,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 1,1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 165ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 0,1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 126ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 174ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 24,1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 140ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 23,1; duration: 32ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 115ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 22,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 21,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 121ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 114ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 140ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 205ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 130ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 140ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 181ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 158ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 199ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 116ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 212ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 192ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 192ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 130ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 113ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 126ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 201ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 108ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 195ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: SHASHASHA2; duration: 177ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 152ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 170ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 187ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 180ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 1ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 1ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 162ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 106ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 95ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 149ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 164ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 190ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 124ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 232ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 20,1; duration: 3ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 113ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 96ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 24,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 180ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 23,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 146ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 232ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 22,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 167ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 21,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 206ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 20,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 164ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 19,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 153ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 18,13; duration: 4ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 146ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 17,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 149ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 19,1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 166ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 16,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 210ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 158ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 18,1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 15,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 150ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 14,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 107ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 17,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 13,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 214ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 16,1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 12,13; duration: 7ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 169ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 11,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 106ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 15,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 10,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 179ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 14,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 9,13; duration: 1ms, rows: 1 }

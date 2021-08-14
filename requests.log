@@ -1510,3 +1510,467 @@ GET /list 0.997 ms
 DATE: Thursday, August 12, 2021
 HTTP STATUS CODE: 200
 
+POST /login 970.108 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 226.807 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 226.278 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 170.271 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 141.685 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 477.751 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 212.251 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 165.479 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 221.140 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 9.345 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 179.154 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 11.468 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 181.934 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 138.615 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 183.382 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 176.999 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 130.933 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 10.795 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 123.747 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 152.861 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 217.624 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 143.862 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 153.496 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 215.979 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 172.061 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 213.514 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 129.950 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 226.043 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 206.223 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 206.030 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 144.134 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 127.607 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 140.079 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 216.446 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 123.239 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 211.658 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=SHASHASHA2 191.966 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 166.697 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 185.085 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 194.670 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 198.738 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 4.324 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 2.972 ms
+DATE: Friday, August 13, 2021
+HTTP STATUS CODE: 200
+
+GET /coupon 8.176 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+DELETE /coupon 24.687 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /coupon 3.345 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 174.484 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 122.487 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 99.133 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 159.699 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 175.489 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 199.292 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 365.586 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.725 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 116.846 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.891 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 103.399 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 24.340 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 196.944 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 397.500 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 188.253 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 226.914 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 179.600 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 177.933 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 168.519 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 165.435 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.582 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 5.785 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.137 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 173.708 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.664 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 220.286 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 174.445 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.453 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 6.151 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.134 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 6.878 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.542 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+DELETE /coupon 4.065 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 165.152 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 123.120 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.272 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 5.787 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.092 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 6.958 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.633 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 231.206 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.238 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 7.442 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.109 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 16.014 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.342 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+DELETE /coupon 3.538 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.007 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 184.879 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.257 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 6.787 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.160 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+DELETE /coupon 3.392 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.077 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 121.185 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.450 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 5.887 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.983 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 6.785 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.871 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+DELETE /coupon 2.799 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 0.993 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 194.524 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.265 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 6.193 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.122 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 6.963 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.675 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+DELETE /coupon 2.590 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.055 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
