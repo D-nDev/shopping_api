@@ -11,6 +11,7 @@ const resetemail = require("./controllers/sendemail");
 const resetsms = require("./controllers/sendsms");
 const resetpass = require("./controllers/resetpass");
 const addtocart = require("./controllers/addtocart");
+const buy = require("./controllers/buy");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const { detect } = require("detect-browser");
@@ -745,9 +746,18 @@ router.post("/addcart", verifyToken, async (req, res) => {
 router.get("/cart", verifyToken, async (req, res) => {
   const userid = await currentUser(req);
   if (userid) {
-    const usercart = await fs.readFile(`./cart/cart${userid}.json`);
-    res.setHeader("Content-Type", "application/json");
-    res.send(usercart);
+    try {
+      const usercart = await fs.readFile(`./cart/cart${userid}.json`);
+      res.setHeader("Content-Type", "application/json");
+      res.send(usercart);
+    } catch (err) {
+      if (err.errno == "-4058") {
+        res.send("Empty Cart");
+      } else {
+        console.log(err);
+        res.send(err);
+      }
+    }
   } else {
     res.send("ID not found");
   }
@@ -824,13 +834,13 @@ router.post("/addcoupon", verifyToken, async (req, res) => {
           if (check.rows[0].type_discount == "fix") {
             element.unitary_price -= parseFloat(check.rows[0].discount);
             element.total_price = element.unitary_price * element.quantity;
-            element.type_discount = 'fix';
+            element.type_discount = "fix";
           } else {
             let percentage =
               (check.rows[0].discount / 100) * element.unitary_price;
             element.unitary_price -= percentage;
             element.total_price = element.unitary_price * element.quantity;
-            element.type_discount = 'percentage';
+            element.type_discount = "percentage";
           }
         });
         await fs.writeFile(
@@ -880,12 +890,12 @@ router.delete("/coupon", verifyToken, async (req, res) => {
         if (element.type_discount == "fix") {
           element.unitary_price = element.original_value;
           element.total_price = element.unitary_value * element.quantity;
-          element.type_discount = 'none';
+          element.type_discount = "none";
           element.discount_value = 0;
         } else {
           element.unitary_price = element.original_value;
           element.total_price = element.original_value * element.quantity;
-          element.type_discount = 'none';
+          element.type_discount = "none";
           element.discount_value = 0;
         }
       });
@@ -910,32 +920,18 @@ router.delete("/coupon", verifyToken, async (req, res) => {
       res.send(err);
     }
   }
-})
+});
 
 router.post("/buy", verifyToken, async (req, res) => {
   const userid = await currentUser(req);
   const method = req.body.method;
-  let total;
-  if (userid) {
-    const allowmethods = await db.query("SELECT name from payment_method");
-
-    const searchmethod = allowmethods.rows.find((o) => o.name === method);
-    if (searchmethod != undefined) {
-      const usercart = await fs.readFile(`./cart/cart${userid}.json`);
-      const hascoupon = await fs.readFile(`./coupons/user${userid}.json`);
-      const usercoupon = JSON.parse(hascoupon);
-      if (usercart.length >= 1) {
-        const cart = JSON.parse(usercart);
-        cart.forEach((element) => {
-          total += element.price;
-          //await db.query("INSERT INTO sale_header(user_id, )");
-        });
-      }
-    } else {
-      res.send("Invalid payment method");
-    }
+  const today = new Date().toLocaleString();
+  let todayconverted = new Date(today);
+  if (userid && fs2.existsSync(`./cart/cart${userid}.json`)) {
+    const requestbuy = await buy.buy(todayconverted, userid, method);
+    res.send(requestbuy);
   } else {
-    res.send("User ID not found");
+    res.send("User ID not found or empty cart");
   }
 });
 

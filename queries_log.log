@@ -686,3 +686,121 @@ executed query: { query: SELECT * from products WHERE id = $1, params: 13; durat
 executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
 executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
 executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 9,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 457ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 220ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 47ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 8,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 13,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 118ms, rows: 10 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 168ms, rows: 10 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 151ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 13ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 111ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 75ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 135ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 13ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 163ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 13ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 197ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 13ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 149ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 13ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 149ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 14ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 118ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 13ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 153ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 11ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 126ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 12ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 161ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 13ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 210ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 14ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 175ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 13ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 118ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 12ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 201ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,NaN; duration: 12ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 151ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,Sun Aug 15 2021 17:37:13 GMT-0300 (Brasilia Standard Time); duration: 177ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 157ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,Sun Aug 15 2021 17:38:06 GMT-0300 (Brasilia Standard Time); duration: 15ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 136ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,Sun Aug 15 2021 17:38:38 GMT-0300 (Brasilia Standard Time); duration: 15ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 177ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,Sun Aug 15 2021 17:39:24 GMT-0300 (Brasilia Standard Time); duration: 15ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 106ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,Sun Aug 15 2021 17:39:49 GMT-0300 (Brasilia Standard Time); duration: 15ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 209ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,NaN,,1,1,Sun Aug 15 2021 17:40:09 GMT-0300 (Brasilia Standard Time); duration: 15ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 165ms, rows: 10 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 199ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 3ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,NaN,,1,1,Sun Aug 15 2021 17:40:57 GMT-0300 (Brasilia Standard Time); duration: 13ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 120ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,NaN,,1,1,Sun Aug 15 2021 17:41:32 GMT-0300 (Brasilia Standard Time); duration: 14ms, rows: error }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 142ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,NaN,8,1,1,Sun Aug 15 2021 17:42:29 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 104ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,NaN,8,1,1,Sun Aug 15 2021 17:45:53 GMT-0300 (Brasilia Standard Time); duration: 6ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 181ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,261.846,8,1,1,Sun Aug 15 2021 17:46:22 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 162ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,261.846,8,1,1,Sun Aug 15 2021 17:48:23 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 102ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,261.846,8,1,1,Sun Aug 15 2021 17:48:48 GMT-0300 (Brasilia Standard Time); duration: 8ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 156ms, rows: 10 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 207ms, rows: 10 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 135ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,261.846,8,1,1,Sun Aug 15 2021 18:00:01 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 93ms, rows: 10 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 107ms, rows: 10 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 1ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,261.846,8,1,1,Sun Aug 15 2021 18:19:32 GMT-0300 (Brasilia Standard Time); duration: 6ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 148ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,261.846,8,1,1,Sun Aug 15 2021 18:20:34 GMT-0300 (Brasilia Standard Time); duration: 6ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 148ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 3ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,261.846,8,1,1,Sun Aug 15 2021 18:23:44 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9), params: 19,1,13,Courier,1,135.423,10,0,135.423; duration: 8ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9), params: 19,1,1,Courier,1,126.423,10,0,126.423; duration: 195ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 203ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 3ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,261.846,8,1,1,Sun Aug 15 2021 18:25:15 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 20,1,13,Courier,1,135.423,10,0,135.423; duration: 8ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 20,1,1,Courier,1,126.423,10,0,126.423; duration: 199ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 149ms, rows: 10 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 125ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 12,1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 11,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 7,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 158ms, rows: 10 }
+executed query: { query: SELECT * from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,388.269,8,1,1,Sun Aug 15 2021 18:29:53 GMT-0300 (Brasilia Standard Time); duration: 8ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 21,2,1,Courier,2,126.423,10,0,252.846; duration: 3ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 21,1,13,Courier,1,135.423,10,0,135.423; duration: 160ms, rows: 1 }

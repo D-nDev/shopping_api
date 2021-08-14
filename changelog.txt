@@ -36,3 +36,4 @@
 
 13~14 de agosto:
     - Adicionado sistema de cupons funcionando dinamicamente com o carrinho
+    - Adicionado rota de finalizar compra

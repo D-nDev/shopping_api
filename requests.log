@@ -1974,3 +1974,107 @@ GET /cart 1.055 ms
 DATE: Saturday, August 14, 2021
 HTTP STATUS CODE: 200
 
+POST /login 710.734 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 276.979 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 9.756 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 5.505 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.579 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 127.616 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 183.508 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 141.233 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 213.758 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 211.945 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 137.686 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 167.888 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 97.103 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 129.158 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 17.166 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 181.229 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 180.864 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 236.888 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 20.326 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 134.956 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 8.185 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 8.030 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /addcoupon?coupon=QWOEPAKMQJF47891 5.682 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.397 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 173.533 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 8.217 ms
+DATE: Saturday, August 14, 2021
+HTTP STATUS CODE: 200
+
