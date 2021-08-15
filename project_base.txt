@@ -85,14 +85,14 @@ Fluxo de vendas para USUÁRIO:
 	nada no carrinho retorna carrinho vazio
 
   /requestrefund?userid=id&&saleheaderid=id
-	O usuário pode requisitar um reembolso, sendo enviado para o e-mail da equipe responsável sua mensagem, o id do usuário, e o id da compra
+	O usuário pode requisitar um reembolso, sendo enviado para o e-mail da equipe responsável sua mensagem, o id do usuário, e o id da compra e armazenado na tabela req_refunds a solicitação
 
   /contact
 	Envia um e-mail para os responsáveis, com o req.session.user, req.session.name, data atual e req.body.message
 
 Fluxo de estorno realizado por pessoas AUTORIZADAS:
 
-  /refund?saleheaderid=id
+  /refund?refundid=id
 	Caso após análise do setor responsável o reembolso seja autorizado, através dessa rota é possível realizar o mesmo.
 	Será feito o soft delete do sale_header e o sale_items respectivos a compra e também do titulos a receber.
 

@@ -2330,3 +2330,143 @@ DELETE /removeproduct?id=1 166.714 ms
 DATE: Sunday, August 15, 2021
 HTTP STATUS CODE: 200
 
+POST /contact 3076.902 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /contact 2511.372 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /contact 1824.108 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /contact 2623.982 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /contact 17.582 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /contact 2181.902 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=77 235.191 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=1 92.809 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=25 52.951 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=25 233.678 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=25 2763.779 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=25 2360.412 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=25 2346.828 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=25 2363.937 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=25 137.035 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 194.733 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 4.684 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 37.833 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 21.578 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.198 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 203.835 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.367 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 15.230 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 224.095 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.249 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 26.832 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=28 2694.295 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /refund?refundid=3 - ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: -
+
+POST /refund?refundid=3 507.333 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /refund?refundid=3 2322.456 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /refund?refundid=3 2854.796 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /refund?refundid=3 3309.375 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /refund?refundid=3 2509.954 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /refund?refundid=3 2208.007 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /refund?refundid=3 2501.467 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+

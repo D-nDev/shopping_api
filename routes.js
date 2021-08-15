@@ -8,6 +8,9 @@ const cookie_parser = require("cookie-parser");
 const db = require("./model/db");
 const login = require("./controllers/login");
 const resetemail = require("./controllers/sendemail");
+const contact = require("./controllers/sendcontactmail");
+const refund = require("./controllers/sendrefundmail");
+const successrefund = require("./controllers/sendrefundsuccessmail");
 const resetsms = require("./controllers/sendsms");
 const resetpass = require("./controllers/resetpass");
 const addtocart = require("./controllers/addtocart");
@@ -173,7 +176,7 @@ router.post("/resetpass", async (req, res) => {
   const token = req.body.token;
   const now = new Date().toString();
   try {
-    const result = await db.query("SELECT * from users where reset_code = $1", [
+    const result = await db.query("SELECT * from users where reset_code = $1 and deleted_at IS NULL", [
       token,
     ]);
     if (result.rows.length == 0) {
@@ -411,7 +414,7 @@ function currentUser(req) {
       //console.log(decoded.id);
       if (err) {
         console.log(err);
-        resolve(err);
+        resolve('0');
       } else {
         resolve(decoded.id);
       }
@@ -419,13 +422,14 @@ function currentUser(req) {
   });
 }
 
+
 router.delete("/deleteaccount", verifyTokenAdmin, async (req, res) => {
   const now = new Date().toLocaleString();
   const id = req.query.id;
   try {
     //console.log(id);
     const currentuser = await currentUser(req);
-    const check = await db.query("SELECT id from users WHERE id = $1", [id]);
+    const check = await db.query("SELECT id from users WHERE id = $1 and deleted_at IS NULL", [id]);
 
     if (check.rows[0].id == currentuser) {
       res.send("You can't delete yourself, try to do it in another account");
@@ -505,7 +509,7 @@ router.get("/paymentmethod", verifyTokenAdmin, async (req, res) => {
     res.send(result.rows);
   } else {
     const result = await db.query(
-      "SELECT * from payment_method WHERE id = $1",
+      "SELECT * from payment_method WHERE id = $1 and deleted_at IS NULL",
       [id]
     );
     res.send(result.rows);
@@ -521,7 +525,7 @@ router.put("/product", verifyTokenAdmin, async (req, res) => {
   if (!id) {
     res.send("Please provide an ID");
   } else {
-    const check = await db.query("SELECT * from products WHERE id = $1", [id]);
+    const check = await db.query("SELECT * from products WHERE id = $1 and deleted_at IS NULL", [id]);
 
     if (check.rows.length == 0) {
       res.send("Invalid ID");
@@ -553,7 +557,7 @@ router.put("/group", verifyTokenAdmin, async (req, res) => {
   } else if (!name) {
     res.send("Please provide a new name");
   } else {
-    const check = await db.query("SELECT * from products_group WHERE id = $1", [
+    const check = await db.query("SELECT * from products_group WHERE id = $1 and deleted_at IS NULL", [
       id,
     ]);
 
@@ -586,7 +590,7 @@ router.put("/provider", verifyTokenAdmin, async (req, res) => {
   if (!id) {
     res.send("Please provide an ID");
   } else {
-    const check = await db.query("SELECT * from providers WHERE id = $1", [id]);
+    const check = await db.query("SELECT * from providers WHERE id = $1 and deleted_at IS NULL", [id]);
 
     if (check.rows.length == 0) {
       res.send("Invalid ID");
@@ -631,7 +635,7 @@ router.put("/code", verifyTokenAdmin, async (req, res) => {
     res.send("Please provide an ID");
   } else {
     const check = await db.query(
-      "SELECT * from promotional_codes WHERE id = $1",
+      "SELECT * from promotional_codes WHERE id = $1 and deleted_at IS NULL",
       [id]
     );
 
@@ -670,7 +674,7 @@ router.put("/paymentmethod", verifyTokenAdmin, async (req, res) => {
   if (!id) {
     res.send("Please provide an ID");
   } else {
-    const check = await db.query("SELECT * from payment_method WHERE id = $1", [
+    const check = await db.query("SELECT * from payment_method WHERE id = $1 and deleted_at IS NULL", [
       id,
     ]);
 
@@ -703,20 +707,20 @@ router.post("/addcart", verifyToken, async (req, res) => {
   if (!id) {
     res.send("Please provider an ID");
   } else {
-    const check = await db.query("SELECT * from products WHERE id = $1", [id]);
+    const check = await db.query("SELECT * from products WHERE id = $1 and deleted_at IS NULL", [id]);
 
     if (check.rows.length == 0) {
       res.send("Invalid ID");
     } else {
       const check_stock = await db.query(
-        "SELECT amount from stock where product_id = $1",
+        "SELECT amount from stock where product_id = $1 and deleted_at IS NULL",
         [id]
       );
       if (check_stock.rows[0].amount <= 0) {
         res.send("Out of stock");
       } else {
         const price = await db.query(
-          "SELECT price from products WHERE id = $1",
+          "SELECT price from products WHERE id = $1 and deleted_at IS NULL",
           [id]
         );
         await addtocart.addtocart(userid, id, price.rows[0].price);
@@ -757,27 +761,27 @@ router.get("/list", verifyTokenAdmin, async (req, res) => {
   const price = req.body.price;
   const date = req.body.date;
   if (id) {
-    const result = await db.query("SELECT * from products WHERE id = $1", [id]);
+    const result = await db.query("SELECT * from products WHERE id = $1 and deleted_at IS NULL", [id]);
     res.send(result.rows);
   } else if (groupid) {
     const result = await db.query(
-      "SELECT * from products WHERE group_id = $1",
+      "SELECT * from products WHERE group_id = $1 and deleted_at IS NULL",
       [groupid]
     );
     res.send(result.rows);
   } else if (name) {
-    const result = await db.query("SELECT * from products WHERE name = $1", [
+    const result = await db.query("SELECT * from products WHERE name = $1 and deleted_at IS NULL", [
       name,
     ]);
     res.send(result.rows);
   } else if (price) {
-    const result = await db.query("SELECT * from products WHERE price = $1", [
+    const result = await db.query("SELECT * from products WHERE price = $1 and deleted_at IS NULL", [
       price,
     ]);
     res.send(result.rows);
   } else if (date) {
     const result = await db.query(
-      "SELECT * from products WHERE add_date = $1",
+      "SELECT * from products WHERE add_date = $1 and deleted_at IS NULL",
       [date]
     );
     res.send(result.rows);
@@ -790,7 +794,7 @@ router.post("/addcoupon", verifyToken, async (req, res) => {
   const userid = await currentUser(req);
   const coupon = req.query.coupon;
   const check = await db.query(
-    "SELECT code, discount, type_discount from promotional_codes WHERE code = $1",
+    "SELECT code, discount, type_discount from promotional_codes WHERE code = $1 and deleted_at IS NULL",
     [coupon]
   );
   if (fs2.existsSync(`./coupons/user${userid}.json`) == true) {
@@ -1011,6 +1015,121 @@ router.delete("/removeproduct", verifyToken, async (req, res) => {
     }
   }
 });
+
+router.post("/contact", async (req, res) => {
+  const email = req.body.email;
+  const name = req.body.name;
+  const subject = req.body.subject;
+  const message = req.body.message;
+  const priority = req.body.priority;
+  if (!email) {
+    res.send("Please fill your email");
+  } else if (!name) {
+    res.send("Please fill your name");
+  } else if (!subject) {
+    res.send("Please fill the subject");
+  } else if (!message) {
+    res.send("Please fill the message");
+  } else if (!priority) {
+    res.send("Please fill the priority");
+  } else {
+    try {
+      await contact.sendEmail(email, name, subject, message, priority);
+      res.send("Message sent");
+    } catch (err) {
+      console.log(err);
+      res.send(err);
+    }
+  }
+});
+
+router.post("/requestrefund", verifyToken, async (req, res) => {
+  const userid = await currentUser(req);
+  const saleid = req.query.saleid;
+  const reason = req.body.reason;
+  const checksaleid = await db.query(
+    "SELECT * from sale_header where id = $1 and user_id = $2",
+    [saleid, userid]
+  );
+  if (!saleid) {
+    res.send("Please fill the sale id");
+  } else if (!reason) {
+    res.send("Please fill the reason");
+  } else if (checksaleid.rows.length <= 0) {
+    res.send("Invalid sale id");
+  } else {
+    const checkreq = await db.query(
+      "SELECT * from req_refunds where sale_header_id = $1",
+      [saleid]
+    );
+    if (checkreq.rows.length >= 1) {
+      res.send(
+        "You have already made a request for this sale, please wait while we evaluate it"
+      );
+    } else {
+      try {
+        await Promise.all([
+          refund.sendEmail(userid, reason, saleid),
+          db.query(
+            "INSERT INTO req_refunds(user_id, reason, sale_header_id) VALUES ($1, $2, $3)",
+            [userid, reason, saleid]
+          ),
+        ]);
+        res.send("Your request has sent and will be evaluated");
+      } catch (err) {
+        console.log(err);
+        res.send("Error on sending email");
+      }
+    }
+  }
+});
+
+router.post("/refund", verifyTokenAdmin, async (req, res) => {
+  const refundid = req.query.refundid;
+  const now = new Date().toLocaleString();
+  let todayconverted = new Date(now);
+  const check = await db.query("SELECT * from req_refunds WHERE id = $1", [refundid]);
+
+  if(check.rows.length >=1) {
+    try {
+      const username = await db.query(
+        "SELECT * from users where (id = $1 AND deleted_at IS NULL)",
+        [check.rows[0].user_id]
+      );
+      const amountrefund = await db.query("SELECT * from sale_header where id = $1", [check.rows[0].sale_header_id])
+      console.log(amountrefund.rows);
+      todayconverted.setDate(todayconverted.getDate() + 30);
+    await Promise.all([
+      db.query("UPDATE sale_header SET refunded = $1 WHERE id = $2", [
+        true,
+        check.rows[0].sale_header_id,
+      ]),
+      db.query(
+        "UPDATE sale_items SET refunded = $1 WHERE sale_header_id = $2",
+        [true, check.rows[0].sale_header_id]
+      ),
+      db.query(
+        "UPDATE bills_receive SET refunded = $1, deleted_at = $2 WHERE sale_header_id = $3",
+        [true, now, check.rows[0].sale_header_id]
+      ),
+      db.query(
+        "INSERT INTO bills_pay(amount, method_id, deadline, user_id) VALUES($1, $2, $3, $4)",
+        [parseFloat(amountrefund.rows[0].total), amountrefund.rows[0].payment_method_id, todayconverted, check.rows[0].user_id]
+      ),
+      db.query(
+        "UPDATE req_refunds SET deleted_at = $1 where id - $2",
+        [now, refundid]
+      )
+    ]);
+    await successrefund.sendEmail(username.rows[0].email, username.rows[0].first_name, check.rows[0].sale_header_id);
+    res.send("Successfully refunded");
+  } catch (err) {
+    console.log(err);
+    res.send("Error, contact the support");
+  }
+    
+  }
+})
 
 function verifyTokenAdmin(req, res, next) {
   jwt.verify(req.cookies.usertoken, process.env.SECRET, (err, decoded) => {

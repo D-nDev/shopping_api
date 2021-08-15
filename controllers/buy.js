@@ -42,6 +42,10 @@ async function buy(today, userid, method) {
             today,
           ]
         );
+        await db.query(
+          "INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *",
+          [userid, postsaleheader.rows[0].id, total, searchmethod.id, today]
+        );
         //console.log(postsaleheader.rows[0].id);
         cart.forEach(async (element) => {
           await db.query(
@@ -66,6 +70,10 @@ async function buy(today, userid, method) {
         const postsaleheader = await db.query(
           "INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
           [userid, total, searchmethod.id, userid, userid, today]
+        );
+        await db.query(
+          "INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *",
+          [userid, postsaleheader.rows[0].id, total, searchmethod.id, today]
         );
         cart.forEach(async (element) => {
           await db.query(

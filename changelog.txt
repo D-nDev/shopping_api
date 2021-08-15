@@ -41,3 +41,8 @@
 15 de agosto:
     - Adicionado rota de modificar o carrinho
     - Adicionado rota de remover um produto do carrinho
+    - Adicionado rota de requisitar reembolso
+    - Adicionado rota de aprovar reembolso
+    - Criado tabela no banco para armazenar requisições de reembolso
+    - Arrumado alguns bugs
+    - Adicionado rota de contato

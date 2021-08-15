@@ -4,7 +4,7 @@
   "description": "shop api for alphalumen edtech",
   "main": "app.js",
   "scripts": {
-    "start": "env TZ='Europe/Amsterdam' node app.js"
+    "start": "env TZ='America/Sao_Paulo' node app.js"
   },
   "keywords": [
     "shop",
@@ -21,7 +21,6 @@
     "detect-browser": "^5.2.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "express-useragent": "^1.0.15",
     "fs-extra": "^10.0.0",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
