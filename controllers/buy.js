@@ -63,7 +63,7 @@ async function buy(today, userid, method) {
         await fs.unlink(`././cart/cart${userid}.json`);
         return "Payment successfully";
       } else {
-        await db.query(
+        const postsaleheader = await db.query(
           "INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
           [userid, total, searchmethod.id, userid, userid, today]
         );
@@ -83,7 +83,6 @@ async function buy(today, userid, method) {
             ]
           );
         });
-        await fs.unlink(`././coupons/user${userid}.json`);
         await fs.unlink(`././cart/cart${userid}.json`);
         return "Payment successfully";
       }

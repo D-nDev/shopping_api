@@ -2078,3 +2078,255 @@ GET /cart 8.217 ms
 DATE: Saturday, August 14, 2021
 HTTP STATUS CODE: 200
 
+POST /login 1143.671 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /coupon 30.761 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /login 322.855 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /coupon 5.797 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /login 336.852 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /coupon 4.520 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /login 978.947 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 437.665 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1?quantity=3 2.961 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1?quantity=3 11.200 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1?quantity=3 9.430 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1?quantity=3 11.637 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1?quantity=3 46.215 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1?quantity=3 12.159 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 217.033 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 156.740 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 12.150 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 176.313 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 219.546 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=40 192.452 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 198.618 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=40 5.628 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 220.752 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 208.461 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 154.493 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 159.720 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 218.298 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 162.052 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 171.416 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 231.034 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 165.956 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 209.669 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 189.308 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 125.186 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 210.529 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 171.178 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 187.768 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 214.658 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 145.429 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 148.396 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 132.514 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 184.075 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 235.022 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 144.671 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=40 120.283 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 248.631 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 217.473 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /modifycart?id=1&quantity=3 8.044 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 22.833 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 125.823 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 10.511 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 6.755 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.939 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+DELETE /removeproduct?id=13 13.204 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 2.796 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.226 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+DELETE /removeproduct?id=13 15.916 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+DELETE /removeproduct?id=13 14.307 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.066 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=13 208.269 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+DELETE /removeproduct?id=13 7.252 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+DELETE /removeproduct?id=1 172.103 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
+DELETE /removeproduct?id=1 166.714 ms
+DATE: Sunday, August 15, 2021
+HTTP STATUS CODE: 200
+
