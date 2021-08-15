@@ -1,6 +1,7 @@
 * adicionar imagem do produto na tabela products - Ok
 * adicionar tabela de formas de pagamento - Ok
 * adicionar um relatório
+* refatorar o código(se der tempo)
 
 grupo, produtos, usuarios(ja feito), metódo de pagamento
 
