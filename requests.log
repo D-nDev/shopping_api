@@ -2506,3 +2506,375 @@ POST /refund?refundid=4 2890.634 ms
 DATE: Monday, August 16, 2021
 HTTP STATUS CODE: 200
 
+POST /test 8.322 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 500
+
+POST /test 6.693 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 1.502 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 202
+
+POST /test 0.966 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 401
+
+POST /login 286.593 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /test 0.872 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /test 6.649 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 1.538 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 202
+
+POST /test 0.981 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 401
+
+POST /test 4.979 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 401
+
+POST /login 273.261 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /test 1.485 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /test 6.334 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 1.428 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 202
+
+POST /test 1.186 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 401
+
+GET /product?id=13 1.579 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 401
+
+POST /login 224.092 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /product?id=13 13.991 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 5.283 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 202
+
+POST /test 1.402 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 401
+
+POST /login 133.693 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /login 290.519 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /test 1.526 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 1.054 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 202
+
+POST /test 0.914 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 401
+
+POST /login 233.727 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /login 70.484 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /test 18.657 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /register 529.584 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /register 73.599 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /register 71.288 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /register 212.844 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /register 280.784 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 5.188 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 202
+
+POST /requestpass_email 161.135 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /requestpass_email 3759.396 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 4.860 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 202
+
+POST /requestpass_sms 698.798 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /requestpass_email 2636.998 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /requestpass_sms 503.267 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /resetpass 126.906 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 0.961 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 202
+
+POST /login 226.808 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /login 72.921 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 5.224 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 202
+
+POST /addproduct 75.701 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 401
+
+POST /login 251.984 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addproduct 240.762 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 5.262 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 202
+
+POST /addgroup 15.603 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 401
+
+POST /login 270.183 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addgroup 49.081 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addgroup 208.439 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addgroup 12.027 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addprovider 173.921 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addprovider 196.971 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addcode 377.676 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addcode 174.122 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addpaymentmethod 199.646 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addpaymentmethod 137.713 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteproduct?id= 111.131 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteproduct?id=14 172.319 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletegroup?id=1 205.674 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletegroup?id=7 146.446 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteprovider?id=6 138.412 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteprovider?id=6 224.888 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteprovider?id=99 3.865 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletecode?id=66 123.769 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletecode?id=7 6.558 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletepaymentmethod?id= 7.231 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletepaymentmethod?id=99 154.291 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletepaymentmethod?id=99 123.193 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deletepaymentmethod?id=12 7.334 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteaccount?id=299 7.596 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteaccount?id=28 2.252 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteaccount?id=28 7.468 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteaccount?id=28 9.899 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteaccount?id=28 175.177 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+DELETE /deleteaccount?id=28 165.267 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /product?id=13 187.836 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /product 4.533 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /group?id=6 218.996 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /group 3.892 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /provider?id=4 142.569 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /provider 4.601 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /product 171.322 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /group 4.593 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /provider 5.496 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /code?id=6 3.743 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /code 2.997 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /paymentmethod 128.893 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /paymentmethod?id= 4.583 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /paymentmethod?id=9 2.983 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
