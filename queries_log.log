@@ -1001,3 +1001,27 @@ executed query: { query: UPDATE sale_items SET refunded = $1 WHERE sale_header_i
 executed query: { query: UPDATE bills_receive SET refunded = $1, deleted_at = $2 WHERE sale_header_id = $3, params: true,8/15/2021, 8:50:34 PM,28; duration: 241ms, rows: 1 }
 executed query: { query: INSERT INTO bills_pay(amount, method_id, deadline, user_id) VALUES($1, $2, $3, $4), params: 140.47,8,Tue Sep 14 2021 20:50:34 GMT-0300 (Brasilia Standard Time),1; duration: 251ms, rows: 1 }
 executed query: { query: UPDATE req_refunds SET deleted_at = $1 where id - $2, params: 8/15/2021, 8:50:34 PM,3; duration: 273ms, rows: error }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 576ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 231ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 1; duration: 292ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 5,1; duration: 304ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 118ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 4,1; duration: 11ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 253ms, rows: 10 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,280.94,8,1,1,Tue Aug 17 2021 15:50:18 GMT-0300 (Brasilia Standard Time); duration: 541ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,29,280.94,8,Tue Aug 17 2021 15:50:18 GMT-0300 (Brasilia Standard Time); duration: 453ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 29,2,1,Courier,2,140.47,0,0,280.94; duration: 154ms, rows: 1 }
+executed query: { query: SELECT * from sale_header where id = $1 and user_id = $2, params: 29,1; duration: 189ms, rows: 1 }
+executed query: { query: SELECT * from req_refunds where sale_header_id = $1, params: 29; duration: 17ms, rows: 0 }
+executed query: { query: INSERT INTO req_refunds(user_id, reason, sale_header_id) VALUES ($1, $2, $3), params: 1,negocio ruim blabla,29; duration: 6ms, rows: 1 }
+executed query: { query: SELECT * from req_refunds WHERE id = $1, params: 4; duration: 140ms, rows: 1 }
+executed query: { query: SELECT * from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * from sale_header where id = $1, params: 29; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE sale_header SET refunded = $1 WHERE id = $2, params: true,29; duration: 4ms, rows: 1 }
+executed query: { query: UPDATE bills_receive SET refunded = $1, deleted_at = $2 WHERE sale_header_id = $3, params: true,8/16/2021, 3:54:32 PM,29; duration: 227ms, rows: 1 }
+executed query: { query: UPDATE sale_items SET refunded = $1 WHERE sale_header_id = $2, params: true,29; duration: 253ms, rows: 1 }
+executed query: { query: UPDATE req_refunds SET deleted_at = $1 where id - $2, params: 8/16/2021, 3:54:32 PM,4; duration: 259ms, rows: error }
+executed query: { query: INSERT INTO bills_pay(amount, method_id, deadline, user_id) VALUES($1, $2, $3, $4), params: 280.94,8,Wed Sep 15 2021 15:54:32 GMT-0300 (Brasilia Standard Time),1; duration: 459ms, rows: 1 }

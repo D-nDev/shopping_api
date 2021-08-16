@@ -2470,3 +2470,39 @@ POST /refund?refundid=3 2501.467 ms
 DATE: Sunday, August 15, 2021
 HTTP STATUS CODE: 200
 
+POST /addcart?productid=1 5.946 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 401
+
+POST /login 1109.548 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 834.832 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.637 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 1.435 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /addcart?productid=1 135.864 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 1253.221 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /requestrefund?saleid=29 3423.393 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
+POST /refund?refundid=4 2890.634 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
