@@ -111,4 +111,8 @@ Fluxo ADMIN:
 
   /addcode
 	Adiciona um novo código promocional, caso não já exista
+
+
+Progresso Geral: 90%
+  Restante: Pelo menos 2 relatórios, modelo e query do SQL e refatorar
   
