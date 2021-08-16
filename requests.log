@@ -2878,3 +2878,7 @@ GET /paymentmethod?id=9 2.983 ms
 DATE: Monday, August 16, 2021
 HTTP STATUS CODE: 200
 
+DELETE /deleteproduct?id=14 132.376 ms
+DATE: Monday, August 16, 2021
+HTTP STATUS CODE: 200
+
