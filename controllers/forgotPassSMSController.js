@@ -15,7 +15,7 @@ module.exports = {
       [sms]
     );
     if (result.rows.length == 0) {
-      res.send("Number not found");
+      res.status(404).send("Number not found");
     } else {
       try {
         console.log(sms);
@@ -26,7 +26,7 @@ module.exports = {
             [token, expire, sms]
           ),
         ]);
-        res.send("SMS sent");
+        res.status(201).send("SMS sent");
       } catch (err) {
         res.send(err);
       }

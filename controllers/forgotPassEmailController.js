@@ -15,7 +15,7 @@ module.exports = {
       [email]
     );
     if (result.rows.length == 0) {
-      res.send("Email not found");
+      res.status(404).send("Email not found");
     } else {
       try {
         console.log(email);
@@ -34,7 +34,7 @@ module.exports = {
             [token, email]
           ),
         ]);
-        res.send("Email sent");
+        res.status(201).send("Email sent");
       } catch (err) {
         res.send(err);
       }

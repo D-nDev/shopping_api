@@ -16,9 +16,9 @@ module.exports = {
         [document, name, country, state, product_type, phone, zip_code]
       );
       if (result == 23505) {
-        res.send("Document already exists");
+        res.status(400).send("Document already exists");
       } else {
-        res.send(result.rows[0]);
+        res.status(201).send(result.rows[0]);
       }
     } catch (err) {
       res.send(err);

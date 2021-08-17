@@ -9,19 +9,19 @@ module.exports = {
     const id = req.query.productid;
     const userid = await currentUserID(req);
     if (!id) {
-      res.send("Please provider an ID");
+      res.status(400).send("Please provider an ID");
     } else {
       const check = await db.query("SELECT * from products WHERE id = $1 and deleted_at IS NULL", [id]);
   
       if (check.rows.length == 0) {
-        res.send("Invalid ID");
+        res.status(404).send("Invalid ID");
       } else {
         const check_stock = await db.query(
           "SELECT amount from stock where product_id = $1 and deleted_at IS NULL",
           [id]
         );
         if (check_stock.rows[0].amount <= 0) {
-          res.send("Out of stock");
+          res.status(409).send("Out of stock");
         } else {
           const price = await db.query(
             "SELECT price from products WHERE id = $1 and deleted_at IS NULL",
@@ -32,7 +32,7 @@ module.exports = {
             check_stock.rows[0].amount - 1,
             id,
           ]);
-          res.send("Added to cart");
+          res.status(200).send("Added to cart");
         }
       }
     }

@@ -19,14 +19,14 @@ module.exports = {
     const find_product = cart_object.indexOf(parseInt(id));
 
     if (find_product == -1) {
-      res.send("Product not found");
+      res.status(404).send("Product not found");
     } else {
       const check_stock = await db.query(
         "SELECT amount from stock where product_id = $1",
         [id]
       );
       if (check_stock.rows[0].amount - parseInt(quantity) <= 0) {
-        res.send("Out of stock");
+        res.status(409).send("Out of stock");
       } else {
         if (parseInt(quantity) < jsoncart[find_product].quantity) {
           await db.query("UPDATE stock SET amount = $1 WHERE product_id = $2", [
@@ -51,7 +51,7 @@ module.exports = {
             `./cart/cart${userid}.json`,
             JSON.stringify(jsoncart)
           );
-          res.send("Cart updated");
+          res.status(200).send("Cart updated");
         }
       }
     }

@@ -7,13 +7,17 @@ module.exports = {
 
     if (!id) {
       const result = await db.query("SELECT * from products_group");
-      res.send(result.rows);
+      res.status(200).send(result.rows);
     } else {
       const result = await db.query(
         "SELECT * from products_group WHERE id = $1",
         [id]
       );
-      res.send(result.rows);
+      if (result.rows.length <= 0) {
+        res.status(404).send("Group not found");
+      } else {
+        res.status(200).send(result.rows);
+      }
     }
   },
 };

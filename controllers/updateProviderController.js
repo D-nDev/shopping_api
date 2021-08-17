@@ -13,7 +13,7 @@ module.exports = {
     const zip_code = req.body.zip_code;
 
     if (!id) {
-      res.send("Please provide an ID");
+      res.status(400).send("Please provide an ID");
     } else {
       const check = await db.query(
         "SELECT * from providers WHERE id = $1 and deleted_at IS NULL",
@@ -21,7 +21,7 @@ module.exports = {
       );
 
       if (check.rows.length == 0) {
-        res.send("Invalid ID");
+        res.status(404).send("Invalid ID");
       } else {
         const currentdocument = check.rows[0].document;
         const currentname = check.rows[0].name;
@@ -45,9 +45,9 @@ module.exports = {
           ]
         );
         if (result == 23505) {
-          res.send("Document or phone already exists");
+          res.status(409).send("Document or phone already exists");
         } else {
-          res.send(result.rows);
+          res.status(200).send(result.rows);
         }
       }
     }

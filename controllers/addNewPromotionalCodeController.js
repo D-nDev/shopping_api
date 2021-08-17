@@ -12,11 +12,11 @@ module.exports = {
         [code, discount, type_discount]
       );
       if (result == 23505) {
-        res.send("Code already exists");
+        res.status(400).send("Code already exists");
       } else if (result == 23514) {
-        res.send("Invalid discount type");
+        res.status(404).send("Invalid discount type");
       } else {
-        res.send(result.rows[0]);
+        res.status(201).send(result.rows[0]);
       }
     } catch (err) {
       res.send(err);

@@ -9,7 +9,7 @@ module.exports = {
     const type_discount = req.body.type_discount;
 
     if (!id) {
-      res.send("Please provide an ID");
+      res.status(400).send("Please provide an ID");
     } else {
       const check = await db.query(
         "SELECT * from promotional_codes WHERE id = $1 and deleted_at IS NULL",
@@ -17,7 +17,7 @@ module.exports = {
       );
 
       if (check.rows.length == 0) {
-        res.send("Invalid ID");
+        res.status(404).send("Invalid ID");
       } else {
         const currentcode = check.rows[0].code;
         const currentdiscount = check.rows[0].discount;
@@ -33,11 +33,11 @@ module.exports = {
           ]
         );
         if (result == 23505) {
-          res.send("Code already exists");
+          res.status(409).send("Code already exists");
         } else if (result == 23514) {
-          res.send("Invalid discount type");
+          res.status(404).send("Invalid discount type");
         } else {
-          res.send(result.rows);
+          res.status(200).send(result.rows);
         }
       }
     }

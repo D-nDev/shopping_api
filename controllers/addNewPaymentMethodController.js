@@ -11,9 +11,9 @@ module.exports = {
         [name, portion]
       );
       if (result == 23505) {
-        res.send("Method already exists");
+        res.status(400).send("Method already exists");
       } else {
-        res.send(result.rows[0]);
+        res.status(201).send(result.rows[0]);
       }
     } catch (err) {
       res.send(err);

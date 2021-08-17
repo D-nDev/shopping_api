@@ -33,9 +33,9 @@ module.exports = {
       ]
     );
     if (result == 23505) {
-      res.send("Email or document already exists");
+      res.status(409).send("Email or document already exists");
     } else {
-      res.send("Register ok");
+      res.status(202).send("Register ok");
     }
   },
 };

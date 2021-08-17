@@ -6,7 +6,7 @@ module.exports = {
     const id = req.query.id;
     const now = new Date().toLocaleString();
     if (!id) {
-      res.send("Please provide an ID");
+      res.status(400).send("Please provide an ID");
     } else {
       try {
         const check = await db.query(
@@ -14,7 +14,7 @@ module.exports = {
           [id]
         );
         if (check.rows[0].count >= 1) {
-          res.send(
+          res.status(409).send(
             `You can't delete this product, because you have a product linked to this group. first delete the linked products.`
           );
         } else {
@@ -22,10 +22,11 @@ module.exports = {
             "UPDATE products_group SET deleted_at = $1 WHERE ID = $2",
             [now, id]
           );
-          res.send("Successfully deleted");
+          res.status(202).send("Successfully deleted");
         }
       } catch (err) {
-        res.send(err);
+        console.log(err);
+        res.status(500).send(err);
       }
     }
   },

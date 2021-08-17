@@ -10,7 +10,7 @@
       "@middlewares/*": ["middlewares/*"],
       "@model/*": ["model/*"],
       "@functions/*": ["functions/*"],
-      "@templates/*": ["templates/*"],
+      "@templates/*": ["templates/*"]
     }
   },
   "exclude": ["node_modules", "dist"]

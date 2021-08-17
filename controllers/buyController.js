@@ -11,9 +11,13 @@ module.exports = {
     let todayconverted = new Date(today);
     if (userid && fs2.existsSync(`./cart/cart${userid}.json`)) {
       const requestbuy = await buy(todayconverted, userid, method);
-      res.send(requestbuy);
+      if (requestbuy != "Payment successfully") {
+        res.status(404).send(requestbuy);
+      } else {
+        res.status(200).send(requestbuy);
+      }
     } else {
-      res.send("User ID not found or empty cart");
+      res.status(404).send("User ID not found or empty cart");
     }
   },
 };

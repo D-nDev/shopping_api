@@ -7,13 +7,17 @@ module.exports = {
 
     if (!id) {
       const result = await db.query("SELECT * from payment_method");
-      res.send(result.rows);
+      res.status(200).send(result.rows);
     } else {
       const result = await db.query(
         "SELECT * from payment_method WHERE id = $1 and deleted_at IS NULL",
         [id]
       );
-      res.send(result.rows);
+      if (result.rows.length <= 0) {
+        res.status(404).send("Payment method not found");
+      } else {
+        res.status(200).send(result.rows);
+      }
     }
   },
 };

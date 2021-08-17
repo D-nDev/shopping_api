@@ -13,18 +13,18 @@ module.exports = {
       [saleid, userid]
     );
     if (!saleid) {
-      res.send("Please fill the sale id");
+      res.status(400).send("Please fill the sale id");
     } else if (!reason) {
-      res.send("Please fill the reason");
+      res.status(400).send("Please fill the reason");
     } else if (checksaleid.rows.length <= 0) {
-      res.send("Invalid sale id");
+      res.status(404).send("Invalid sale id");
     } else {
       const checkreq = await db.query(
         "SELECT * from req_refunds where sale_header_id = $1",
         [saleid]
       );
       if (checkreq.rows.length >= 1) {
-        res.send(
+        res.status(208).send(
           "You have already made a request for this sale, please wait while we evaluate it"
         );
       } else {
@@ -36,10 +36,10 @@ module.exports = {
               [userid, reason, saleid]
             ),
           ]);
-          res.send("Your request has sent and will be evaluated");
+          res.status(201).send("Your request has sent and will be evaluated");
         } catch (err) {
           console.log(err);
-          res.send("Error on sending email");
+          res.status(500).send("Error on sending email");
         }
       }
     }

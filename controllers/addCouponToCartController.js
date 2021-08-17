@@ -14,9 +14,9 @@ module.exports = {
       [coupon]
     );
     if (fs2.existsSync(`./coupons/user${userid}.json`) == true) {
-      res.send("You already have a coupon");
+      res.status(400).send("You already have a coupon");
     } else if (fs2.existsSync(`./cart/cart${userid}.json`) == false) {
-      res.send("You have to add a product to cart first before add a coupon.");
+      res.status(400).send("You have to add a product to cart first before add a coupon.");
     } else {
       if (check.rows.length >= 1) {
         const newcode = [
@@ -33,7 +33,7 @@ module.exports = {
 
         // update the cart
         const update = await updatecart(userid, check);
-        res.send(update);
+        res.status(200).send(update);
       } else {
         res.send("Invalid coupon");
       }

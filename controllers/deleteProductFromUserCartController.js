@@ -22,7 +22,7 @@ module.exports = {
     const find_product = cart_object.indexOf(parseInt(id));
 
     if (find_product == -1) {
-      res.send("Product not found");
+      res.status(404).send("Product not found");
     } else {
       await db.query("UPDATE stock SET amount = $1 WHERE product_id = $2", [
         current_stock.rows[0].amount + jsoncart[find_product].quantity,
@@ -30,14 +30,14 @@ module.exports = {
       ]);
       if (jsoncart.length == 1) {
         fs.unlink(`./cart/cart${userid}.json`);
-        res.send("Cart deleted");
+        res.status(202).send("Cart deleted");
       } else {
         jsoncart.splice(find_product, 1);
         await fs.writeFile(
           `./cart/cart${userid}.json`,
           JSON.stringify(jsoncart)
         );
-        res.send("Product removed from cart");
+        res.status(202).send("Product removed from cart");
       }
     }
   },

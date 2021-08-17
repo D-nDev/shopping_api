@@ -13,13 +13,13 @@ module.exports = {
         [token]
       );
       if (result.rows.length == 0) {
-        res.send("Token not found");
+        res.status(404).send("Token not found");
       } else if (result.rows[0].expire_time > now) {
         console.log(now);
-        res.send("Token expired");
+        res.status(400).send("Token expired");
       } else {
         await newuserpass.resetPass(newpass, result.rows[0].reset_code);
-        res.send("Password changed");
+        res.status(200).send("Password changed");
       }
     } catch (err) {
       res.send(err);

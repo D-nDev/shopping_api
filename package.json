@@ -34,8 +34,8 @@
     "tzdata": "^1.0.25"
   },
   "_moduleAliases": {
-    "@app"      : ".", 
-    "@config"      : "config/",
+    "@app"  : ".", 
+    "@config"  : "config/",
     "@controller" : "controllers/",
     "@middlewares"  : "middlewares/",
     "@model"  : "model/",

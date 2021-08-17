@@ -1,9 +1,10 @@
 require("dotenv").config();
 process.env.TZ = "America/Sao_Paulo";
+require('module-alias/register');
 const express = require("express");
 const compression = require("compression");
 const cookie_parser = require("cookie-parser");
-const nodemailer = require("nodemailer");
+const config = require("@config");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const path = require("path");
@@ -43,6 +44,6 @@ app.disable("x-powered-by");
 
 app.use(require("./routes")); // require all routes created on routes.js
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+app.listen(config.app.port, () => {
+  console.log(`Server listening on port ${config.app.port}`);
 });

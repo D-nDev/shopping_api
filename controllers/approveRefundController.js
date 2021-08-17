@@ -55,14 +55,14 @@ module.exports = {
           username.rows[0].first_name,
           check.rows[0].sale_header_id
         );
-        res.send("Successfully refunded");
+        res.status(200).send("Successfully refunded");
       } catch (err) {
         console.log(err);
-        res.send("Error, contact the support");
+        res.status(500).send("Error, contact the support");
       }
     }
     else {
-      res.send("Refund Order not found");
+      res.status(404).send("Refund Order not found");
     }
   },
 };

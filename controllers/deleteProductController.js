@@ -6,7 +6,7 @@ module.exports = {
     const id = req.query.id;
     const now = new Date().toLocaleString();
     if (!id) {
-      res.send("Please provide an ID");
+      res.status(400).send("Please provide an ID");
     } else {
       try {
         const result = await db.query(
@@ -14,12 +14,13 @@ module.exports = {
           [now, id]
         );
         if (result.rowCount >= 1) {
-          res.send("Successfully deleted");
+          res.status(202).send("Successfully deleted");
         } else {
-          res.send("error");
+          res.status(500).send("Product not found");
         }
       } catch (err) {
-        res.send(err);
+        console.log(err);
+        res.status(500).send(err);
       }
     }
   },

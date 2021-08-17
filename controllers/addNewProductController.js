@@ -13,9 +13,9 @@ module.exports = {
         [group_id, name, price, description]
       );
       if (result == 23503) {
-        res.send("Invalid Product Group ID");
+        res.status(404).send("Invalid Product Group ID");
       } else {
-        res.send(result.rows[0]);
+        res.status(201).send(result.rows[0]);
       }
     } catch (err) {
       res.send(err);

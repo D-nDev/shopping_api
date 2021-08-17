@@ -28,21 +28,21 @@ module.exports = {
           `./cart/cart${userid}.json`,
           JSON.stringify(updateusercart)
         );
-        res.send("Deleted");
+        res.status(202).send("Deleted");
       } catch (err) {
         if (err.errno == "-4058") {
-          res.send("Can't open the file");
+          res.status(500).send("Can't open the file");
         } else {
           console.log(err);
-          res.send(err);
+          res.status(500).send(err);
         }
       }
     } catch (err) {
       if (err.errno == "-4058") {
-        res.send("File doesn't exists");
+        res.status(404).send("File doesn't exists");
       } else {
         console.log(err);
-        res.send(err);
+        res.status(500).send(err);
       }
     }
   },

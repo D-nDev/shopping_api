@@ -8,7 +8,7 @@ module.exports = {
     const portion = req.body.portion;
 
     if (!id) {
-      res.send("Please provide an ID");
+      res.status(400).send("Please provide an ID");
     } else {
       const check = await db.query(
         "SELECT * from payment_method WHERE id = $1 and deleted_at IS NULL",
@@ -16,7 +16,7 @@ module.exports = {
       );
 
       if (check.rows.length == 0) {
-        res.send("Invalid ID");
+        res.status(404).send("Invalid ID");
       } else {
         const currentname = check.rows[0].name;
         const currentportion = check.rows[0].portion_quantity;
@@ -30,9 +30,9 @@ module.exports = {
           ]
         );
         if (result == 23505) {
-          res.send("Payment method already exists");
+          res.status(409).send("Payment method already exists");
         } else {
-          res.send(result.rows);
+          res.status(200).send(result.rows);
         }
       }
     }

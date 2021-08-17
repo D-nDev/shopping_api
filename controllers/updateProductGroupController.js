@@ -7,9 +7,9 @@ module.exports = {
     const name = req.body.name;
 
     if (!id) {
-      res.send("Please provide an ID");
+      res.status(400).send("Please provide an ID");
     } else if (!name) {
-      res.send("Please provide a new name");
+      res.status(400).send("Please provide a new name");
     } else {
       const check = await db.query(
         "SELECT * from products_group WHERE id = $1 and deleted_at IS NULL",
@@ -17,16 +17,16 @@ module.exports = {
       );
 
       if (check.rows.length == 0) {
-        res.send("Invalid ID");
+        res.status(404).send("Invalid ID");
       } else {
         const result = await db.query(
           "UPDATE products_group SET name = $1 WHERE id = $2 RETURNING *",
           [name, id]
         );
         if (result == 23505) {
-          res.send("Name already exists");
+          res.status(409).send("Name already exists");
         } else {
-          res.send(result.rows);
+          res.status(200).send(result.rows);
         }
       }
     }

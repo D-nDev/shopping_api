@@ -8,13 +8,13 @@ module.exports = {
     try {
       const result = await fs.readFile(`./coupons/user${userid}.json`);
       res.setHeader("Content-Type", "application/json");
-      res.send(result);
+      res.status(200).send(result);
     } catch (err) {
       if (err.errno == "-4058") {
-        res.send("You haven't applied a coupon");
+        res.status(404).send("You haven't applied a coupon");
       } else {
         console.log(err);
-        res.send(err);
+        res.status(500).send(err);
       }
     }
   },

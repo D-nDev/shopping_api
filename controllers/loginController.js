@@ -36,10 +36,14 @@ module.exports = {
           }
         });
       } catch (err) {
-        res.send(err);
+        if (err == 1) {
+          res.status(403).send("0");
+        } else {
+          res.send(err);
+        }
       }
     } else {
-      res.send("0");
+      res.status(404).send("0");
     }
   },
 };

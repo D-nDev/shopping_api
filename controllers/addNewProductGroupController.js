@@ -10,9 +10,9 @@ module.exports = {
         [name]
       );
       if (result == 23505) {
-        res.send("Group Name already exists");
+        res.status(400).send("Group Name already exists");
       } else {
-        res.send(result.rows[0]);
+        res.status(201).send(result.rows[0]);
       }
     } catch (err) {
       res.send(err);

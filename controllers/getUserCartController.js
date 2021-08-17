@@ -9,17 +9,17 @@ module.exports = {
       try {
         const usercart = await fs.readFile(`./cart/cart${userid}.json`);
         res.setHeader("Content-Type", "application/json");
-        res.send(usercart);
+        res.status(200).send(usercart);
       } catch (err) {
         if (err.errno == "-4058") {
-          res.send("Empty Cart");
+          res.status(400).send("Empty Cart");
         } else {
           console.log(err);
-          res.send(err);
+          res.status(500).send(err);
         }
       }
     } else {
-      res.send("ID not found");
+      res.status(404).send("ID not found");
     }
   },
 };
