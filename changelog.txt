@@ -46,3 +46,14 @@
     - Criado tabela no banco para armazenar requisições de reembolso
     - Arrumado alguns bugs
     - Adicionado rota de contato
+
+16 de agosto~17 de agosto:
+    - Projeto refatorado 100%
+    - Logs melhorados
+    - Logs movidos para pasta /logs
+    - Adicionado log de falha na conexão com o PGSQL
+    - project_base.txt movido para /doc
+    - Fix de bugs menores
+    - Adicionado códigos http correspondente para todas as rotas
+    - Adicionado module-alias
+    - Arquitetura melhorada
