@@ -1,0 +1,39 @@
+require("dotenv").config();
+const db = require("@model/db");
+
+module.exports = {
+  put: async (req, res) => {
+    const id = req.query.id;
+    const name = req.body.name;
+    const description = req.body.description;
+    const price = req.body.price;
+
+    if (!id) {
+      res.send("Please provide an ID");
+    } else {
+      const check = await db.query(
+        "SELECT * from products WHERE id = $1 and deleted_at IS NULL",
+        [id]
+      );
+
+      if (check.rows.length == 0) {
+        res.send("Invalid ID");
+      } else {
+        const currentname = check.rows[0].name;
+        const currentdescription = check.rows[0].description;
+        const currentprice = check.rows[0].price;
+
+        const result = await db.query(
+          "UPDATE products SET name = $1, description = $2, price = $3 WHERE id = $4 RETURNING *",
+          [
+            name != undefined ? name : currentname,
+            description != undefined ? description : currentdescription,
+            price != undefined ? price : currentprice,
+            id,
+          ]
+        );
+        res.send(result.rows);
+      }
+    }
+  },
+};

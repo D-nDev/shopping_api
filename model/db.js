@@ -37,7 +37,7 @@ async function query(text, params) {
       rows: `${query != undefined ? query.rowCount : 'error'}` ,
     });*/
     fs.appendFileSync(
-      "queries_log.log",
+      "./logs/queries_log.log",
       `executed query: { query: ${text}, params: ${params}; duration: ${duration}ms, rows: ${query != undefined ? query.rowCount : 'error'} }\n`
     );
     client.release();

@@ -1,8 +1,7 @@
-require("dotenv").config();
-const templatepass = require("../templates/resetpass");
+const templatecontact = require("@templates/contact");
 const nodemailer = require("nodemailer");
 
-function sendEmail(email, token, browser, os, os_version, ip, user_name) {
+function sendEmail(email, name, subject, message, priority) {
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
       name: "smtp.gmail.com",
@@ -17,16 +16,9 @@ function sendEmail(email, token, browser, os, os_version, ip, user_name) {
       debug: true,
     });
     const mailOptions = {
-      to: `${email}`,
-      subject: "Your reset code to AlphaShop",
-      html: templatepass.resetTemplate(
-        token,
-        user_name,
-        browser,
-        os,
-        os_version,
-        ip
-      ),
+      to: `diego-s.novaes@hotmail.com`,
+      subject: `Contact from ${name + " - " + email}`,
+      html: templatecontact.contactemail(email, name, subject, message, priority)
     };
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {

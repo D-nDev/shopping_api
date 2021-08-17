@@ -1,7 +1,7 @@
-const templatecontact = require("../templates/contact.js");
+const templaterefund = require("@templates/refund");
 const nodemailer = require("nodemailer");
 
-function sendEmail(email, name, subject, message, priority) {
+function sendEmail(userid, reason, saleid) {
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
       name: "smtp.gmail.com",
@@ -17,8 +17,8 @@ function sendEmail(email, name, subject, message, priority) {
     });
     const mailOptions = {
       to: `diego-s.novaes@hotmail.com`,
-      subject: `Contact from ${name + " - " + email}`,
-      html: templatecontact.contactemail(email, name, subject, message, priority)
+      subject: `Refund Request from USERID ${userid}`,
+      html: templaterefund.refundEmail(userid, reason, saleid)
     };
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {

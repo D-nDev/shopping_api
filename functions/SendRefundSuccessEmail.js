@@ -1,4 +1,4 @@
-const templaterefundsuccess = require("../templates/successRefund.js");
+const templaterefundsuccess = require("@templates/successRefund");
 const nodemailer = require("nodemailer");
 
 function sendEmail(email, name, saleid) {
