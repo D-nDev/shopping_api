@@ -13,14 +13,20 @@ module.exports = {
         [id]
       );
 
-      if (check.rows[0].id == currentuser) {
-        res.status(409).send("You can't delete yourself, try to do it in another account");
+      if (check.rows.length <= 0) {
+        res.status(404).send("User not found");
       } else {
-        await db.query("UPDATE users SET deleted_at = $1 WHERE id = $2", [
-          now,
-          id,
-        ]);
-        res.status(202).send("Successfully deleted");
+        if (check.rows[0].id == currentuser) {
+          res
+            .status(409)
+            .send("You can't delete yourself, try to do it in another account");
+        } else {
+          await db.query("UPDATE users SET deleted_at = $1 WHERE id = $2", [
+            now,
+            id,
+          ]);
+          res.status(202).send("Successfully deleted");
+        }
       }
     } catch (err) {
       console.log(err);

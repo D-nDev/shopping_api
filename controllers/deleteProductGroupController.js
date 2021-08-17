@@ -14,15 +14,21 @@ module.exports = {
           [id]
         );
         if (check.rows[0].count >= 1) {
-          res.status(409).send(
-            `You can't delete this product, because you have a product linked to this group. first delete the linked products.`
-          );
+          res
+            .status(409)
+            .send(
+              `You can't delete this product group, because you have a product linked to this group. first delete the linked products.`
+            );
         } else {
-          await db.query(
-            "UPDATE products_group SET deleted_at = $1 WHERE ID = $2",
+          const deletegroup = await db.query(
+            "UPDATE products_group SET deleted_at = $1 WHERE ID = $2 RETURNING *",
             [now, id]
           );
-          res.status(202).send("Successfully deleted");
+          if (deletegroup.rows.length <= 0) {
+            res.status(404).send("Group not found");
+          } else {
+            res.status(202).send("Successfully deleted");
+          }
         }
       } catch (err) {
         console.log(err);

@@ -16,7 +16,7 @@ module.exports = {
         if (result.rowCount >= 1) {
           res.status(202).send("Successfully deleted");
         } else {
-          res.status(500).send("Product not found");
+          res.status(404).send("Product not found");
         }
       } catch (err) {
         console.log(err);

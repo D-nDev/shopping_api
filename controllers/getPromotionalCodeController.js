@@ -13,7 +13,7 @@ module.exports = {
         "SELECT * from promotional_codes WHERE id = $1",
         [id]
       );
-      if (result.rows.length < 0) {
+      if (result.rows.length <= 0) {
         res.status(404).send("Promotional code not found");
       } else {
         res.status(200).send(result.rows);
