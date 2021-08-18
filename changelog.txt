@@ -62,3 +62,4 @@
     - Adicionado rota de relatório do fluxo de caixa atual
     - Adicionado erro caso ocorra erro em alguma query na parte de compra
     - Adicionado Modelo BETA do SQL
+    - Adicionado Query BETA de criação da database no postgres
