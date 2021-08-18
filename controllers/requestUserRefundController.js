@@ -9,7 +9,7 @@ module.exports = {
     const saleid = req.query.saleid;
     const reason = req.body.reason;
     const checksaleid = await db.query(
-      "SELECT * from sale_header where id = $1 and user_id = $2",
+      "SELECT id from sale_header where id = $1 and user_id = $2",
       [saleid, userid]
     );
     if (!saleid) {
@@ -20,7 +20,7 @@ module.exports = {
       res.status(404).send("Invalid sale id");
     } else {
       const checkreq = await db.query(
-        "SELECT * from req_refunds where sale_header_id = $1",
+        "SELECT id from req_refunds where sale_header_id = $1",
         [saleid]
       );
       if (checkreq.rows.length >= 1) {

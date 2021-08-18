@@ -9,10 +9,10 @@ module.exports = {
     const now = new Date().toString();
     try {
       const result = await db.query(
-        "SELECT * from users where reset_code = $1 and deleted_at IS NULL",
+        "SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL",
         [token]
       );
-      if (result.rows.length == 0) {
+      if (result.rows.length <= 0) {
         res.status(404).send("Token not found");
       } else if (result.rows[0].expire_time > now) {
         console.log(now);

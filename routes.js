@@ -43,6 +43,7 @@ const approverefundController = require("@controller/approveRefundController");
 const logoutController = require("@controller/logoutController");
 const getcashflowController = require("@controller/getCashFlowController");
 const getsoldbymonthController = require("@controller/getSoldByMonthController");
+const testController = require("@controller/testController");
 const verifyToken = require("@middlewares/userToken").verifyToken;
 const verifyTokenAdmin = require("@middlewares/adminToken").verifyTokenAdmin;
 const app = express();
@@ -93,5 +94,6 @@ router.delete("/deletepaymentmethod", verifyTokenAdmin, deletepaymentmethodContr
 router.delete("/deleteaccount", verifyTokenAdmin, deleteaccountController.delete);
 router.delete("/coupon", verifyToken, deletecouponfromusercartController.delete);
 router.delete("/removeproduct", verifyToken, deleteproductfromusercartController.delete);
+router.get("/test", testController.get);
 
 module.exports = router;

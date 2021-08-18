@@ -11,7 +11,7 @@ module.exports = {
     const email = req.body.email;
     const token = crypto.randomBytes(20).toString("hex");
     const result = await db.query(
-      "SELECT * FROM users where (email = $1 AND deleted_at IS NULL)",
+      "SELECT email, first_name FROM users where (email = $1 AND deleted_at IS NULL)",
       [email]
     );
     if (result.rows.length == 0) {

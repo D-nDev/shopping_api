@@ -11,11 +11,11 @@ module.exports = {
       res.status(400).send("Please provide an ID");
     } else {
       const check = await db.query(
-        "SELECT * from payment_method WHERE id = $1 and deleted_at IS NULL",
+        "SELECT id, name, portion_quantity from payment_method WHERE id = $1 and deleted_at IS NULL",
         [id]
       );
 
-      if (check.rows.length == 0) {
+      if (check.rows.length <= 0) {
         res.status(404).send("Invalid ID");
       } else {
         const currentname = check.rows[0].name;

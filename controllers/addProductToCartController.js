@@ -11,7 +11,7 @@ module.exports = {
     if (!id) {
       res.status(400).send("Please provider an ID");
     } else {
-      const check = await db.query("SELECT * from products WHERE id = $1 and deleted_at IS NULL", [id]);
+      const check = await db.query("SELECT id from products WHERE id = $1 and deleted_at IS NULL", [id]);
   
       if (check.rows.length == 0) {
         res.status(404).send("Invalid ID");

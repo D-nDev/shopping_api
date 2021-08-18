@@ -63,3 +63,6 @@
     - Adicionado erro caso ocorra erro em alguma query na parte de compra
     - Adicionado Modelo BETA do SQL
     - Adicionado Query BETA de criação da database no postgres
+
+18 de agosto:
+    - Melhorado performance das queries

@@ -8,7 +8,7 @@ module.exports = {
     const email = req.body.email;
     const password = req.body.password;
     const result = await db.query(
-      "SELECT * from users where (email = $1 AND deleted_at IS NULL)",
+      "SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL)",
       [email]
     );
     if (result.rows.length >= 1) {
@@ -37,7 +37,7 @@ module.exports = {
         });
       } catch (err) {
         if (err == 1) {
-          res.status(403).send("0");
+          res.status(403).send("1");
         } else {
           res.send(err);
         }

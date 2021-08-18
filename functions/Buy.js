@@ -9,7 +9,7 @@ async function userhascoupon(userid, total, searchmethod, today, cart) {
 
   try {
     const codeid = await db.query(
-      "SELECT * from promotional_codes WHERE code = $1",
+      "SELECT id from promotional_codes WHERE code = $1",
       [getcoupon]
     );
     const postsaleheader = await db.query(

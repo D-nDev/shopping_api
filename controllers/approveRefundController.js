@@ -7,18 +7,18 @@ module.exports = {
     const refundid = req.query.refundid;
     const now = new Date().toLocaleString();
     let todayconverted = new Date(now);
-    const check = await db.query("SELECT * from req_refunds WHERE id = $1", [
+    const check = await db.query("SELECT sale_header_id, user_id from req_refunds WHERE id = $1", [
       refundid,
     ]);
 
     if (check.rows.length >= 1) {
       try {
         const username = await db.query(
-          "SELECT * from users where (id = $1 AND deleted_at IS NULL)",
+          "SELECT id, email, first_name from users where (id = $1 AND deleted_at IS NULL)",
           [check.rows[0].user_id]
         );
         const amountrefund = await db.query(
-          "SELECT * from sale_header where id = $1",
+          "SELECT total, payment_method_id from sale_header where id = $1 AND deleted_at IS NULL",
           [check.rows[0].sale_header_id]
         );
         console.log(amountrefund.rows);

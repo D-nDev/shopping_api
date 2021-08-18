@@ -1549,3 +1549,64 @@ executed query: { query: SELECT name, id, daystopay from payment_method, params:
 executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,150.47,8,1,1,Wed Aug 18 2021 23:30:04 GMT-0300 (Brasilia Standard Time); duration: 12ms, rows: 1 }
 executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,34,150.47,8,Wed Aug 18 2021 23:30:04 GMT-0300 (Brasilia Standard Time); duration: 6ms, rows: 1 }
 executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 34,1,13,Courier,1,150.47,0,0,150.47; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 427ms, rows: 1 }
+executed query: { query: SELECT user from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 168ms, rows: 1 }
+executed query: { query: SELECT * from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 182ms, rows: 1 }
+executed query: { query: SELECT email from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 135ms, rows: 1 }
+executed query: { query: SELECT user_id from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 233ms, rows: error }
+executed query: { query: SELECT * from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 168ms, rows: 1 }
+executed query: { query: SELECT id from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 103ms, rows: 1 }
+executed query: { query: SELECT id from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 205ms, rows: 1 }
+executed query: { query: SELECT id from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 164ms, rows: 1 }
+executed query: { query: SELECT id from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 143ms, rows: 1 }
+executed query: { query: SELECT id from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 112ms, rows: 1 }
+executed query: { query: SELECT id from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 166ms, rows: 1 }
+executed query: { query: SELECT id from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 141ms, rows: 1 }
+executed query: { query: SELECT id from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 190ms, rows: 1 }
+executed query: { query: SELECT id from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 160ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 172ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 2,1; duration: 25ms, rows: 1 }
+executed query: { query: SELECT sale_header_id, user_id from req_refunds WHERE id = $1, params: 6; duration: 199ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 3ms, rows: 1 }
+executed query: { query: SELECT total, payment_method_id from sale_header where id = $1 AND deleted_at IS NULL, params: 33; duration: 86ms, rows: 1 }
+executed query: { query: UPDATE sale_header SET refunded = $1 WHERE id = $2, params: true,33; duration: 4ms, rows: 1 }
+executed query: { query: UPDATE req_refunds SET deleted_at = $1 where id = $2, params: 8/18/2021, 4:04:08 PM,6; duration: 214ms, rows: 1 }
+executed query: { query: UPDATE sale_items SET refunded = $1 WHERE sale_header_id = $2, params: true,33; duration: 396ms, rows: 1 }
+executed query: { query: UPDATE bills_receive SET refunded = $1, deleted_at = $2 WHERE sale_header_id = $3, params: true,8/18/2021, 4:04:08 PM,33; duration: 440ms, rows: 1 }
+executed query: { query: INSERT INTO bills_pay(amount, method_id, deadline, user_id) VALUES($1, $2, $3, $4), params: 140.47,8,Fri Sep 17 2021 16:04:08 GMT-0300 (Brasilia Standard Time),1; duration: 714ms, rows: 1 }
+executed query: { query: SELECT email, first_name FROM users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 223ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE (email = $2 AND deleted_at IS NULL), params: 04bc7c74c3eea6ea6367c8c6421829617e2c0e9e,diego-s.novaes@hotmail.com; duration: 2ms, rows: 1 }
+executed query: { query: SELECT phone FROM users where (phone = $1 and deleted_at IS NULL), params: 11970151606; duration: 196ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1, expire_time = $2 WHERE (phone = $3 AND deleted_at IS NULL), params: 1e6fef8ea96f5f9e81788c45acb7b4f83721c5b9,Wed Aug 18 2021 18:09:18 GMT-0300 (Brasilia Standard Time),11970151606; duration: 11ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 140ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-ss.novaes@hotmail.com; duration: 1ms, rows: 0 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-sss.novaes@hotmail.com; duration: 1ms, rows: 0 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: disdffdsdsfego-sss.novaes@hotmail.com; duration: 2ms, rows: 0 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 157ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from sale_header where id = $1 and user_id = $2, params: 33,1; duration: 166ms, rows: 1 }
+executed query: { query: SELECT id from req_refunds where sale_header_id = $1, params: 33; duration: 2ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 26d34d70e51d14d08058ed115c2f3719608b3a7b; duration: 179ms, rows: 0 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 1e6fef8ea96f5f9e81788c45acb7b4f83721c5b9; duration: 110ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$qOkxIWPQ1xYKTMCTtCJ4we0meTUgM7tb7DOcV0P3hXO2XYVWKpAei,1e6fef8ea96f5f9e81788c45acb7b4f83721c5b9; duration: 3ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 0ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id, name, portion_quantity from payment_method WHERE id = $1 and deleted_at IS NULL, params: 19; duration: 203ms, rows: 0 }
+executed query: { query: SELECT id, name, portion_quantity from payment_method WHERE id = $1 and deleted_at IS NULL, params: 14; duration: 199ms, rows: 1 }
+executed query: { query: UPDATE payment_method SET name = $1, portion_quantity = $2 WHERE id = $3 RETURNING *, params: testdnv2,17,14; duration: 5ms, rows: 1 }
+executed query: { query: SELECT id, name, description, price from products WHERE id = $1 and deleted_at IS NULL, params: 19; duration: 133ms, rows: 0 }
+executed query: { query: SELECT id, name, description, price from products WHERE id = $1 and deleted_at IS NULL, params: 16; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE products SET name = $1, description = $2, price = $3 WHERE id = $4 RETURNING *, params: test47controllerfinal,test6_descriptioncontroller,121.47,16; duration: 5ms, rows: 1 }
+executed query: { query: SELECT id, name from products_group WHERE id = $1 and deleted_at IS NULL, params: 99; duration: 148ms, rows: 0 }
+executed query: { query: SELECT id, name from products_group WHERE id = $1 and deleted_at IS NULL, params: 99; duration: 2ms, rows: 0 }
+executed query: { query: SELECT id, name from products_group WHERE id = $1 and deleted_at IS NULL, params: 9; duration: 143ms, rows: 1 }
+executed query: { query: UPDATE products_group SET name = $1 WHERE id = $2 RETURNING *, params: Notebooksfinalsu2,9; duration: 6ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 126ms, rows: 12 }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,140.47,8,1,1,Thu Aug 19 2021 16:22:31 GMT-0300 (Brasilia Standard Time); duration: 7ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,35,140.47,8,Thu Aug 19 2021 16:22:31 GMT-0300 (Brasilia Standard Time); duration: 3ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 35,1,1,Courier,1,140.47,0,0,140.47; duration: 3ms, rows: 1 }

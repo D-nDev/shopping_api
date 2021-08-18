@@ -12,11 +12,11 @@ module.exports = {
       res.status(400).send("Please provide a new name");
     } else {
       const check = await db.query(
-        "SELECT * from products_group WHERE id = $1 and deleted_at IS NULL",
+        "SELECT id, name from products_group WHERE id = $1 and deleted_at IS NULL",
         [id]
       );
 
-      if (check.rows.length == 0) {
+      if (check.rows.length <= 0) {
         res.status(404).send("Invalid ID");
       } else {
         const result = await db.query(

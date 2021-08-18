@@ -12,11 +12,11 @@ module.exports = {
       res.status(400).send("Please provide an ID");
     } else {
       const check = await db.query(
-        "SELECT * from products WHERE id = $1 and deleted_at IS NULL",
+        "SELECT id, name, description, price from products WHERE id = $1 and deleted_at IS NULL",
         [id]
       );
 
-      if (check.rows.length == 0) {
+      if (check.rows.length <= 0) {
         res.status(404).send("Invalid ID");
       } else {
         const currentname = check.rows[0].name;

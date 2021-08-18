@@ -11,7 +11,7 @@ module.exports = {
     const sms = req.body.number;
     const token = crypto.randomBytes(20).toString("hex");
     const result = await db.query(
-      "SELECT * FROM users where (phone = $1 and deleted_at IS NULL)",
+      "SELECT phone FROM users where (phone = $1 and deleted_at IS NULL)",
       [sms]
     );
     if (result.rows.length == 0) {
