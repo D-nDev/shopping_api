@@ -1425,3 +1425,119 @@ executed query: { query: UPDATE sale_items SET refunded = $1 WHERE sale_header_i
 executed query: { query: UPDATE bills_receive SET refunded = $1, deleted_at = $2 WHERE sale_header_id = $3, params: true,8/17/2021, 1:46:54 AM,33; duration: 530ms, rows: 1 }
 executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 128ms, rows: 1 }
 executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 156ms, rows: 1 }
+executed query: { query: SELECT * from vw_cashflow, params: undefined; duration: 3ms, rows: 1 }
+executed query: { query: SELECT * from vw_cashflow, params: undefined; duration: 122ms, rows: 1 }
+executed query: { query: 
+      SELECT sales.product_id,
+        prd.name,
+        prd.description,
+        count(sales.sold_amount) AS quantity_sold,
+        date_part('month'::text, hrd.creation_timestamp) AS month,
+        max(sales.total) AS high_sale,
+        avg(sales.total) AS average,
+        sum(sales.total) AS total_month,
+        max(sales.unitary_value) AS high_unitary,
+        avg(sales.unitary_value) AS average_unitary
+      FROM sale_items sales
+        JOIN products prd ON sales.product_id = prd.id
+        JOIN sale_header hrd ON sales.sale_header_id = hrd.id
+        WHERE date_part('month'::text, hrd.creation_timestamp) = $1
+      GROUP BY sales.product_id, prd.name, prd.description, (date_part('month'::text, hrd.creation_timestamp));
+      , params: 9; duration: 249ms, rows: 0 }
+executed query: { query: 
+      SELECT sales.product_id,
+        prd.name,
+        prd.description,
+        count(sales.sold_amount) AS quantity_sold,
+        date_part('month'::text, hrd.creation_timestamp) AS month,
+        max(sales.total) AS high_sale,
+        avg(sales.total) AS average,
+        sum(sales.total) AS total_month,
+        max(sales.unitary_value) AS high_unitary,
+        avg(sales.unitary_value) AS average_unitary
+      FROM sale_items sales
+        JOIN products prd ON sales.product_id = prd.id
+        JOIN sale_header hrd ON sales.sale_header_id = hrd.id
+        WHERE date_part('month'::text, hrd.creation_timestamp) = $1
+      GROUP BY sales.product_id, prd.name, prd.description, (date_part('month'::text, hrd.creation_timestamp));
+      , params: 8; duration: 2ms, rows: 2 }
+executed query: { query: 
+      SELECT sales.product_id,
+        prd.name,
+        prd.description,
+        count(sales.sold_amount) AS quantity_sold,
+        date_part('month'::text, hrd.creation_timestamp) AS month,
+        max(sales.total) AS high_sale,
+        avg(sales.total) AS average,
+        sum(sales.total) AS total_month,
+        max(sales.unitary_value) AS high_unitary,
+        avg(sales.unitary_value) AS average_unitary
+      FROM sale_items sales
+        JOIN products prd ON sales.product_id = prd.id
+        JOIN sale_header hrd ON sales.sale_header_id = hrd.id
+        WHERE date_part('month'::text, hrd.creation_timestamp) = $1
+      GROUP BY sales.product_id, prd.name, prd.description, (date_part('month'::text, hrd.creation_timestamp));
+      , params: 8; duration: 124ms, rows: 2 }
+executed query: { query: 
+      SELECT sales.product_id,
+        prd.name,
+        prd.description,
+        count(sales.sold_amount) AS quantity_sold,
+        date_part('month'::text, hrd.creation_timestamp) AS month,
+        max(sales.total) AS high_sale,
+        avg(sales.total) AS average,
+        sum(sales.total) AS total_month,
+        max(sales.unitary_value) AS high_unitary,
+        avg(sales.unitary_value) AS average_unitary
+      FROM sale_items sales
+        JOIN products prd ON sales.product_id = prd.id
+        JOIN sale_header hrd ON sales.sale_header_id = hrd.id
+        WHERE date_part('month'::text, hrd.creation_timestamp) = $1
+      GROUP BY sales.product_id, prd.name, prd.description, (date_part('month'::text, hrd.creation_timestamp));
+      , params: 8; duration: 177ms, rows: 2 }
+executed query: { query: SELECT * from vw_cashflow, params: undefined; duration: 108ms, rows: 1 }
+executed query: { query: 
+      SELECT sales.product_id,
+        prd.name,
+        prd.description,
+        count(sales.sold_amount) AS quantity_sold,
+        date_part('month'::text, hrd.creation_timestamp) AS month,
+        max(sales.total) AS high_sale,
+        avg(sales.total) AS average,
+        sum(sales.total) AS total_month,
+        max(sales.unitary_value) AS high_unitary,
+        avg(sales.unitary_value) AS average_unitary
+      FROM sale_items sales
+        JOIN products prd ON sales.product_id = prd.id
+        JOIN sale_header hrd ON sales.sale_header_id = hrd.id
+        WHERE date_part('month'::text, hrd.creation_timestamp) = $1
+      GROUP BY sales.product_id, prd.name, prd.description, (date_part('month'::text, hrd.creation_timestamp));
+      , params: 8; duration: 100ms, rows: 2 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 120ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 141ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 0ms, rows: 1 }
+executed query: { query: 
+      SELECT sales.product_id,
+        prd.name,
+        prd.description,
+        count(sales.sold_amount) AS quantity_sold,
+        date_part('month'::text, hrd.creation_timestamp) AS month,
+        max(sales.total) AS high_sale,
+        avg(sales.total) AS average,
+        sum(sales.total) AS total_month,
+        max(sales.unitary_value) AS high_unitary,
+        avg(sales.unitary_value) AS average_unitary
+      FROM sale_items sales
+        JOIN products prd ON sales.product_id = prd.id
+        JOIN sale_header hrd ON sales.sale_header_id = hrd.id
+        WHERE date_part('month'::text, hrd.creation_timestamp) = $1
+      GROUP BY sales.product_id, prd.name, prd.description, (date_part('month'::text, hrd.creation_timestamp));
+      , params: 8; duration: 182ms, rows: 2 }

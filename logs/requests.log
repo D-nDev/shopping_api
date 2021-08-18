@@ -3878,3 +3878,103 @@ POST /login 75.275 ms
 DATE: Tuesday, August 17, 2021
 HTTP STATUS CODE: 200
 
+POST /login 274.455 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /cashflow 8.669 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /cashflow 130.888 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /salesmonth 6.829 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 400
+
+GET /salesmonth?month=15 2.735 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 400
+
+GET /salesmonth?month=9 251.444 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 404
+
+GET /salesmonth?month=8 3.915 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /salesmonth?month=8 132.884 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /salesmonth?month=8 185.260 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /cashflow 116.599 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /salesmonth?month=8 104.027 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 140.653 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 4.170 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 2.482 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 2.089 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 2.192 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 0.871 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 429
+
+GET /product 0.837 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 429
+
+GET /product 142.461 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 2.148 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 2.027 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 2.030 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 2.122 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /product 0.620 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 429
+
+GET /salesmonth?month=8 194.533 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+

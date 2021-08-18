@@ -41,6 +41,8 @@ const contactsupportController = require("@controller/contactSupportController")
 const requestuserrefundController = require("@controller/requestUserRefundController");
 const approverefundController = require("@controller/approveRefundController");
 const logoutController = require("@controller/logoutController");
+const getcashflowController = require("@controller/getCashFlowController");
+const getsoldbymonthController = require("@controller/getSoldByMonthController");
 const verifyToken = require("@middlewares/userToken").verifyToken;
 const verifyTokenAdmin = require("@middlewares/adminToken").verifyTokenAdmin;
 const app = express();
@@ -75,6 +77,8 @@ router.get("/code", verifyTokenAdmin, getpromotionalcodeController.get);
 router.get("/paymentmethod", verifyTokenAdmin, getpaymentmethodController.get);
 router.get("/cart", verifyToken, getusercartController.get);
 router.get("/coupon", verifyToken, getusercouponController.get);
+router.get("/cashflow", verifyTokenAdmin, getcashflowController.get);
+router.get("/salesmonth", verifyTokenAdmin, getsoldbymonthController.get);
 router.put("/product", verifyTokenAdmin, updateproductController.put);
 router.put("/group", verifyTokenAdmin, updateproductgroupController.put);
 router.put("/provider", verifyTokenAdmin, updateproviderController.put);

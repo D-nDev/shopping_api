@@ -57,3 +57,6 @@
     - Adicionado códigos http correspondente para todas as rotas
     - Adicionado module-alias
     - Arquitetura melhorada
+    - Adicionado proteção contra DoS/DDoS
+    - Adicionado rota de relatório de produtos vendidos em um mês específico
+    - Adicionado rota de relatório do fluxo de caixa atual

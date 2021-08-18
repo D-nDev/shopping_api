@@ -34,12 +34,12 @@
     "tzdata": "^1.0.25"
   },
   "_moduleAliases": {
-    "@app"  : ".", 
-    "@config"  : "config/",
-    "@controller" : "controllers/",
-    "@middlewares"  : "middlewares/",
-    "@model"  : "model/",
-    "@functions"  : "functions/",
-    "@templates"  : "templates/"
+    "@app": ".",
+    "@config": "config/",
+    "@controller": "controllers/",
+    "@middlewares": "middlewares/",
+    "@model": "model/",
+    "@functions": "functions/",
+    "@templates": "templates/"
   }
 }

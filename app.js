@@ -9,6 +9,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const path = require("path");
 const fs = require("fs");
+const rateLimit = require("@middlewares/rateLimit");
 const dateoptions = {
   weekday: "long",
   year: "numeric",
@@ -38,6 +39,7 @@ app.use(compression());
 app.use(cookie_parser("1234")); // force to sign the cookie
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(...rateLimit);
 app.use(helmet());
 
 app.disable("x-powered-by");
