@@ -47,7 +47,7 @@
     - Arrumado alguns bugs
     - Adicionado rota de contato
 
-16 de agosto~17 de agosto:
+16~17 de agosto:
     - Projeto refatorado 100%
     - Logs melhorados
     - Logs movidos para pasta /logs
