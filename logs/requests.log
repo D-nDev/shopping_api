@@ -3978,3 +3978,19 @@ GET /salesmonth?month=8 194.533 ms
 DATE: Tuesday, August 17, 2021
 HTTP STATUS CODE: 200
 
+POST /buy 20.656 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 404
+
+POST /addcart?productid=13 214.330 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+GET /cart 3.475 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
+POST /buy 120.866 ms
+DATE: Tuesday, August 17, 2021
+HTTP STATUS CODE: 200
+
