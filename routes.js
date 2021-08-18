@@ -43,7 +43,8 @@ const approverefundController = require("@controller/approveRefundController");
 const logoutController = require("@controller/logoutController");
 const getcashflowController = require("@controller/getCashFlowController");
 const getsoldbymonthController = require("@controller/getSoldByMonthController");
-const testController = require("@controller/testController");
+const getuserordersController = require("@controller/getUserOrdersController");
+const getusersalesController = require("@controller/getUserSalesController");
 const verifyToken = require("@middlewares/userToken").verifyToken;
 const verifyTokenAdmin = require("@middlewares/adminToken").verifyTokenAdmin;
 const app = express();
@@ -80,6 +81,8 @@ router.get("/cart", verifyToken, getusercartController.get);
 router.get("/coupon", verifyToken, getusercouponController.get);
 router.get("/cashflow", verifyTokenAdmin, getcashflowController.get);
 router.get("/salesmonth", verifyTokenAdmin, getsoldbymonthController.get);
+router.get("/myorders", verifyToken, getuserordersController.get);
+router.get("/usersales", verifyToken, getusersalesController.get);
 router.put("/product", verifyTokenAdmin, updateproductController.put);
 router.put("/group", verifyTokenAdmin, updateproductgroupController.put);
 router.put("/provider", verifyTokenAdmin, updateproviderController.put);
@@ -94,6 +97,5 @@ router.delete("/deletepaymentmethod", verifyTokenAdmin, deletepaymentmethodContr
 router.delete("/deleteaccount", verifyTokenAdmin, deleteaccountController.delete);
 router.delete("/coupon", verifyToken, deletecouponfromusercartController.delete);
 router.delete("/removeproduct", verifyToken, deleteproductfromusercartController.delete);
-router.get("/test", testController.get);
 
 module.exports = router;

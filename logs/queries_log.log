@@ -1610,3 +1610,24 @@ executed query: { query: SELECT name, id, daystopay from payment_method, params:
 executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,140.47,8,1,1,Thu Aug 19 2021 16:22:31 GMT-0300 (Brasilia Standard Time); duration: 7ms, rows: 1 }
 executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,35,140.47,8,Thu Aug 19 2021 16:22:31 GMT-0300 (Brasilia Standard Time); duration: 3ms, rows: 1 }
 executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 35,1,1,Courier,1,140.47,0,0,140.47; duration: 3ms, rows: 1 }
+executed query: { query: 
+    SELECT
+      pr.name
+      ,pr.description
+      ,sale.sold_amount
+      ,sale.unitary_value
+      ,sale.total
+      ,(SELECT user_id from sale_header where id = sale.sale_header_id)
+      ,(SELECT id from sale_header where id = sale.sale_header_id) as "sale_header_id"
+    FROM products pr
+    INNER JOIN sale_items sale ON sale.product_id = pr.id
+    WHERE (SELECT user_id from sale_header where id = sale.sale_header_id) = $1 AND (SELECT id from sale_header where id = sale.sale_header_id) = $2, params: 1,30; duration: 196ms, rows: 2 }
+executed query: { query: SELECT * from sale_header where user_id = $1, params: 1; duration: 192ms, rows: 13 }
+executed query: { query: SELECT * from sale_header where user_id = $1, params: 1; duration: 210ms, rows: 13 }
+executed query: { query: SELECT * from sale_header where user_id = $1, params: 1; duration: 167ms, rows: 13 }
+executed query: { query: SELECT * from sale_header where user_id = $1 and deleted_at IS NULL, params: 1; duration: 122ms, rows: 13 }
+executed query: { query: SELECT * from sale_header where user_id = $1 and deleted_at IS NULL, params: 1; duration: 2ms, rows: 13 }
+executed query: { query: SELECT * from sale_header where user_id = $1 and id = $2 and deleted_at IS NULL, params: 1,32; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from sale_header where user_id = $1 and id = $2 and deleted_at IS NULL, params: 1,34; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from sale_header where user_id = $1 and id = $2 and deleted_at IS NULL, params: 1,399; duration: 17ms, rows: 0 }
+executed query: { query: SELECT * from sale_header where user_id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 13 }

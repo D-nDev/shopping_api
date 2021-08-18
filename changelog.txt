@@ -66,3 +66,5 @@
 
 18 de agosto:
     - Melhorado performance das queries
+    - Adicionado rota para visualizar todos os itens de uma venda de um usuário específico
+    - Adicionado rota para visualizar um cabeçalho de uma venda específica de um usuário

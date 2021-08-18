@@ -4162,3 +4162,43 @@ POST /buy 155.196 ms
 DATE: Wednesday, August 18, 2021
 HTTP STATUS CODE: 200
 
+GET /myorders?saleheaderid=30 247.752 ms
+DATE: Wednesday, August 18, 2021
+HTTP STATUS CODE: 200
+
+GET /usersales 34.986 ms
+DATE: Wednesday, August 18, 2021
+HTTP STATUS CODE: 500
+
+GET /usersales 14.582 ms
+DATE: Wednesday, August 18, 2021
+HTTP STATUS CODE: 500
+
+GET /usersales 185.108 ms
+DATE: Wednesday, August 18, 2021
+HTTP STATUS CODE: 200
+
+GET /usersales 133.582 ms
+DATE: Wednesday, August 18, 2021
+HTTP STATUS CODE: 200
+
+GET /usersales?id=32 19.640 ms
+DATE: Wednesday, August 18, 2021
+HTTP STATUS CODE: 200
+
+GET /usersales?saleheaderid=32 2.635 ms
+DATE: Wednesday, August 18, 2021
+HTTP STATUS CODE: 200
+
+GET /usersales?saleheaderid=34 2.322 ms
+DATE: Wednesday, August 18, 2021
+HTTP STATUS CODE: 200
+
+GET /usersales?saleheaderid=399 18.011 ms
+DATE: Wednesday, August 18, 2021
+HTTP STATUS CODE: 404
+
+GET /usersales 2.818 ms
+DATE: Wednesday, August 18, 2021
+HTTP STATUS CODE: 200
+
