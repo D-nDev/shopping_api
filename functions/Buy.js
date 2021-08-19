@@ -1,6 +1,7 @@
 const fs = require("fs").promises;
 const fs2 = require("fs");
 const db = require("@model/db");
+const insertcart = require("@functions/InsertSaleItems");
 
 async function userhascoupon(userid, total, searchmethod, today, cart) {
   const coupon = await fs.readFile(`././coupons/user${userid}.json`);
@@ -12,31 +13,33 @@ async function userhascoupon(userid, total, searchmethod, today, cart) {
       "SELECT id from promotional_codes WHERE code = $1",
       [getcoupon]
     );
+    await db.query("BEGIN TRANSACTION");
+
     const postsaleheader = await db.query(
       "INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
       [userid, codeid.rows[0].id, total, searchmethod.id, userid, userid, today]
     );
-    await db.query(
+    if(postsaleheader.severity) {
+      await db.query("ROLLBACK");
+      return "Error on insert header";
+    }
+    
+    const postbills = await db.query(
       "INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *",
       [userid, postsaleheader.rows[0].id, total, searchmethod.id, today]
     );
-
-    cart.forEach(async (element) => {
-      await db.query(
-        "INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
-        [
-          postsaleheader.rows[0].id,
-          element.quantity,
-          element.product_id,
-          "Courier",
-          element.quantity,
-          element.unitary_price,
-          element.discount_value,
-          element.plus_value,
-          element.total_price,
-        ]
-      );
-    });
+    if(postbills.severity) {
+      await db.query("ROLLBACK");
+      return "Error on insert bills receive";
+    }
+    
+    const usercart = await insertcart.insertitems(postsaleheader.rows[0].id, cart);
+    if(usercart >= 1) {
+      await db.query("ROLLBACK");
+      return "Error on add an sale item";
+    }
+    
+    await db.query("COMMIT");
 
     await fs.unlink(`././coupons/user${userid}.json`);
     await fs.unlink(`././cart/cart${userid}.json`);
@@ -49,30 +52,33 @@ async function userhascoupon(userid, total, searchmethod, today, cart) {
 
 async function userhasnocoupon(userid, total, searchmethod, today, cart) {
   try {
+    await db.query("BEGIN TRANSACTION");
+
     const postsaleheader = await db.query(
       "INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
       [userid, total, searchmethod.id, userid, userid, today]
     );
-    await db.query(
+    if(postsaleheader.severity) {
+      await db.query("ROLLBACK");
+      return "Error on insert header";
+    }
+
+    const postbills = await db.query(
       "INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *",
       [userid, postsaleheader.rows[0].id, total, searchmethod.id, today]
     );
-    cart.forEach(async (element) => {
-      await db.query(
-        "INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
-        [
-          postsaleheader.rows[0].id,
-          element.quantity,
-          element.product_id,
-          "Courier",
-          element.quantity,
-          element.unitary_price,
-          element.discount_value,
-          element.plus_value,
-          element.total_price,
-        ]
-      );
-    });
+    if(postbills.severity) {
+      await db.query("ROLLBACK");
+      return "Error on insert bills receive";
+    }
+    
+    const usercart = await insertcart.insertitems(postsaleheader.rows[0].id, cart);
+    if(usercart >= 1) {
+      await db.query("ROLLBACK");
+      return "Error on add an sale item";
+    }
+
+    await db.query("COMMIT");
     await fs.unlink(`././cart/cart${userid}.json`);
     return "Payment successfully";
   } catch (err) {

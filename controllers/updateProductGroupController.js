@@ -11,23 +11,28 @@ module.exports = {
     } else if (!name) {
       res.status(400).send("Please provide a new name");
     } else {
-      const check = await db.query(
-        "SELECT id, name from products_group WHERE id = $1 and deleted_at IS NULL",
-        [id]
-      );
-
-      if (check.rows.length <= 0) {
-        res.status(404).send("Invalid ID");
-      } else {
-        const result = await db.query(
-          "UPDATE products_group SET name = $1 WHERE id = $2 RETURNING *",
-          [name, id]
+      try {
+        const check = await db.query(
+          "SELECT id, name from products_group WHERE id = $1 and deleted_at IS NULL",
+          [id]
         );
-        if (result == 23505) {
-          res.status(409).send("Name already exists");
+
+        if (check.rows.length <= 0) {
+          res.status(404).send("Invalid ID");
         } else {
-          res.status(200).send(result.rows);
+          const result = await db.query(
+            "UPDATE products_group SET name = $1 WHERE id = $2 RETURNING *",
+            [name, id]
+          );
+          if (result.code == 23505) {
+            res.status(409).send("Name already exists");
+          } else {
+            res.status(200).send(result.rows);
+          }
         }
+      } catch (err) {
+        console.log(err);
+        res.status(500).send(err);
       }
     }
   },

@@ -11,15 +11,16 @@ module.exports = {
         "INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *",
         [code, discount, type_discount]
       );
-      if (result == 23505) {
+      if (result.code == 23505) {
         res.status(400).send("Code already exists");
-      } else if (result == 23514) {
+      } else if (result.code == 23514) {
         res.status(404).send("Invalid discount type");
       } else {
         res.status(201).send(result.rows[0]);
       }
     } catch (err) {
-      res.send(err);
+      console.log(err);
+      res.status(500).send(err);
     }
   },
 };

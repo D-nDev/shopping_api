@@ -12,13 +12,14 @@ module.exports = {
         "INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *",
         [group_id, name, price, description]
       );
-      if (result == 23503) {
+      if (result.code == 23503) {
         res.status(404).send("Invalid Product Group ID");
       } else {
         res.status(201).send(result.rows[0]);
       }
     } catch (err) {
-      res.send(err);
+      console.log(err);
+      res.status(500).send(err);
     }
   },
 };

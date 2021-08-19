@@ -28,30 +28,38 @@ module.exports = {
       if (check_stock.rows[0].amount - parseInt(quantity) <= 0) {
         res.status(409).send("Out of stock");
       } else {
-        if (parseInt(quantity) < jsoncart[find_product].quantity) {
-          await db.query("UPDATE stock SET amount = $1 WHERE product_id = $2", [
-            check_stock.rows[0].amount + 1,
-            id,
-          ]);
-        } else {
-          currentquantity = jsoncart[find_product].quantity;
-          jsoncart[find_product].quantity = parseInt(quantity);
-          jsoncart[find_product].total_price =
-            parseFloat(jsoncart[find_product].unitary_price) *
-            parseFloat(jsoncart[find_product].quantity).toFixed(2);
-          jsoncart[find_product].total_price =
-            +jsoncart[find_product].total_price.toFixed(2);
+        try {
+          if (parseInt(quantity) < jsoncart[find_product].quantity) {
+            await db.query(
+              "UPDATE stock SET amount = $1 WHERE product_id = $2",
+              [check_stock.rows[0].amount + 1, id]
+            );
+          } else {
+            currentquantity = jsoncart[find_product].quantity;
+            jsoncart[find_product].quantity = parseInt(quantity);
+            jsoncart[find_product].total_price =
+              parseFloat(jsoncart[find_product].unitary_price) *
+              parseFloat(jsoncart[find_product].quantity).toFixed(2);
+            jsoncart[find_product].total_price =
+              +jsoncart[find_product].total_price.toFixed(2);
 
-          await db.query("UPDATE stock SET amount = $1 WHERE product_id = $2", [
-            check_stock.rows[0].amount -
-              (jsoncart[find_product].quantity - currentquantity),
-            id,
-          ]);
-          await fs.writeFile(
-            `./cart/cart${userid}.json`,
-            JSON.stringify(jsoncart)
-          );
-          res.status(200).send("Cart updated");
+            await db.query(
+              "UPDATE stock SET amount = $1 WHERE product_id = $2",
+              [
+                check_stock.rows[0].amount -
+                  (jsoncart[find_product].quantity - currentquantity),
+                id,
+              ]
+            );
+            await fs.writeFile(
+              `./cart/cart${userid}.json`,
+              JSON.stringify(jsoncart)
+            );
+            res.status(200).send("Cart updated");
+          }
+        } catch (err) {
+          console.log(err);
+          res.status(500).send(err);
         }
       }
     }

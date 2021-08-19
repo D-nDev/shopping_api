@@ -18,12 +18,13 @@ module.exports = {
           "INSERT INTO payment_method(name, portion_quantity) VALUES ($1, $2) RETURNING *",
           [name, portion]
         );
-        if (result == 23505) {
+        if (result.code == 23505) {
           res.status(400).send("Method already exists");
         } else {
-          res.status(201).send(result.rows[0]);
+          res.status(201).send(result.rows);
         }
       } catch (err) {
+        console.log(err);
         res.status(500).send(err);
       }
     }

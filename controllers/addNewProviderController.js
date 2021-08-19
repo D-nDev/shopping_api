@@ -15,13 +15,14 @@ module.exports = {
         "INSERT INTO providers(document, name, country, state, product_type, phone, zip_code) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
         [document, name, country, state, product_type, phone, zip_code]
       );
-      if (result == 23505) {
+      if (result.code == 23505) {
         res.status(400).send("Document already exists");
       } else {
         res.status(201).send(result.rows[0]);
       }
     } catch (err) {
-      res.send(err);
+      console.log(err);
+      res.status(500).send(err);
     }
   },
 };

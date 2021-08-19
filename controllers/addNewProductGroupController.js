@@ -9,13 +9,14 @@ module.exports = {
         "INSERT INTO products_group(name) VALUES ($1) RETURNING *",
         [name]
       );
-      if (result == 23505) {
+      if (result.code == 23505) {
         res.status(400).send("Group Name already exists");
       } else {
         res.status(201).send(result.rows[0]);
       }
     } catch (err) {
-      res.send(err);
+      console.log(err);
+      res.status(500).send(err);
     }
   },
 };
