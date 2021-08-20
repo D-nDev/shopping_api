@@ -1,0 +1,363 @@
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 181ms, rows: 13 }
+executed query: { query: BEGIN TRANSACTION, params: undefined; duration: 1ms, rows: null }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,150.47,8,1,1,Fri Aug 20 2021 20:16:23 GMT-0300 (Brasilia Standard Time); duration: 6ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,97,150.47,8,Fri Aug 20 2021 20:16:23 GMT-0300 (Brasilia Standard Time); duration: 3ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 99,1,13,Courier,1,150.47,0,0,150.47; duration: 9ms, rows: error }
+executed query: { query: ROLLBACK, params: undefined; duration: 1ms, rows: null }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 170ms, rows: 13 }
+executed query: { query: BEGIN TRANSACTION, params: undefined; duration: 1ms, rows: null }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,150.47,8,1,1,Fri Aug 20 2021 20:17:06 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,98,150.47,8,Fri Aug 20 2021 20:17:06 GMT-0300 (Brasilia Standard Time); duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 98,1,13,Courier,1,150.47,0,0,150.47; duration: 2ms, rows: 1 }
+executed query: { query: COMMIT, params: undefined; duration: 2ms, rows: null }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 182ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 5,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 4,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 2ms, rows: 13 }
+executed query: { query: BEGIN TRANSACTION, params: undefined; duration: 0ms, rows: null }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,300.94,8,1,1,Fri Aug 20 2021 20:18:23 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,99,300.94,8,Fri Aug 20 2021 20:18:23 GMT-0300 (Brasilia Standard Time); duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 99,2,13,Courier,2,150.47,0,0,300.94; duration: 2ms, rows: 1 }
+executed query: { query: COMMIT, params: undefined; duration: 1ms, rows: null }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 112ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 3,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 2,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 1,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 2ms, rows: 13 }
+executed query: { query: BEGIN TRANSACTION, params: undefined; duration: 1ms, rows: null }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,451.40999999999997,8,1,1,Fri Aug 20 2021 20:19:03 GMT-0300 (Brasilia Standard Time); duration: 6ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,100,451.40999999999997,8,Fri Aug 20 2021 20:19:03 GMT-0300 (Brasilia Standard Time); duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 400,3,13,Courier,3,150.47,0,0,451.40999999999997; duration: 9ms, rows: error }
+executed query: { query: ROLLBACK, params: undefined; duration: 1ms, rows: null }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 172ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 0,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1 and deleted_at IS NULL, params: QWOEPAKMQJF47891; duration: 88ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 110ms, rows: 13 }
+executed query: { query: SELECT id from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: BEGIN TRANSACTION, params: undefined; duration: 0ms, rows: null }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,541.692,8,1,1,Fri Aug 20 2021 20:27:23 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,101,541.692,8,Fri Aug 20 2021 20:27:23 GMT-0300 (Brasilia Standard Time); duration: 3ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 101,4,13,Courier,4,135.423,10,0,541.692; duration: 2ms, rows: 1 }
+executed query: { query: COMMIT, params: undefined; duration: 4ms, rows: null }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 124ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 19,13; duration: 3ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 18,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 1ms, rows: 13 }
+executed query: { query: BEGIN TRANSACTION, params: undefined; duration: 1ms, rows: null }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,300.94,8,1,1,Fri Aug 20 2021 20:28:30 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,102,300.94,8,Fri Aug 20 2021 20:28:30 GMT-0300 (Brasilia Standard Time); duration: 3ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 102,2,13,Courier,2,150.47,0,0,300.94; duration: 2ms, rows: 1 }
+executed query: { query: COMMIT, params: undefined; duration: 1ms, rows: null }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 168ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 17,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 16,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 15,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 14,13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 2ms, rows: 13 }
+executed query: { query: BEGIN TRANSACTION, params: undefined; duration: 0ms, rows: null }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *, params: 1,601.88,8,1,1,Fri Aug 20 2021 20:29:47 GMT-0300 (Brasilia Standard Time); duration: 5ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,103,601.88,8,Fri Aug 20 2021 20:29:47 GMT-0300 (Brasilia Standard Time); duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 103,4,13,Courier,4,150.47,0,0,601.88; duration: 1ms, rows: 1 }
+executed query: { query: COMMIT, params: undefined; duration: 0ms, rows: null }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 185ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 13,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 12,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 11,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 10,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1 and deleted_at IS NULL, params: QWOEPAKMQJF47891; duration: 2ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 2ms, rows: 13 }
+executed query: { query: SELECT id from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 1ms, rows: 1 }
+executed query: { query: BEGIN TRANSACTION, params: undefined; duration: 0ms, rows: null }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 1,1,541.692,8,1,1,Fri Aug 20 2021 20:30:27 GMT-0300 (Brasilia Standard Time); duration: 4ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,104,541.692,8,Fri Aug 20 2021 20:30:27 GMT-0300 (Brasilia Standard Time); duration: 2ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 104,4,13,Courier,4,135.423,10,0,541.692; duration: 1ms, rows: 1 }
+executed query: { query: COMMIT, params: undefined; duration: 1ms, rows: null }
+executed query: { query: INSERT INTO users(document, email, password, first_name, last_name, address, city, state, zip_code, phone, birth_date) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING *, params: 673478519,pedroc-controlerdb.novaes@hotmail.com,$2b$10$fcGkETsQif7lU8idy236Eug0GH4zf9D7TL92Gb/7OKu2M1W2tUJKa,Pedrao5,Sousa2,test72,Guarulhos,SP,133,1987016064,2001-09-27; duration: 1938ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 219ms, rows: 1 }
+executed query: { query: SELECT email, first_name FROM users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1 WHERE (email = $2 AND deleted_at IS NULL), params: 09bd63750aa955c4bf23689729187db2acdafd9f,diego-s.novaes@hotmail.com; duration: 51ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 201ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$ttGrVUXVWQqn/Ar4gdPnD.e8ZKj5T7RlUZQNW4laYjjaanVVP1xQC,09bd63750aa955c4bf23689729187db2acdafd9f; duration: 4ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 199ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 16ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 133ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$PetyT91mAJoR.eXlVfaPf.1y02Y77qSf8vn70qcIPCE4kUB4EStKy,09bd63750aa955c4bf23689729187db2acdafd9f; duration: 106ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 201ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$Wah5xcXlDTQ5ETXOXyYP.OPbah3WLw0p2PSU9fDBhBc8utJxdL46S,09bd63750aa955c4bf23689729187db2acdafd9f; duration: 7ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 214ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$AtpQKHS789wZltxD3Hgsa.Emi/htanrbVB65ZKds2hpDJaphJmEN6,09bd63750aa955c4bf23689729187db2acdafd9f; duration: 12ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 190ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$WCq3FAT9J2L8/8/Rp.43l.5Tk0MLK15dCX3NMv89dYiLISTrRsV0i,09bd63750aa955c4bf23689729187db2acdafd9f; duration: 25ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 186ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$Yun.LC4wnQa/4Jmwrcfy4OZYWhMW3KHTz4Wdb5NM8keqPBV.sl2b6,09bd63750aa955c4bf23689729187db2acdafd9f; duration: 32ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 193ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$u/DnbcBZEycwU/P44ftOAuY6PSna2wWBfLl4JVVZe1ADMyqvpsDvG,09bd63750aa955c4bf23689729187db2acdafd9f; duration: 49ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 132ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$wdlVoeXDUxhN5BB7PWxhwuXJ6JLW9XUww7WAd33GD2buCT3OT.Wru,09bd63750aa955c4bf23689729187db2acdafd9f; duration: 89ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 223ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$tAiUAuIyI8bBcO6MMur1FeIwYKUV2yFQcBGO4UR9TVstHUKmRN5/u,09bd63750aa955c4bf23689729187db2acdafd9f; duration: 35ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 139ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 09bd63750aa955c4bf23689729187db2acdafd9f; duration: 179ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 2ms, rows: 1 }
+executed query: { query: SELECT email, first_name FROM users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 201ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1, expire_time = $2 WHERE (email = $3 AND deleted_at IS NULL), params: 6f4bc40fa486367df09eeb240ffbb8a833b61ad8,Fri Aug 20 2021 02:22:48 GMT-0300 (Brasilia Standard Time),diego-s.novaes@hotmail.com; duration: 26ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 6f4bc40fa486367df09eeb240ffbb8a833b61ad8 ; duration: 147ms, rows: 0 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 6f4bc40fa486367df09eeb240ffbb8a833b61ad8; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$MQ6gaHc1D6fQ8YOfA6AMGuVv1QnSFEAc3Yr6Re4gE2BMg/uMmQgOO,6f4bc40fa486367df09eeb240ffbb8a833b61ad8; duration: 172ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT email, first_name FROM users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 129ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1, expire_time = $2 WHERE (email = $3 AND deleted_at IS NULL), params: 42c824945bc3db2e4e9e6c929b9da67f1093fadc,Fri Aug 20 2021 02:24:28 GMT-0300 (Brasilia Standard Time),diego-s.novaes@hotmail.com; duration: 8ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: 42c824945bc3db2e4e9e6c929b9da67f1093fadc; duration: 119ms, rows: 1 }
+executed query: { query: UPDATE users set reset_code = $1 WHERE reset_code = $2, params: ,42c824945bc3db2e4e9e6c929b9da67f1093fadc; duration: 5ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$DU6Rxp.D2rq/ET/dMMFnY.8/FU03ngDQ6Gg84Q9Zltnispm8d/udG,42c824945bc3db2e4e9e6c929b9da67f1093fadc; duration: 1ms, rows: 0 }
+executed query: { query: SELECT email, first_name FROM users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 220ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1, expire_time = $2 WHERE (email = $3 AND deleted_at IS NULL), params: c2560f5362f84f6a9be0f25bb412bfbbe58fdb58,Fri Aug 20 2021 02:25:18 GMT-0300 (Brasilia Standard Time),diego-s.novaes@hotmail.com; duration: 3ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: c2560f5362f84f6a9be0f25bb412bfbbe58fdb58; duration: 95ms, rows: 1 }
+executed query: { query: UPDATE users set reset_code = $1, expire_time = $2 WHERE reset_code = $3, params: ,,c2560f5362f84f6a9be0f25bb412bfbbe58fdb58; duration: 29ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1 WHERE reset_code = $2, params: $2b$10$lH4Co9HbxCdULgLj5ME8M.6mwo901rWwTJjgl4sVsLvT8ISo5SjOG,c2560f5362f84f6a9be0f25bb412bfbbe58fdb58; duration: 0ms, rows: 0 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT email, first_name FROM users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 194ms, rows: 1 }
+executed query: { query: UPDATE users SET reset_code = $1, expire_time = $2 WHERE (email = $3 AND deleted_at IS NULL), params: e4f844c7840e861ccd9ffd5e14a124040d2ddaf4,Fri Aug 20 2021 02:27:02 GMT-0300 (Brasilia Standard Time),diego-s.novaes@hotmail.com; duration: 2ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: e4f844c7840e861ccd9ffd5e14a124040d2ddaf4; duration: 172ms, rows: 1 }
+executed query: { query: UPDATE users set password = $1, reset_code = $2, expire_time = $3 WHERE reset_code = $4, params: $2b$10$1fgx1SCDjJmOcvKOjNRvtuAsBPJw5ixIC4WBvFrQCfhtgzqO/Pj5y,,,e4f844c7840e861ccd9ffd5e14a124040d2ddaf4; duration: 5ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: SELECT reset_code, expire_time from users where reset_code = $1 and deleted_at IS NULL, params: e4f844c7840e861ccd9ffd5e14a124040d2ddaf4; duration: 151ms, rows: 0 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 143ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 1ms, rows: 1 }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 666,testfinal7,121.47,teste247 final; duration: 57ms, rows: error }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 6,testfinal7,121.47,teste247 final; duration: 3ms, rows: 1 }
+executed query: { query: INSERT INTO products_group(name) VALUES ($1) RETURNING *, params: NotebooksFinal8; duration: 165ms, rows: 1 }
+executed query: { query: INSERT INTO providers(document, name, country, state, product_type, phone, zip_code) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 30000129-8,JOAOedrinhocontroller final,Brazil,SP,Notebooks,43445678,0223456-7; duration: 429ms, rows: 1 }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: 12OEPAKMQJF47892,70,percentage; duration: 190ms, rows: 1 }
+executed query: { query: INSERT INTO promotional_codes(code, discount, type_discount) VALUES ($1, $2, $3) RETURNING *, params: 12OEPAKMQJF47892,70,percentage; duration: 284ms, rows: error }
+executed query: { query: INSERT INTO products_group(name) VALUES ($1) RETURNING *, params: NotebooksFinal8; duration: 4ms, rows: error }
+executed query: { query: INSERT INTO providers(document, name, country, state, product_type, phone, zip_code) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *, params: 30000129-8,JOAOedrinhocontroller final,Brazil,SP,Notebooks,43445678,0223456-7; duration: 4ms, rows: error }
+executed query: { query: INSERT INTO products(group_id, name, price, description) VALUES ($1, $2, $3, $4) RETURNING *, params: 6,testfinal7,121.47,teste247 final; duration: 6ms, rows: 1 }
+executed query: { query: UPDATE products SET deleted_at = $1 WHERE (id = $2), params: 8/20/2021, 12:29:52 AM,21; duration: 166ms, rows: 1 }
+executed query: { query: UPDATE products SET deleted_at = $1 WHERE (id = $2), params: 8/20/2021, 12:30:01 AM,29; duration: 1ms, rows: 0 }
+executed query: { query: SELECT COUNT(CASE WHEN group_id = $1 AND deleted_at IS NULL THEN 1 ELSE NULL END) FROM products, params: 11; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE products_group SET deleted_at = $1 WHERE ID = $2 RETURNING *, params: 8/20/2021, 12:30:10 AM,11; duration: 125ms, rows: 1 }
+executed query: { query: SELECT COUNT(CASE WHEN group_id = $1 AND deleted_at IS NULL THEN 1 ELSE NULL END) FROM products, params: 19; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE products_group SET deleted_at = $1 WHERE ID = $2 RETURNING *, params: 8/20/2021, 12:30:16 AM,19; duration: 0ms, rows: 0 }
+executed query: { query: UPDATE providers SET deleted_at = $1 WHERE ID = $2, params: 8/20/2021, 12:30:29 AM,9; duration: 159ms, rows: 1 }
+executed query: { query: UPDATE providers SET deleted_at = $1 WHERE ID = $2, params: 8/20/2021, 12:30:31 AM,11; duration: 0ms, rows: 0 }
+executed query: { query: UPDATE promotional_codes SET deleted_at = $1 WHERE ID = $2, params: 8/20/2021, 12:30:48 AM,11; duration: 160ms, rows: 1 }
+executed query: { query: UPDATE promotional_codes SET deleted_at = $1 WHERE ID = $2, params: 8/20/2021, 12:30:50 AM,14; duration: 1ms, rows: 0 }
+executed query: { query: SELECT id from users WHERE id = $1 and deleted_at IS NULL, params: 31; duration: 95ms, rows: 1 }
+executed query: { query: UPDATE users SET deleted_at = $1 WHERE id = $2, params: 8/20/2021, 12:31:11 AM,31; duration: 32ms, rows: 1 }
+executed query: { query: SELECT id from users WHERE id = $1 and deleted_at IS NULL, params: 39; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE deleted_at IS NULL, params: undefined; duration: 106ms, rows: 5 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 66; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from products_group WHERE id = $1, params: 6; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products_group, params: undefined; duration: 1ms, rows: 5 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 1; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from providers WHERE id = $1, params: 99; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from providers, params: undefined; duration: 1ms, rows: 5 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 65; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 4; duration: 0ms, rows: 0 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from promotional_codes, params: undefined; duration: 0ms, rows: 5 }
+executed query: { query: SELECT id, name, description, price from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 135ms, rows: 1 }
+executed query: { query: UPDATE products SET name = $1, description = $2, price = $3 WHERE id = $4 RETURNING *, params: test59controllerfinal,test6_descriptioncontroller,121.47,20; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id, name from products_group WHERE id = $1 and deleted_at IS NULL, params: 11; duration: 126ms, rows: 0 }
+executed query: { query: SELECT id, name from products_group WHERE id = $1 and deleted_at IS NULL, params: 9; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE products_group SET name = $1 WHERE id = $2 RETURNING *, params: ANotebooksfinalsu2,9; duration: 5ms, rows: 1 }
+executed query: { query: SELECT * from providers WHERE id = $1 and deleted_at IS NULL, params: 7; duration: 109ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8 RETURNING *, params: 20000179-8,Pedrinho 6.0,Brazil,SP,Notebooks,13445678,0223456-7,7; duration: 9ms, rows: error }
+executed query: { query: SELECT * from providers WHERE id = $1 and deleted_at IS NULL, params: 7; duration: 142ms, rows: 1 }
+executed query: { query: UPDATE providers SET document = $1, name = $2, country = $3, state = $4, product_type = $5, phone = $6, zip_code = $7 WHERE id = $8 RETURNING *, params: 20000179-1,Pedrinho 6.0,Brazil,SP,Notebooks,13445678,0223456-7,7; duration: 2ms, rows: 1 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1 and deleted_at IS NULL, params: 11; duration: 127ms, rows: 0 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1 and deleted_at IS NULL, params: 111; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from promotional_codes WHERE id = $1 and deleted_at IS NULL, params: 7; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE promotional_codes SET code = $1, discount = $2, type_discount = $3 WHERE id = $4 RETURNING *, params: XWOEPAKMQJF47891,42,percentage,7; duration: 5ms, rows: 1 }
+executed query: { query: SELECT * from payment_method WHERE id = $1 and deleted_at IS NULL, params: 9; duration: 155ms, rows: 1 }
+executed query: { query: SELECT * from payment_method WHERE id = $1 and deleted_at IS NULL, params: 99; duration: 1ms, rows: 0 }
+executed query: { query: SELECT * from payment_method, params: undefined; duration: 1ms, rows: 13 }
+executed query: { query: INSERT INTO payment_method(name, portion_quantity) VALUES ($1, $2) RETURNING *, params: Pix145,1; duration: 1ms, rows: 1 }
+executed query: { query: INSERT INTO payment_method(name, portion_quantity) VALUES ($1, $2) RETURNING *, params: Pix145,1; duration: 8ms, rows: error }
+executed query: { query: SELECT id, name, portion_quantity from payment_method WHERE id = $1 and deleted_at IS NULL, params: 32; duration: 100ms, rows: 1 }
+executed query: { query: UPDATE payment_method SET name = $1, portion_quantity = $2 WHERE id = $3 RETURNING *, params: testdnv87,17,32; duration: 71ms, rows: 1 }
+executed query: { query: SELECT id, name, portion_quantity from payment_method WHERE id = $1 and deleted_at IS NULL, params: 328; duration: 1ms, rows: 0 }
+executed query: { query: UPDATE payment_method SET deleted_at = $1 WHERE ID = $2, params: 8/20/2021, 12:34:30 AM,32; duration: 3ms, rows: 1 }
+executed query: { query: UPDATE payment_method SET deleted_at = $1 WHERE ID = $2, params: 8/20/2021, 12:34:31 AM,322; duration: 2ms, rows: 0 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 2ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 9,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1 and deleted_at IS NULL, params: QWOEPAKMQJF47891; duration: 3ms, rows: 1 }
+executed query: { query: SELECT code, discount, type_discount from promotional_codes WHERE code = $1 and deleted_at IS NULL, params: QWOEPAKMQJF47891; duration: 94ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 45ms, rows: 14 }
+executed query: { query: SELECT id from promotional_codes WHERE code = $1, params: QWOEPAKMQJF47891; duration: 0ms, rows: 1 }
+executed query: { query: BEGIN TRANSACTION, params: undefined; duration: 0ms, rows: null }
+executed query: { query: INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, deadline) VALUES ($1, $2, $3, $4, $5) RETURNING *, params: 1,1,135.423,8,Sat Aug 21 2021 00:35:05 GMT-0300 (Brasilia Standard Time); duration: 104ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,105,135.423,8,Sat Aug 21 2021 00:35:05 GMT-0300 (Brasilia Standard Time); duration: 88ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, delivery_method, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *, params: 105,1,13,Courier,1,135.423,10,0,135.423; duration: 95ms, rows: 1 }
+executed query: { query: COMMIT, params: undefined; duration: 4ms, rows: null }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 101ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 8,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 6,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 6,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 5,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 1; duration: 127ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 9,13; duration: 14ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 13; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 8,13; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from sale_header where id = $1 and user_id = $2, params: 338,1; duration: 8086ms, rows: 0 }
+executed query: { query: SELECT * from vw_cashflow, params: undefined; duration: 854ms, rows: 1 }
+executed query: { query: 
+      SELECT sales.product_id,
+        prd.name,
+        prd.description,
+        count(sales.sold_amount) AS quantity_sold,
+        date_part('month'::text, hrd.creation_timestamp) AS month,
+        max(sales.total) AS high_sale,
+        avg(sales.total) AS average,
+        sum(sales.total) AS total_month,
+        max(sales.unitary_value) AS high_unitary,
+        avg(sales.unitary_value) AS average_unitary
+      FROM sale_items sales
+        JOIN products prd ON sales.product_id = prd.id
+        JOIN sale_header hrd ON sales.sale_header_id = hrd.id
+        WHERE date_part('month'::text, hrd.creation_timestamp) = $1
+      GROUP BY sales.product_id, prd.name, prd.description, (date_part('month'::text, hrd.creation_timestamp));
+      , params: 8; duration: 676ms, rows: 2 }
+executed query: { query: 
+    SELECT
+      pr.name
+      ,pr.description
+      ,sale.sold_amount
+      ,sale.unitary_value
+      ,sale.total
+      ,(SELECT user_id from sale_header where id = sale.sale_header_id)
+      ,(SELECT id from sale_header where id = sale.sale_header_id) as "sale_header_id"
+    FROM products pr
+    INNER JOIN sale_items sale ON sale.product_id = pr.id
+    WHERE (SELECT user_id from sale_header where id = sale.sale_header_id) = $1 AND (SELECT id from sale_header where id = sale.sale_header_id) = $2, params: 1,30; duration: 2ms, rows: 2 }
+executed query: { query: 
+    SELECT
+      pr.name
+      ,pr.description
+      ,sale.sold_amount
+      ,sale.unitary_value
+      ,sale.total
+      ,(SELECT user_id from sale_header where id = sale.sale_header_id)
+      ,(SELECT id from sale_header where id = sale.sale_header_id) as "sale_header_id"
+    FROM products pr
+    INNER JOIN sale_items sale ON sale.product_id = pr.id
+    WHERE (SELECT user_id from sale_header where id = sale.sale_header_id) = $1 AND (SELECT id from sale_header where id = sale.sale_header_id) = $2, params: 1,105; duration: 130ms, rows: 1 }
+executed query: { query: SELECT * from sale_header where user_id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 32 }
+executed query: { query: SELECT id from sale_header where id = $1 and user_id = $2, params: 338,1; duration: 152ms, rows: 0 }
+executed query: { query: SELECT id from sale_header where id = $1 and user_id = $2, params: 105,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from req_refunds where sale_header_id = $1, params: 105; duration: 77ms, rows: 0 }
+executed query: { query: INSERT INTO req_refunds(user_id, reason, sale_header_id) VALUES ($1, $2, $3), params: 1,negocio ruim blabla controller,105; duration: 49ms, rows: 1 }
+executed query: { query: SELECT id from sale_header where id = $1 and user_id = $2, params: 105,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from sale_header where id = $1 and user_id = $2, params: 105,1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT id from req_refunds where sale_header_id = $1, params: 105; duration: 1ms, rows: 1 }
+executed query: { query: SELECT sale_header_id, user_id from req_refunds WHERE id = $1, params: 6888; duration: 90ms, rows: 0 }
+executed query: { query: SELECT sale_header_id, user_id from req_refunds WHERE id = $1, params: 105; duration: 174ms, rows: 0 }
+executed query: { query: SELECT sale_header_id, user_id from req_refunds WHERE id = $1, params: 7; duration: 156ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name from users where (id = $1 AND deleted_at IS NULL), params: 1; duration: 3ms, rows: 1 }
+executed query: { query: SELECT total, payment_method_id from sale_header where id = $1 AND deleted_at IS NULL, params: 105; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE sale_header SET refunded = $1 WHERE id = $2, params: true,105; duration: 3ms, rows: 1 }
+executed query: { query: UPDATE sale_items SET refunded = $1 WHERE sale_header_id = $2, params: true,105; duration: 83ms, rows: 1 }
+executed query: { query: UPDATE req_refunds SET deleted_at = $1 where id = $2, params: 8/20/2021, 12:39:15 AM,7; duration: 238ms, rows: 1 }
+executed query: { query: UPDATE bills_receive SET refunded = $1, deleted_at = $2 WHERE sale_header_id = $3, params: true,8/20/2021, 12:39:15 AM,105; duration: 256ms, rows: 1 }
+executed query: { query: INSERT INTO bills_pay(amount, method_id, deadline, user_id) VALUES($1, $2, $3, $4), params: 135.42,8,Sun Sep 19 2021 00:39:15 GMT-0300 (Brasilia Standard Time),1; duration: 274ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 13; duration: 116ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 9,13; duration: 3ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 204ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 20; duration: 2ms, rows: 0 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 296ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 20; duration: 1ms, rows: 0 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 162ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 20; duration: 2ms, rows: 0 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 234ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 20; duration: 2ms, rows: 0 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 156ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 20; duration: 1ms, rows: 0 }
+executed query: { query: INSERT INTO stock(product_id, amount, creation_userid) VALUES ($1, $2, $3) RETURNING *, params: 20,15,1; duration: 201ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 20; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 14,20; duration: 1ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1, params: 20; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 15,20; duration: 1ms, rows: 1 }
+executed query: { query: SELECT product_id from stock where product_id = $1, params: 20; duration: 155ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1, update_userid = $2 RETURNING *, params: 80,1; duration: 16ms, rows: 3 }
+executed query: { query: SELECT product_id from stock where product_id = $1, params: 20; duration: 167ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1, update_userid = $2 WHERE product_id = $3 RETURNING *, params: 90,1,20; duration: 39ms, rows: 1 }
+executed query: { query: SELECT product_id from stock where product_id = $1, params: 80; duration: 176ms, rows: 0 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 203ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 20; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 0ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 89,20; duration: 33ms, rows: 1 }
+executed query: { query: SELECT id from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 0ms, rows: 1 }
+executed query: { query: SELECT amount from stock where product_id = $1 and deleted_at IS NULL, params: 20; duration: 1ms, rows: 1 }
+executed query: { query: SELECT price from products WHERE id = $1 and deleted_at IS NULL, params: 20; duration: 1ms, rows: 1 }
+executed query: { query: UPDATE stock SET amount = $1 WHERE product_id = $2, params: 88,20; duration: 1ms, rows: 1 }
+executed query: { query: SELECT name, id, daystopay from payment_method, params: undefined; duration: 2ms, rows: 14 }
+executed query: { query: BEGIN TRANSACTION, params: undefined; duration: 1ms, rows: null }
+executed query: { query: INSERT INTO sale_header(user_id, total, payment_method_id, deadline) VALUES ($1, $2, $3, $4) RETURNING *, params: 1,242.94,8,Sat Aug 21 2021 01:21:39 GMT-0300 (Brasilia Standard Time); duration: 42ms, rows: 1 }
+executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amount, method_id, deadline) VALUES($1, $2, $3, $4, $5) RETURNING *, params: 1,106,242.94,8,Sat Aug 21 2021 01:21:39 GMT-0300 (Brasilia Standard Time); duration: 28ms, rows: 1 }
+executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *, params: 106,2,20,2,121.47,0,0,242.94; duration: 54ms, rows: 1 }
+executed query: { query: COMMIT, params: undefined; duration: 1ms, rows: null }
+executed query: { query: INSERT INTO products(group_id, name, price, description, creation_userid) VALUES ($1, $2, $3, $4, $5) RETURNING *, params: 6,testfinal7userid,121.47,teste247 final,1; duration: 307ms, rows: 1 }

@@ -46,3 +46,36 @@
     - Criado tabela no banco para armazenar requisições de reembolso
     - Arrumado alguns bugs
     - Adicionado rota de contato
+
+16~17 de agosto:
+    - Projeto refatorado 100%
+    - Logs melhorados
+    - Logs movidos para pasta /logs
+    - Adicionado log de falha na conexão com o PGSQL
+    - project_base.txt movido para /doc
+    - Fix de bugs menores
+    - Adicionado códigos http correspondente para todas as rotas
+    - Adicionado module-alias
+    - Arquitetura melhorada
+    - Adicionado proteção contra DoS/DDoS
+    - Adicionado rota de relatório de produtos vendidos em um mês específico
+    - Adicionado rota de relatório do fluxo de caixa atual
+    - Adicionado erro caso ocorra erro em alguma query na parte de compra
+    - Adicionado Modelo BETA do SQL
+    - Adicionado Query BETA de criação da database no postgres
+
+18 de agosto:
+    - Melhorado performance das queries
+    - Adicionado rota para visualizar todos os itens de uma venda de um usuário específico
+    - Adicionado rota para visualizar um cabeçalho de uma venda específica de um usuário
+
+19 de agosto:
+    - Adicionado BEGIN transaction para as compras
+    - Arrumado bugs menores
+
+- 20 de agosto:
+    - Melhorado segurança de algumas queries
+    - Arrumado bug no esqueceu sua senha
+    - Adicionado rotas para adicionar um produto ao estoque ou atualizá-logs
+    - Adicionado queries e models da release 1.0.1 na pasta SQL
+    - Release V1.0.1

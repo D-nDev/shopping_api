@@ -1,7 +1,7 @@
-const templaterefund = require("../templates/refund.js");
+const templaterefundsuccess = require("@templates/successRefund");
 const nodemailer = require("nodemailer");
 
-function sendEmail(userid, reason, saleid) {
+function sendEmail(email, name, saleid) {
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
       name: "smtp.gmail.com",
@@ -16,9 +16,9 @@ function sendEmail(userid, reason, saleid) {
       debug: true,
     });
     const mailOptions = {
-      to: `diego-s.novaes@hotmail.com`,
-      subject: `Refund from USERID ${userid}`,
-      html: templaterefund.refundEmail(userid, reason, saleid)
+      to: `${email}`,
+      subject: `Your refund status`,
+      html: templaterefundsuccess.successRefund(name, saleid)
     };
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {

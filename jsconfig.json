@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "@app/*": ["*"],
+      "@config/*": ["config/*"],
+      "@controller/*": ["controllers/*"],
+      "@middlewares/*": ["middlewares/*"],
+      "@model/*": ["model/*"],
+      "@functions/*": ["functions/*"],
+      "@templates/*": ["templates/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

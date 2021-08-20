@@ -1,7 +1,8 @@
-const templatecontact = require("../templates/contact.js");
+require("dotenv").config();
+const templatepass = require("@templates/resetpass");
 const nodemailer = require("nodemailer");
 
-function sendEmail(email, name, subject, message, priority) {
+function sendEmail(email, token, browser, os, os_version, ip, user_name) {
   return new Promise((resolve, reject) => {
     const transporter = nodemailer.createTransport({
       name: "smtp.gmail.com",
@@ -16,9 +17,16 @@ function sendEmail(email, name, subject, message, priority) {
       debug: true,
     });
     const mailOptions = {
-      to: `diego-s.novaes@hotmail.com`,
-      subject: `Contact from ${name + " - " + email}`,
-      html: templatecontact.contactemail(email, name, subject, message, priority)
+      to: `${email}`,
+      subject: "Your reset code to AlphaShop",
+      html: templatepass.resetTemplate(
+        token,
+        user_name,
+        browser,
+        os,
+        os_version,
+        ip
+      ),
     };
     transporter.sendMail(mailOptions, (err, info) => {
       if (err) {
