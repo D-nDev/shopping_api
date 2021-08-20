@@ -1,4 +1,3 @@
-//test3
 process.env.TZ = "America/Sao_Paulo";
 require("dotenv").config();
 require('module-alias/register');
