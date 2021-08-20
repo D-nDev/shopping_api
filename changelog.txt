@@ -78,4 +78,5 @@
     - Arrumado bug no esqueceu sua senha
     - Adicionado rotas para adicionar um produto ao estoque ou atualizá-logs
     - Adicionado queries e models da release 1.0.1 na pasta SQL
+    - Adicionado PDF do dbdesigner a pasta SQL
     - Release V1.0.1
