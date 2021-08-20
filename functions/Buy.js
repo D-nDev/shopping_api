@@ -16,8 +16,8 @@ async function userhascoupon(userid, total, searchmethod, today, cart) {
     await db.query("BEGIN TRANSACTION");
 
     const postsaleheader = await db.query(
-      "INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
-      [userid, codeid.rows[0].id, total, searchmethod.id, userid, userid, today]
+      "INSERT INTO sale_header(user_id, promotional_code_id, total, payment_method_id, deadline) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      [userid, codeid.rows[0].id, total, searchmethod.id, today]
     );
     if(postsaleheader.severity) {
       await db.query("ROLLBACK");
@@ -55,8 +55,8 @@ async function userhasnocoupon(userid, total, searchmethod, today, cart) {
     await db.query("BEGIN TRANSACTION");
 
     const postsaleheader = await db.query(
-      "INSERT INTO sale_header(user_id, total, payment_method_id, creation_user, update_user, deadline) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
-      [userid, total, searchmethod.id, userid, userid, today]
+      "INSERT INTO sale_header(user_id, total, payment_method_id, deadline) VALUES ($1, $2, $3, $4) RETURNING *",
+      [userid, total, searchmethod.id, today]
     );
     if(postsaleheader.severity) {
       await db.query("ROLLBACK");

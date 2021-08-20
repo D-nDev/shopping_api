@@ -13,14 +13,14 @@ module.exports = {
     } else {
       const check = await db.query("SELECT id from products WHERE id = $1 and deleted_at IS NULL", [id]);
   
-      if (check.rows.length == 0) {
+      if (check.rows.length <= 0) {
         res.status(404).send("Invalid ID");
       } else {
         const check_stock = await db.query(
           "SELECT amount from stock where product_id = $1 and deleted_at IS NULL",
           [id]
         );
-        if (check_stock.rows[0].amount <= 0) {
+        if (check_stock.rows.length <= 0 || check_stock.rows[0].amount <= 0) {
           res.status(409).send("Out of stock");
         } else {
           const price = await db.query(

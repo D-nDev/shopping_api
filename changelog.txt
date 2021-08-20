@@ -72,3 +72,10 @@
 19 de agosto:
     - Adicionado BEGIN transaction para as compras
     - Arrumado bugs menores
+
+- 20 de agosto:
+    - Melhorado segurança de algumas queries
+    - Arrumado bug no esqueceu sua senha
+    - Adicionado rotas para adicionar um produto ao estoque ou atualizá-logs
+    - Adicionado queries e models da release 1.0.1 na pasta SQL
+    - Release V1.0.1

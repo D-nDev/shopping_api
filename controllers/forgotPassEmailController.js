@@ -19,6 +19,8 @@ module.exports = {
     } else {
       try {
         console.log(email);
+        const expire = new Date();
+        expire.setHours(expire.getHours() + 2);
         await Promise.all([
           forgotPass.sendEmail(
             email,
@@ -30,8 +32,8 @@ module.exports = {
             result.rows[0].first_name
           ),
           db.query(
-            "UPDATE users SET reset_code = $1 WHERE (email = $2 AND deleted_at IS NULL)",
-            [token, email]
+            "UPDATE users SET reset_code = $1, expire_time = $2 WHERE (email = $3 AND deleted_at IS NULL)",
+            [token, expire, email]
           ),
         ]);
         res.status(201).send("Email sent");
