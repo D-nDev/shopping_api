@@ -5638,3 +5638,31 @@ POST /addproduct 328.917 ms
 DATE: Friday, August 20, 2021
 HTTP STATUS CODE: 201
 
+GET /product 61.910 ms
+DATE: Friday, August 20, 2021
+HTTP STATUS CODE: 401
+
+POST /login 2855.585 ms
+DATE: Friday, August 20, 2021
+HTTP STATUS CODE: 200
+
+GET /product 2.883 ms
+DATE: Friday, August 20, 2021
+HTTP STATUS CODE: 400
+
+GET /product?id=0 307.536 ms
+DATE: Friday, August 20, 2021
+HTTP STATUS CODE: 200
+
+GET /product?id=1 2.273 ms
+DATE: Friday, August 20, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=1 2.044 ms
+DATE: Friday, August 20, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 2.754 ms
+DATE: Friday, August 20, 2021
+HTTP STATUS CODE: 200
+

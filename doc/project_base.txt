@@ -1,16 +1,17 @@
-* adicionar imagem do produto na tabela products - Ok
-* adicionar tabela de formas de pagamento - Ok
-* adicionar um relatório
-* refatorar o código(se der tempo)
-
-grupo, produtos, usuarios(ja feito), metódo de pagamento
-
 Arquitetura:
   * MVC
   * Pastas:
 	model: db
 	controllers: funcoes que interagem diretamente com as regras de negócio
 	cart: cart.json, devido a falta do front para armazenar o carrinho atual, será armazenado em um json
+  config: pasta com definições de configs(db e ratelimit)
+  functions: funções auxiliares dos controllers
+  sql: Queries e modelo do dbdesigner
+  templates: templates de e-mail
+  cart: carrinho dos usuários
+  coupon: cupom dos usuários(caso possua)
+  logs: logs de queries, requisições e erros do SQL
+  middlewares: middlewares aplicados as rotas
   * routes.js: rotas
 
 Libs usadas:
@@ -52,44 +53,56 @@ Fluxo de CRUD usuário:
   /requestpass_sms
 	Solicita um reset de senha por SMS
 
-  /recoverpass
+  /resetpass
 	Recupera a senha através de uma nova senha e caso o código esteja correto.
 
   /deleteaccount
-	Realiza um soft delete da conta, caso o usuário esteja logado
+	Realiza um soft delete de uma conta específica
+
+  /logout
+  Realiza logout da conta
+
 	
 
 Fluxo de vendas para USUÁRIO:
 
-  /addcart?productid=id:
+  POST /addcart?productid=id:
 	Realiza um select no bd, tras os dados do produto através do id requisitado e adiciona ao CARRINHO 
 	caso possua quantidade desejada em estoque
 
-  /cart
+  GET /cart
 	Retorna o carrinho do usuário atual
 
-  /list
-	Realiza uma consulta no bd, e retorna todos os produtos disponíveis baseado ou não no filter do req.body
-
-  /buy
+  POST /buy
 	Realiza uma compra com os itens no carrinho, podendo ser aplicado um cupom de desconto ao qual vira da req.body.
 	Após é iniciada uma transaction para processar o header, os itens vendidos, e a adição de um titulo a receber.
 
-  /modifycart?productid=id&&quantity=quantity
+  GET /coupon
+  Devolve se o usuário tem ou não um cupom ativo no carrinho
+
+  POST /addcoupon?coupon=
+  Adiciona um cupom ao carrinho e atualiza os preços caso necessário
+
+  DELETE /coupon
+  Remove o cupom do carrinho e atualiza os preços caso necessário
+
+  PUT /modifycart?productid=id&&quantity=quantity
 	No carrinho será possível aumentar ou diminuir a quantidade. Será feita uma consulta no bd para verificar o estoque
 
-  /removeproduct?productid=id
+  DELETE /removeproduct?productid=id
 	Remove um produto do carrinho, e retorna a quantidade ao estoque no bd
 
-  /addcoupon?code=code
-	Adiciona um cupom ao carrinho, verifica se o mesmo existe no bd, caso exista aplica um desconto ao carrinho atual. Caso não haja
-	nada no carrinho retorna carrinho vazio
-
-  /requestrefund?userid=id&&saleheaderid=id
+  POST /requestrefund?userid=id&&saleheaderid=id
 	O usuário pode requisitar um reembolso, sendo enviado para o e-mail da equipe responsável sua mensagem, o id do usuário, e o id da compra e armazenado na tabela req_refunds a solicitação
 
-  /contact
-	Envia um e-mail para os responsáveis, com o req.session.user, req.session.name, data atual e req.body.message
+  POST /contact
+	Envia um e-mail para os responsáveis, através da req.body: email, name, subject, message e priority
+
+  GET /myorders?saleheaderid=
+  Retorna os produtos comprados por um usuário em uma venda específica
+
+  GET /usersales
+  Retorna todos os produtos de todas as vendas do usuário logado ou de uma específica com o req.query.saleheaderid
 
 Fluxo de estorno realizado por pessoas AUTORIZADAS:
 
@@ -100,19 +113,83 @@ Fluxo de estorno realizado por pessoas AUTORIZADAS:
 
 Fluxo ADMIN:
 
-  /addproduct
-	Adiciona um novo produto a loja caso seu grupo de produtos exista
+  POST /addproduct
+  Recebe o id do grupo, nome, preço e descrição pela req.body e adiciona um novo produto a loja
 
-  /addgroup
-	Adiciona um novo grupo de produtos a loja, caso não haja um igual
+  POST /addgroup
+  Recebe um name na req.body e adiciona um novo grupo de produtos a loja
 
-  /addprovider
-	Adiciona um novo fornecedor ao bd
+  POST /addcode
+  Recebe o code, discount e type_discount da req.body e adiciona um novo cupom de desconto ao bd
 
-  /addcode
-	Adiciona um novo código promocional, caso não já exista
+  POST /addprovider
+	Recebe documento, nome, país, estado, produto vendido, telefone e código postal pela req.body e adiciona um novo provider
 
+  POST /addpaymentmethod
+  Recebe name, portion e daystopay na req.body e cria um novo metódo de pagamento
 
-Progresso Geral: 90%
-  Restante: Pelo menos 2 relatórios, modelo e query do SQL e refatorar
+  POST /refund
+  Recebe um id na req.query e aprova o reembolso de uma solicitação
+
+  POST /addstock
+  Adiciona stock para um produto da req.query.productid e req.query.amount
+
+  DELETE /deleteproduct
+  Recebe um id na req.query e deleta um produto do bd
+
+  DELETE /deletegroup
+  Recebe um id na req.query e deleta um grupo de produtos do bd
+
+  DELETE /deleteprovider
+  Recebe um id de provider na req.query e deleta do bd
+
+  DELETE /deletecode
+  Recebe um id de um código promocional na req.query e deleta do bd
+
+  DELETE /deleteaccount
+  Recebe o id de uma conta na req.query(Que não seja da atual logada) e deleta do bd
+
+  DELETE /paymentmethod
+  Recebe um id na req.query e deleta o metódo de pagamento
+
+  GET /product
+  Recebe um id na req.query e traz os produtos do bd
+
+  GET /group
+  Recebe um id na req.query e traz os grupos de produtos do bd
+
+  GET /provider
+  Recebe um id na req.query e traz os providers do bd
+
+  GET /code
+  Recebe um id de um código promocional(ou todos) e traz do bd
+
+  GET /paymentmethod
+  Recebe um id e tras os dados do metódo de pagamento, ou se nenhum for especificado tras todos
+
+  GET /cashflow
+  Retorna o fluxo de caixa atual
+
+  GET /salesmonth
+  Recebe o month(em INT) na req.query e retorna as vendas do mes
+  
+  PUT /product
+  Recebe um name e/ou description na req.body e o id do produto na req.query e o altera
+
+  PUT /group
+  Recebe um name na req.body e o id do grupo na req.query e o altera
+
+  PUT /provider
+  Recebe um document e/ou um name na req.body e o id na req.query e o altera
+
+  PUT /code
+  Recebe um discount e/ou type_discount e/ou code na req.body e o id do código na req.query e o altera
+
+  PUT /paymentmethod
+  Recebe um id na req.query e um name e/ou portion e/ou daystopay na req.body e atualiza o metódo
+
+  PUT /updatestock
+  Atualiza o estoque de um produto por req.query.productid e req.query.amount
+
+Progresso Geral: 100%
   

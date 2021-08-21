@@ -6,6 +6,7 @@ module.exports = {
     const id = req.query.id;
     const name = req.body.name;
     const portion = req.body.portion;
+    const daystopay = req.body.daystopay;
 
     if (!id) {
       res.status(400).send("Please provide an ID");
@@ -21,12 +22,14 @@ module.exports = {
         } else {
           const currentname = check.rows[0].name;
           const currentportion = check.rows[0].portion_quantity;
+          const currentdaystopay = check.rows[0].daystopay;
 
           const result = await db.query(
-            "UPDATE payment_method SET name = $1, portion_quantity = $2 WHERE id = $3 RETURNING *",
+            "UPDATE payment_method SET name = $1, portion_quantity = $2, daystopay = $3 WHERE id = $4 RETURNING *",
             [
               name != undefined ? name : currentname,
               portion != undefined ? portion : currentportion,
+              daystopay != undefined ? daystopay : currentdaystopay,
               id,
             ]
           );

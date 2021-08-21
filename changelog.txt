@@ -80,3 +80,7 @@
     - Adicionado queries e models da release 1.0.1 na pasta SQL
     - Adicionado PDF do dbdesigner a pasta SQL
     - Release V1.0.1
+
+- 21 de agosto:
+    - Fix de bugs menores
+    - project_base.txt atualizado

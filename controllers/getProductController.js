@@ -3,11 +3,11 @@ const db = require("@model/db");
 
 module.exports = {
   get: async (req, res) => {
-    const id = req.body.id;
-    const groupid = req.body.groupid;
-    const name = req.body.name;
-    const price = req.body.price;
-    const date = req.body.date;
+    const id = req.query.id;
+    const groupid = req.query.groupid;
+    const name = req.query.name;
+    const price = req.query.price;
+    const date = req.query.date;
     if (id) {
       if (id == 0) {
         const result = await db.query(

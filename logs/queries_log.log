@@ -361,3 +361,8 @@ executed query: { query: INSERT INTO bills_receive(user_id, sale_header_id, amou
 executed query: { query: INSERT INTO sale_items (sale_header_id, line, product_id, sold_amount, unitary_value, discount_value, plus_value, total) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *, params: 106,2,20,2,121.47,0,0,242.94; duration: 54ms, rows: 1 }
 executed query: { query: COMMIT, params: undefined; duration: 1ms, rows: null }
 executed query: { query: INSERT INTO products(group_id, name, price, description, creation_userid) VALUES ($1, $2, $3, $4, $5) RETURNING *, params: 6,testfinal7userid,121.47,teste247 final,1; duration: 307ms, rows: 1 }
+executed query: { query: SELECT id, email, first_name, role_id, password from users where (email = $1 AND deleted_at IS NULL), params: diego-s.novaes@hotmail.com; duration: 2221ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE deleted_at IS NULL, params: undefined; duration: 229ms, rows: 6 }
+executed query: { query: SELECT * from products WHERE id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE group_id = $1 and deleted_at IS NULL, params: 1; duration: 1ms, rows: 1 }
+executed query: { query: SELECT * from products WHERE group_id = $1 and deleted_at IS NULL, params: 6; duration: 1ms, rows: 5 }
