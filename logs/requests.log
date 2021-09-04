@@ -5666,3 +5666,87 @@ GET /product?groupid=6 2.754 ms
 DATE: Friday, August 20, 2021
 HTTP STATUS CODE: 200
 
+POST /login 2370.961 ms
+DATE: Tuesday, August 24, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 440.989 ms
+DATE: Tuesday, August 24, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 162.739 ms
+DATE: Tuesday, August 24, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 202.994 ms
+DATE: Tuesday, August 24, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 143.894 ms
+DATE: Tuesday, August 24, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 202.528 ms
+DATE: Tuesday, August 24, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 125.284 ms
+DATE: Tuesday, August 24, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 193.833 ms
+DATE: Tuesday, August 24, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 217.257 ms
+DATE: Tuesday, August 24, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 229.909 ms
+DATE: Tuesday, August 24, 2021
+HTTP STATUS CODE: 200
+
+POST /login 733.597 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 321.499 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 200
+
+POST /logout 1.113 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 202
+
+GET /group 2.269 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 401
+
+GET /product 0.743 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 401
+
+POST /login 203.799 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 200
+
+GET /product 0.774 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 400
+
+GET /product?groupid=6 171.943 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 0.888 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 401
+
+POST /login 1158.449 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 200
+
+GET /product?groupid=6 161.636 ms
+DATE: Wednesday, August 25, 2021
+HTTP STATUS CODE: 200
+

@@ -4,7 +4,9 @@
   "description": "shop api for alphalumen edtech",
   "main": "app.js",
   "scripts": {
-    "start": "env TZ='America/Sao_Paulo' node app.js"
+    "start": "pm2 start app.js --log-date-format \"YYYY-MM-DD HH:mm\"",
+    "autostart": "pm2 start app.js --log-date-format \"YYYY-MM-DD HH:mm\" --watch",
+    "stop": "pm2 kill"
   },
   "keywords": [
     "shop",
@@ -30,6 +32,7 @@
     "morgan": "^1.10.0",
     "nodemailer": "^6.6.3",
     "pg": "^8.7.1",
+    "tar": "^6.1.11",
     "totalvoice-node": "^1.10.0",
     "tzdata": "^1.0.25"
   },
